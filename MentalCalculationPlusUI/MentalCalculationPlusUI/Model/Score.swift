@@ -10,7 +10,10 @@ import Foundation
 
 class Score {
     var currentScore = 0
-    private static var topScore = 0
+    private var topScore = 0
+    
+     let gameData = UserDefaults.standard
+    let topScoreKey = "topScore"
     
     func getScore() -> Int {
     return currentScore
@@ -21,12 +24,27 @@ class Score {
     }
     
     func updateTopScore() {
-        if (currentScore > Score.topScore) {
-            Score.topScore = currentScore
+        topScore = getTopScore()
+        
+        if (currentScore > topScore) {
+    
+            topScore = currentScore
+            
+            gameData.set(topScore, forKey: topScoreKey)
+            
         }
     }
-    static func getTopScore() -> Int {
-        return topScore
+    func getTopScore() -> Int {
+        
+        if gameData.object(forKey: topScoreKey) == nil {
+            return 0
+        } else {
+             return gameData.integer(forKey: topScoreKey)
+        }
+        
     }
+   
+    
+    
     
 }

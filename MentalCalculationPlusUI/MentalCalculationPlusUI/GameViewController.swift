@@ -154,6 +154,7 @@ class GameViewController: UIViewController {
             showResultWithColor(isCorrect: false)
             lives -= 1
             if lives == 0 {
+                score.updateTopScore()
                 performSegue(withIdentifier: "gameOverSegue", sender: self)
             } else {
             
@@ -191,6 +192,13 @@ class GameViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //        Get the new view controller using segue.destination.
+        //        Pass the selected object to the new view controller.
+        if let destination = segue.destination as? GameOverViewController {
+            destination.displayedScore = score.getScore()
+        }
+    }
 //    @objc func hideKeyboard() {
 //        self.endEditing(true)
 //    }
