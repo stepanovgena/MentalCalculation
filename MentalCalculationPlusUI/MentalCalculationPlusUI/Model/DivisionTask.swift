@@ -29,15 +29,15 @@ class DivisionTask: Solvable {
 
             
         case .hard:
-            let coinFlip = Coin.flip()// выровняем распределение
+            let distribution = Distribution.generate(from: 1, to: 10, separateBy: 8)// set probability distribution
             
-            switch coinFlip {
+            switch distribution {
             
-            case .tails:
+            case .optionOne:
             b =  RandomNumberFactory.generateInLimits(lower: 5, upper: 9)
-            a =  RandomNumberFactory.generateInLimits(lower: 5, upper: 99) * b
+            a =  RandomNumberFactory.generateInLimits(lower: 20, upper: 99) * b
             
-            case .heads:
+            case .optionTwo:
             b =  RandomNumberFactory.generateInLimits(lower: 11, upper: 19)
             a =  b * b
                 

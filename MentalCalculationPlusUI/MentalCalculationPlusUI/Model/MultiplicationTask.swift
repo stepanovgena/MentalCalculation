@@ -24,18 +24,24 @@ class MultiplicationTask: Solvable {
             b =  RandomNumberFactory.generateInLimits(lower: 2, upper: 10 - a)
             
         case .normal:
-             let distribution = RandomNumberFactory.generateInLimits(lower: 1, upper: 10)// зададим распределение вероятностей выпадания обычного задания и квадратов до 20
-             if (distribution <= 7) {
-            a =  RandomNumberFactory.generateInLimits(lower: 5, upper: 99)//обычное умножение
+             let distribution = Distribution.generate(from: 1, to: 10, separateBy: 7)// set probability distribution to get normal task and squares
+             
+             switch distribution {
+             case .optionOne:
+                //normal multiplication
+                a =  RandomNumberFactory.generateInLimits(lower: 5, upper: 99)
             
                 if (a > 10) {
                 b =  RandomNumberFactory.generateInLimits(lower: 2, upper: 9)
                 } else {
                     b =  RandomNumberFactory.generateInLimits(lower: 2, upper: 99)
+                    }
                     
-                }
-             } else {
-                a =  RandomNumberFactory.generateInLimits(lower: 3, upper: 20) //квадраты до 20
+                
+             case .optionTwo:
+                
+                //squares
+                a =  RandomNumberFactory.generateInLimits(lower: 3, upper: 20)
                 b = a
             }
             

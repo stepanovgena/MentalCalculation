@@ -52,7 +52,7 @@ class RandomNumberFactory {
     }
     
     static func generateInLimits (lower: Int, upper: Int) -> Int {
-        assert((lower > 0 || upper > 0 || upper >= lower), "Incorrect limits for random Int")
+        assert((lower > 0 && upper > 0 && upper >= lower), "Incorrect limits for random Int")
         return Int.random(in: lower...upper)
     }
     

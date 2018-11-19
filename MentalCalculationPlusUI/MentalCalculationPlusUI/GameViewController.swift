@@ -39,13 +39,12 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var enterButton: UIButton!
     
-    @IBOutlet weak var resultLabel: UILabel!
-    
     @IBOutlet weak var scoreLabel: UILabel!
     
      @IBOutlet weak var livesLabel: UILabel!
     
-   
+    @IBOutlet weak var progressBar: UIProgressView!
+    
     
    
     
@@ -57,8 +56,9 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         updateViewFromModel()
+        updateProgressBar()
     
     
         
@@ -146,6 +146,7 @@ class GameViewController: UIViewController {
             clearResponseLabel()
             updateTask()
             updateViewFromModel()
+            updateProgressBar()
             
         
             
@@ -161,6 +162,7 @@ class GameViewController: UIViewController {
             clearResponseLabel()
             updateTask()
             updateViewFromModel()
+            updateProgressBar()
             }
         }
         
@@ -199,6 +201,35 @@ class GameViewController: UIViewController {
             destination.displayedScore = score.getScore()
         }
     }
+    
+    
+    func updateProgressBar() {
+        
+        progressBar.setProgress(0, animated: false)
+        progressBar.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        
+        
+        var progress: Float  = 0.0
+        
+       
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
+            
+            progress += 0.001
+            self.progressBar.setProgress(progress, animated: true)
+            
+            if (progress > 0.999) {
+                t.invalidate()
+                 self.responseLabel.text = ("123")
+            }
+            
+            
+        })
+       
+       
+    }
+    
+    
+    
 //    @objc func hideKeyboard() {
 //        self.endEditing(true)
 //    }
