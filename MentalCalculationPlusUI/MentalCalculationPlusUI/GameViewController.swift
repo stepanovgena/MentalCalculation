@@ -24,6 +24,8 @@ class GameViewController: UIViewController {
     
     var lives: Int = 3
     
+    var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false, block: {(t) in })
+    
     
 
     @IBOutlet weak var aLabel: UILabel!
@@ -56,7 +58,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         updateViewFromModel()
         updateProgressBar()
     
@@ -70,20 +72,7 @@ class GameViewController: UIViewController {
             
             task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
             
-           
         
-    
-//        ((self.parent as! UINavigationController).viewControllers[1] as! SelectCategoryViewController).selectedLevel
-       
-            //Timer start
-//        let timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { (t) in //Timer(timeInterval:3 , repeats: true, block: { (t) in
-//
-////                self.resultLabel.text = "\(count)"
-//
-//                    t.invalidate()
-//
-//
-//            }) //end of closure
         
         }
         
@@ -109,8 +98,9 @@ class GameViewController: UIViewController {
         task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
     }
     
+    //the score is calculated as task difficulty * level difficulty * 10
     func updateScore() {
-        score.setScore(newValue: score.getScore() + 10 * (task.level.rawValue * (self.gameCategory.rawValue))) //the score is calculated as task difficulty * level difficulty * 10
+        score.setScore(newValue: score.getScore() + 10 * (task.level.rawValue * (self.gameCategory.rawValue)))
     }
     
     func clearResponseLabel() {
@@ -140,7 +130,7 @@ class GameViewController: UIViewController {
     @IBAction func enterButtonPressed(_ sender: UIButton) {
         
         if (String(task.result) == responseString) {
-//
+            timer.invalidate()
             showResultWithColor(isCorrect: true)
             updateScore()
             clearResponseLabel()
@@ -151,7 +141,7 @@ class GameViewController: UIViewController {
         
             
         } else {
-//
+            timer.invalidate()
             showResultWithColor(isCorrect: false)
             lives -= 1
             if lives == 0 {
@@ -212,14 +202,15 @@ class GameViewController: UIViewController {
         var progress: Float  = 0.0
         
        
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
             
             progress += 0.001
             self.progressBar.setProgress(progress, animated: true)
             
             if (progress > 0.999) {
                 t.invalidate()
-                 self.responseLabel.text = ("123")
+               // print("Is timer valid: \(t.isValid)")
+                self.enterButtonPressed(self.enterButton)
             }
             
             
