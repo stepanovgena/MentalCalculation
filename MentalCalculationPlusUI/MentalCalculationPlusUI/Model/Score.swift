@@ -9,13 +9,13 @@
 import Foundation
 
 class Score {
-    var currentScore = 0
+    private var currentScore = 0
     private var topScore = 0
     
-     let gameData = UserDefaults.standard
+    let gameData = UserDefaults.standard
     let topScoreKey = "topScore"
     
-    func getScore() -> Int {
+   func getScore() -> Int {
     return currentScore
     }
     
@@ -43,8 +43,5 @@ class Score {
         }
         
     }
-   
-    
-    
     
 }

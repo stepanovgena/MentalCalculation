@@ -20,7 +20,6 @@
 		96F9FC07219220E6003E80B4 /* MentalCalculationPlusUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC06219220E6003E80B4 /* MentalCalculationPlusUIUITests.swift */; };
 		96F9FC282192222F003E80B4 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC1B2192222E003E80B4 /* Score.swift */; };
 		96F9FC292192222F003E80B4 /* RandomNumberFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC1C2192222F003E80B4 /* RandomNumberFactory.swift */; };
-		96F9FC2A2192222F003E80B4 /* GameTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC1D2192222F003E80B4 /* GameTimer.swift */; };
 		96F9FC2C2192222F003E80B4 /* GameCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC1F2192222F003E80B4 /* GameCategory.swift */; };
 		96F9FC2D2192222F003E80B4 /* AdditionTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC202192222F003E80B4 /* AdditionTask.swift */; };
 		96F9FC2E2192222F003E80B4 /* DivisionTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC212192222F003E80B4 /* DivisionTask.swift */; };
@@ -72,7 +71,6 @@
 		96F9FC08219220E6003E80B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96F9FC1B2192222E003E80B4 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		96F9FC1C2192222F003E80B4 /* RandomNumberFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNumberFactory.swift; sourceTree = "<group>"; };
-		96F9FC1D2192222F003E80B4 /* GameTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTimer.swift; sourceTree = "<group>"; };
 		96F9FC1F2192222F003E80B4 /* GameCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCategory.swift; sourceTree = "<group>"; };
 		96F9FC202192222F003E80B4 /* AdditionTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionTask.swift; sourceTree = "<group>"; };
 		96F9FC212192222F003E80B4 /* DivisionTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DivisionTask.swift; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 				96D486B921A0AF91006BA0D7 /* Distribution.swift */,
 				96F9FC272192222F003E80B4 /* Game.swift */,
 				96F9FC1F2192222F003E80B4 /* GameCategory.swift */,
-				96F9FC1D2192222F003E80B4 /* GameTimer.swift */,
 				96F9FC242192222F003E80B4 /* Level.swift */,
 				96F9FC222192222F003E80B4 /* MultiplicationTask.swift */,
 				96F9FC1C2192222F003E80B4 /* RandomNumberFactory.swift */,
@@ -338,7 +335,6 @@
 				963A8F66219CAF520019CD30 /* TopScoreViewController.swift in Sources */,
 				96F9FC332192222F003E80B4 /* CoinFlip.swift in Sources */,
 				96F9FC292192222F003E80B4 /* RandomNumberFactory.swift in Sources */,
-				96F9FC2A2192222F003E80B4 /* GameTimer.swift in Sources */,
 				96F9FC2D2192222F003E80B4 /* AdditionTask.swift in Sources */,
 				96F9FC2E2192222F003E80B4 /* DivisionTask.swift in Sources */,
 				96F9FC342192222F003E80B4 /* Game.swift in Sources */,

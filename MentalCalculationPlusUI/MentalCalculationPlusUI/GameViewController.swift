@@ -13,23 +13,24 @@ class GameViewController: UIViewController {
     var gameCategory: GameCategory = .addition
     var gameLevel: Level = .easy
     
-    var responseString: String = String()
+    private var responseString: String = String()
     var operationsSign: String = ""
     
-     lazy var game: Game = Game(gameCategory: self.gameCategory, gameLevel: self.gameLevel)
+    lazy var game: Game = Game(gameCategory: self.gameCategory, gameLevel: self.gameLevel)
     
     lazy var task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
     
-    var score: Score = Score()
+    private var score: Score = Score()
     
-    var lives: Int = 3
+    private var lives: Int = 3
     
-    var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false, block: {(t) in })
+    //don't like this instance member with exact parameters
+    private var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false, block: {(t) in })
     
     
 
     @IBOutlet weak var aLabel: UILabel!
-     @IBOutlet weak var bLabel: UILabel!
+    @IBOutlet weak var bLabel: UILabel!
     
     @IBOutlet weak var responseLabel: UILabel!
     
@@ -43,16 +44,9 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var scoreLabel: UILabel!
     
-     @IBOutlet weak var livesLabel: UILabel!
+    @IBOutlet weak var livesLabel: UILabel!
     
     @IBOutlet weak var progressBar: UIProgressView!
-    
-    
-   
-    
-   // lazy var task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
-    
-    var difficulty: String = "Easy"
     
     
     
@@ -61,35 +55,16 @@ class GameViewController: UIViewController {
         
         updateViewFromModel()
         updateProgressBar()
-    
-    
         
     }
     
-    func play() {
-        
-        while lives > 0 {
-            
-            task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
-            
-        
-        
-        }
-        
-        
-        
-//        let gr:UIGestureRecognizer = self.view.gestureRecognizers![0]
-//        gr.addTarget(self, action: #selector(swipeRight))
-        
-
-    }
     
     func updateViewFromModel() {
         aLabel.text = String(task.a)
         bLabel.text = String(task.b)
         operationLabel.text = operationsSign
         
-        scoreLabel.text = "\u{1F3C6}\(score.currentScore)"
+        scoreLabel.text = "\u{1F3C6}\(score.getScore())"
         
         livesLabel.text = "\u{2764}\(lives)"
     }
@@ -158,22 +133,18 @@ class GameViewController: UIViewController {
         
     }
     
-    @objc func swipeRight(_ sender: UIGestureRecognizer) {
-        performSegue(withIdentifier: "segueToGame", sender: self)
-        
-    }
-    
     func showResultWithColor (isCorrect: Bool) {
         if isCorrect {
-            
+            //blink green if the answer is correct
             UIView.animate(withDuration: 0.2, animations: {
                 self.view.backgroundColor = UIColor.green
             }, completion: nil)
             UIView.animate(withDuration: 0.4, animations: {
                 self.view.backgroundColor = UIColor.black
             }, completion: nil)
-            
+
         } else {
+            //blink red if the answer is incorrect
             UIView.animate(withDuration: 0.2, animations: {
                 self.view.backgroundColor = UIColor.red
             }, completion: nil)
@@ -184,13 +155,6 @@ class GameViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        Get the new view controller using segue.destination.
-        //        Pass the selected object to the new view controller.
-        if let destination = segue.destination as? GameOverViewController {
-            destination.displayedScore = score.getScore()
-        }
-    }
     
     
     func updateProgressBar() {
@@ -198,18 +162,17 @@ class GameViewController: UIViewController {
         progressBar.setProgress(0, animated: false)
         progressBar.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         
-        
         var progress: Float  = 0.0
         
-       
+        
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
             
             progress += 0.001
             self.progressBar.setProgress(progress, animated: true)
             
+            //if timer runs out then stop timer and programmatically press Enter
             if (progress > 0.999) {
                 t.invalidate()
-               // print("Is timer valid: \(t.isValid)")
                 self.enterButtonPressed(self.enterButton)
             }
             
@@ -219,23 +182,11 @@ class GameViewController: UIViewController {
        
     }
     
-    
-    
-//    @objc func hideKeyboard() {
-//        self.endEditing(true)
-//    }
-    
-    
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    
-    */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? GameOverViewController {
+            destination.displayedScore = score.getScore()
+        }
+    }
     
 
 }

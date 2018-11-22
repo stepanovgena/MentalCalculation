@@ -74,7 +74,7 @@ class SelectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPi
                 destination.gameCategory = .addition
                 destination.operationsSign = "+"
             }
-//            source.difficulty = selectedLevel
+
         }
     }
 

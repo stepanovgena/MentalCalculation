@@ -32,16 +32,16 @@ class MultiplicationTask: Solvable {
                 a =  RandomNumberFactory.generateInLimits(lower: 5, upper: 99)
             
                 if (a > 10) {
-                b =  RandomNumberFactory.generateInLimits(lower: 2, upper: 9)
+                b =  RandomNumberFactory.generateInLimits(lower: 3, upper: 9)
                 } else {
-                    b =  RandomNumberFactory.generateInLimits(lower: 2, upper: 99)
+                    b =  RandomNumberFactory.generateInLimits(lower: 11, upper: 99)
                     }
                     
                 
              case .optionTwo:
                 
                 //squares
-                a =  RandomNumberFactory.generateInLimits(lower: 3, upper: 20)
+                a =  RandomNumberFactory.generateInLimits(lower: 4, upper: 20)
                 b = a
             }
             
@@ -64,7 +64,7 @@ class MultiplicationTask: Solvable {
                 b =  RandomNumberFactory.generateInLimits(lower: 2, upper: 15)//slightly simplify b if 10 < а < 100
                 
             } else {
-                b = RandomNumberFactory.generateInLimits(lower: 2, upper: 99)//fires if a < 10
+                b = RandomNumberFactory.generateInLimits(lower: 2, upper: 99)
             }
             
         }

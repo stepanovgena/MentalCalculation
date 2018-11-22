@@ -206,6 +206,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="hFy-mk-qiT" firstAttribute="centerX" secondItem="U7B-YA-Pxu" secondAttribute="centerX" id="5Sx-Nf-X8m"/>
                             <constraint firstItem="Qqa-tl-h3V" firstAttribute="centerX" secondItem="U7B-YA-Pxu" secondAttribute="centerX" id="G0d-Oc-He2"/>
@@ -213,6 +214,9 @@
                             <constraint firstItem="Qqa-tl-h3V" firstAttribute="centerY" secondItem="U7B-YA-Pxu" secondAttribute="centerY" id="hy1-UE-TWR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Xr-IU-t4j"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="s58-2L-c9f" appends="YES" id="zPS-4d-sVJ"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="topScoreLabel" destination="Qqa-tl-h3V" id="h2B-3z-axM"/>
@@ -220,6 +224,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hya-pK-L5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6ch-o4-Mrm" userLabel="Exit" sceneMemberID="exit"/>
+                <swipeGestureRecognizer direction="right" id="s58-2L-c9f">
+                    <connections>
+                        <segue destination="6ch-o4-Mrm" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="Nyj-Eg-aUK"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2108" y="447.78325123152712"/>
         </scene>
@@ -561,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Lu-9B-BkB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5314" y="-343"/>
+            <point key="canvasLocation" x="5425" y="-331"/>
         </scene>
         <!--Select Difficulty View Controller-->
         <scene sceneID="Jxr-gW-Lz9">
@@ -671,6 +680,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MdE-Gp-ffX"/>
+        <segue reference="3Lq-0a-Com"/>
     </inferredMetricsTieBreakers>
 </document>

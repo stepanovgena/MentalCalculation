@@ -19,24 +19,20 @@ class GameOverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-scoreLabel.text = "\u{1F3C6}Your score: \(displayedScore)"
-        // Do any additional setup after loading the view.
+        
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(backToMainMenuButtonPressed(_:)))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+        
+
+        scoreLabel.text = "\u{1F3C6}Your score: \(displayedScore)"
+        
     }
     
     @IBAction func backToMainMenuButtonPressed(_ sender: UIButton) {
         let controllerStack = self.navigationController?.viewControllers
-        _ = self.navigationController?.popToViewController((controllerStack?[0])!, animated: true)
+        _ = self.navigationController?.popToViewController((controllerStack?[1])!, animated: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

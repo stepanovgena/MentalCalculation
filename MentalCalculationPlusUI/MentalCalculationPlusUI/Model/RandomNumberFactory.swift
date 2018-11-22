@@ -24,11 +24,10 @@ class RandomNumberFactory {
         
     }
     
-    //TODO add min and max order
+    
      static func generate (order: Int, limit: Int?)  -> Int {
         
         guard (order > 0 && order < 4) else {
-          // throw Errors.orderOutOfRange
             return 0
         }
         
@@ -42,7 +41,7 @@ class RandomNumberFactory {
         case 3: return Int.random(in: 2...999)
         default:
             return 0
-            //throw Errors.orderOutOfRange
+        
         }
         }
         else {
