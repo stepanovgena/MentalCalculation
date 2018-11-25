@@ -31,7 +31,6 @@
 		96F9FC342192222F003E80B4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC272192222F003E80B4 /* Game.swift */; };
 		96F9FC3821923555003E80B4 /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC3721923555003E80B4 /* SelectCategoryViewController.swift */; };
 		96F9FC3C21938616003E80B4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC3B21938616003E80B4 /* GameViewController.swift */; };
-		96F9FC3E21976269003E80B4 /* SelectDifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC3D21976269003E80B4 /* SelectDifficultyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +81,6 @@
 		96F9FC272192222F003E80B4 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		96F9FC3721923555003E80B4 /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
 		96F9FC3B21938616003E80B4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		96F9FC3D21976269003E80B4 /* SelectDifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDifficultyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +134,6 @@
 				96F9FC1421922178003E80B4 /* Model */,
 				96F9FBE3219220E4003E80B4 /* AppDelegate.swift */,
 				96F9FC3B21938616003E80B4 /* GameViewController.swift */,
-				96F9FC3D21976269003E80B4 /* SelectDifficultyViewController.swift */,
 				963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */,
 				96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */,
 				96F9FC3721923555003E80B4 /* SelectCategoryViewController.swift */,
@@ -327,7 +324,6 @@
 				96D486BA21A0AF91006BA0D7 /* Distribution.swift in Sources */,
 				96F9FC322192222F003E80B4 /* SubstractionTask.swift in Sources */,
 				96F9FC3C21938616003E80B4 /* GameViewController.swift in Sources */,
-				96F9FC3E21976269003E80B4 /* SelectDifficultyViewController.swift in Sources */,
 				96F9FC282192222F003E80B4 /* Score.swift in Sources */,
 				96F9FC302192222F003E80B4 /* Solvable.swift in Sources */,
 				96F9FBE4219220E4003E80B4 /* AppDelegate.swift in Sources */,

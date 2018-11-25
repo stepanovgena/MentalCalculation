@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/**Class provides substraction task logic*/
 class SubstractionTask: Solvable {
     let level: Level
     let a: Int

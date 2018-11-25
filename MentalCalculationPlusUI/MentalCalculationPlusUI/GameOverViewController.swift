@@ -29,7 +29,7 @@ class GameOverViewController: UIViewController {
         scoreLabel.text = "\u{1F3C6}Your score: \(displayedScore)"
         
     }
-    
+    //return to Select Category 
     @IBAction func backToMainMenuButtonPressed(_ sender: UIButton) {
         let controllerStack = self.navigationController?.viewControllers
         _ = self.navigationController?.popToViewController((controllerStack?[1])!, animated: true)

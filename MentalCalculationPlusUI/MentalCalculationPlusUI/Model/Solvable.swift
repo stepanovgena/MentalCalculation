@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/**Protocol that all task types conform to*/
 protocol Solvable {
     var level: Level { get }
     var a: Int { get }

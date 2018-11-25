@@ -8,6 +8,8 @@
 
 import Foundation
 
+/**Utility class to provide coin flip probability logic */
+
 enum Coin: Int {
     case heads = 1
     case tails = 2

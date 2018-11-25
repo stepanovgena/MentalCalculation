@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/**Utility class provides probability distribution logic to mix various tasks together*/
 enum Distribution: Int {
     case optionOne = 1
     case optionTwo = 2

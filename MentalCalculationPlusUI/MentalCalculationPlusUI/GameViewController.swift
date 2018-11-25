@@ -13,6 +13,8 @@ class GameViewController: UIViewController {
     var gameCategory: GameCategory = .addition
     var gameLevel: Level = .easy
     
+    var progressUpdateSpeed: Float = 0.001
+    
     private var responseString: String = String()
     var operationsSign: String = ""
     
@@ -26,7 +28,6 @@ class GameViewController: UIViewController {
     
     //don't like this instance member with exact parameters
     private var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false, block: {(t) in })
-    
     
 
     @IBOutlet weak var aLabel: UILabel!
@@ -52,12 +53,16 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //adjust timer speed according to difficulty
+        switch gameLevel {
+        case .normal: progressUpdateSpeed = 0.001
+        default: progressUpdateSpeed = 0.0005 //for easy and hard give more time to solve
+        }
         
         updateViewFromModel()
         updateProgressBar()
         
     }
-    
     
     func updateViewFromModel() {
         aLabel.text = String(task.a)
@@ -73,7 +78,7 @@ class GameViewController: UIViewController {
         task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
     }
     
-    //the score is calculated as task difficulty * level difficulty * 10
+    /**The score is calculated as task category * level difficulty * 10 */
     func updateScore() {
         score.setScore(newValue: score.getScore() + 10 * (task.level.rawValue * (self.gameCategory.rawValue)))
     }
@@ -93,7 +98,6 @@ class GameViewController: UIViewController {
         
         responseLabel.text = responseString
         
-    
     }
     
     
@@ -113,8 +117,6 @@ class GameViewController: UIViewController {
             updateViewFromModel()
             updateProgressBar()
             
-        
-            
         } else {
             timer.invalidate()
             showResultWithColor(isCorrect: false)
@@ -132,7 +134,7 @@ class GameViewController: UIViewController {
         }
         
     }
-    
+    /**Blinks the screen with color depending on whether the answer is correct or wrong*/
     func showResultWithColor (isCorrect: Bool) {
         if isCorrect {
             //blink green if the answer is correct
@@ -154,9 +156,7 @@ class GameViewController: UIViewController {
             
         }
     }
-    
-    
-    
+    /**Handles time given to respond to the task*/
     func updateProgressBar() {
         
         progressBar.setProgress(0, animated: false)
@@ -167,7 +167,7 @@ class GameViewController: UIViewController {
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
             
-            progress += 0.001
+            progress += self.progressUpdateSpeed
             self.progressBar.setProgress(progress, animated: true)
             
             //if timer runs out then stop timer and programmatically press Enter

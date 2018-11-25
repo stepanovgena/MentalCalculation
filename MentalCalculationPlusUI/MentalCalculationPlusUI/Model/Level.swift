@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/**Enum provides levels of difficulty, raw values are used in score calculation*/
 enum Level: Int {
     case easy = 1
     case normal = 2

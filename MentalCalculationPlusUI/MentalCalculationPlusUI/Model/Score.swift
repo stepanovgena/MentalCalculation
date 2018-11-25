@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/**Class provides scoring task logic*/
 class Score {
     private var currentScore = 0
     private var topScore = 0

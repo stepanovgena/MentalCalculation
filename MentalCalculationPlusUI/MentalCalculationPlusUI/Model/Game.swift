@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/**Class generates task according to chosen task type and difficulty level*/
 class Game {
     let gameCategory: GameCategory
     let gameLevel: Level

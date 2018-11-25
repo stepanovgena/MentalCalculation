@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/**Class provides division task logic*/
 class DivisionTask: Solvable {
     let level: Level
     let a: Int

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/**Utility class provides operations with random numbers*/
 class RandomNumberFactory {
     
     

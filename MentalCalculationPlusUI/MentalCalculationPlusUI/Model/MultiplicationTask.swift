@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/**Class provides multiplication task logic*/
 class MultiplicationTask: Solvable {
     let level: Level
     let a: Int

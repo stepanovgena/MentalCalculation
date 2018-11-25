@@ -8,6 +8,7 @@
 
 import Foundation
 
+/**Class provides addition task logic*/
 class AdditionTask: Solvable {
     let level: Level
     let a: Int
