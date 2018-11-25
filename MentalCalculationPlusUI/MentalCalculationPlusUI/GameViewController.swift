@@ -15,6 +15,10 @@ class GameViewController: UIViewController {
     
     var progressUpdateSpeed: Float = 0.001
     
+    var limitedTimeToResolve = true
+    
+    var wrongTasksArray = [String]()
+    
     private var responseString: String = String()
     var operationsSign: String = ""
     
@@ -25,6 +29,8 @@ class GameViewController: UIViewController {
     private var score: Score = Score()
     
     private var lives: Int = 3
+    
+    private var scoreForSpeed: Int = 0
     
     //don't like this instance member with exact parameters
     private var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false, block: {(t) in })
@@ -53,6 +59,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //adjust timer speed according to difficulty
         switch gameLevel {
         case .normal: progressUpdateSpeed = 0.001
@@ -63,7 +70,7 @@ class GameViewController: UIViewController {
         updateProgressBar()
         
     }
-    
+    /**Draws current task, score and lives in UI */
     func updateViewFromModel() {
         aLabel.text = String(task.a)
         bLabel.text = String(task.b)
@@ -73,16 +80,16 @@ class GameViewController: UIViewController {
         
         livesLabel.text = "\u{2764}\(lives)"
     }
-    
+    /**Generates new task of given category and difficulty */
     func updateTask() {
         task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
     }
     
-    /**The score is calculated as task category * level difficulty * 10 */
+    /**The score is calculated as 10 * (task category * level difficulty + scoreForSpeed) */
     func updateScore() {
-        score.setScore(newValue: score.getScore() + 10 * (task.level.rawValue * (self.gameCategory.rawValue)))
+        score.setScore(newValue: score.getScore() + 10 * (task.level.rawValue * (self.gameCategory.rawValue) + scoreForSpeed))
     }
-    
+    /**Clears user input text*/
     func clearResponseLabel() {
         
         responseString = ""
@@ -120,6 +127,7 @@ class GameViewController: UIViewController {
         } else {
             timer.invalidate()
             showResultWithColor(isCorrect: false)
+            addWrongTaskToList(task: task)
             lives -= 1
             if lives == 0 {
                 score.updateTopScore()
@@ -159,6 +167,8 @@ class GameViewController: UIViewController {
     /**Handles time given to respond to the task*/
     func updateProgressBar() {
         
+        if limitedTimeToResolve {
+        
         progressBar.setProgress(0, animated: false)
         progressBar.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         
@@ -168,7 +178,11 @@ class GameViewController: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
             
             progress += self.progressUpdateSpeed
+            
             self.progressBar.setProgress(progress, animated: true)
+            
+            //additional points for speed of answer
+            self.scoreForSpeed = Int((1 - progress) * 10)
             
             //if timer runs out then stop timer and programmatically press Enter
             if (progress > 0.999) {
@@ -178,15 +192,23 @@ class GameViewController: UIViewController {
             
             
         })
+        } else {
+            progressBar.isHidden = true
+        }
        
-       
+    }
+    /**Adds wrong answered task to array to display when the game is over */
+    func addWrongTaskToList(task: Solvable) {
+        wrongTasksArray.append("\(task.a) \(operationsSign) \(task.b) = \(task.result)")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? GameOverViewController {
             destination.displayedScore = score.getScore()
+            print(wrongTasksArray)
         }
     }
+    
     
 
 }

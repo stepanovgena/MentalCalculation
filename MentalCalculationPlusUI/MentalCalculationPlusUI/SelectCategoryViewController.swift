@@ -12,6 +12,7 @@ class SelectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPi
 
     @IBOutlet weak var picker: UIPickerView!
     
+    @IBOutlet weak var limitedTimeSwitch: UISwitch!
     
     var categories: [String] = []
     var levels: [String] = []
@@ -26,34 +27,20 @@ class SelectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPi
         levels = ["Easy", "Normal", "Hard"]
         
 
-        
-        
-//
-//        let gr:UIGestureRecognizer = self.view.gestureRecognizers![0]
-//        gr.addTarget(self, action: #selector(swipeRight))
-//
-//        // Do any additional setup after loading the view.
     }
     
    
-
-    
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
     
-    
-//    @objc func swipeRight(_ sender: UIGestureRecognizer) {
-//        performSegue(withIdentifier: "segueToCategory", sender: self)
-//    }
     
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        Get the new view controller using segue.destination.
-        //        Pass the selected object to the new view controller.
+     
         if let destination = segue.destination as? GameViewController {
             destination.gameLevel = selectedLevel
             switch segue.identifier {
@@ -74,8 +61,13 @@ class SelectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPi
                 destination.gameCategory = .addition
                 destination.operationsSign = "+"
             }
+            if !limitedTimeSwitch.isOn {
+                destination.limitedTimeToResolve = false
+            }
 
         }
+        
+        
     }
 
     /*
