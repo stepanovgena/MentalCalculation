@@ -25,8 +25,6 @@ class SelectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPi
         categories = ["Addition", "Substraction", "Multiplication", "Division"]
         
         levels = ["Easy", "Normal", "Hard"]
-        
-
     }
     
    
@@ -70,15 +68,6 @@ class SelectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPi
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -96,10 +85,6 @@ class SelectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPi
     }
     
     // The data to return fopr the row and component (column) that's being passed in
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//    return levels[row]
-//    }
-    
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return NSAttributedString(string: levels[row], attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
     }

@@ -85,9 +85,9 @@ class GameViewController: UIViewController {
         task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
     }
     
-    /**The score is calculated as 10 * (task category * level difficulty + scoreForSpeed) */
+    /**The score is calculated as 10 * (task category * level difficulty + 0.5 * scoreForSpeed) */
     func updateScore() {
-        score.setScore(newValue: score.getScore() + 10 * (task.level.rawValue * (self.gameCategory.rawValue) + scoreForSpeed))
+        score.setScore(newValue: score.getScore() + 10 * (task.level.rawValue * (self.gameCategory.rawValue) +  scoreForSpeed/2))
     }
     /**Clears user input text*/
     func clearResponseLabel() {
@@ -205,6 +205,7 @@ class GameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? GameOverViewController {
             destination.displayedScore = score.getScore()
+            destination.wrongAnswersArray = wrongTasksArray
             print(wrongTasksArray)
         }
     }
