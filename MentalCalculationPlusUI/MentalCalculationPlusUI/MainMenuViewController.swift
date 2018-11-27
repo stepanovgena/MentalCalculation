@@ -9,25 +9,24 @@
 import UIKit
 
 class MainMenuViewController: UIViewController {
+  
+  override func viewWillAppear(_ animated: Bool) {
+    self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    super.viewWillAppear(animated)
+    //       self.preferredStatusBarStyle = .lightContent
+  }
+  
+  override var preferredStatusBarStyle : UIStatusBarStyle {
+    return .lightContent
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.
+  }
+  @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        super.viewWillAppear(animated)
-//       self.preferredStatusBarStyle = .lightContent
-    }
-    
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return .lightContent
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
-        
-    }
-
+  }
+  
 }
 

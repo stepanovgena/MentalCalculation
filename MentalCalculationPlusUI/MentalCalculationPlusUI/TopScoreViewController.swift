@@ -9,14 +9,13 @@
 import UIKit
 
 class TopScoreViewController: UIViewController {
-    @IBOutlet weak var topScoreLabel: UILabel!
-    
-    private let score = Score()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        topScoreLabel.text = "\u{1F3C6}Top score: \(score.getTopScore())"
-      
-    }
-
+  @IBOutlet weak var topScoreLabel: UILabel!
+  
+  private let score = Score()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    topScoreLabel.text = "\u{1F3C6}Top score: \(score.getTopScore())"
+  }
+  
 }

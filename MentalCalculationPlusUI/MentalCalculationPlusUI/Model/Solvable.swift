@@ -9,11 +9,11 @@
 import Foundation
 /**Protocol that all task types conform to*/
 protocol Solvable {
-    var level: Level { get }
-    var a: Int { get }
-    var b: Int { get }
-    var result: Int { get }
-    
-    init (level: Level)
-        
+  var level: Level { get }
+  var a: Int { get }
+  var b: Int { get }
+  var result: Int { get }
+  
+  init (level: Level)
+  
 }

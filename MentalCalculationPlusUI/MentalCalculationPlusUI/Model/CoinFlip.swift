@@ -11,14 +11,14 @@ import Foundation
 /**Utility class to provide coin flip probability logic */
 
 enum Coin: Int {
-    case heads = 1
-    case tails = 2
+  case heads = 1
+  case tails = 2
+  
+  static func flip() -> Coin {
     
-    static func flip() -> Coin {
-       
-        let flip = RandomNumberFactory.generateInLimits(lower: 1, upper: 2)
-        
-        let coin = Coin(rawValue: flip)
-        return coin!
-    }
+    let flip = RandomNumberFactory.generateInLimits(lower: 1, upper: 2)
+    
+    let coin = Coin(rawValue: flip)
+    return coin!
+  }
 }
