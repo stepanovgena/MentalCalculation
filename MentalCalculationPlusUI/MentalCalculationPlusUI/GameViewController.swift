@@ -206,7 +206,6 @@ class GameViewController: UIViewController {
         if let destination = segue.destination as? GameOverViewController {
             destination.displayedScore = score.getScore()
             destination.wrongAnswersArray = wrongTasksArray
-            print(wrongTasksArray)
         }
     }
     
