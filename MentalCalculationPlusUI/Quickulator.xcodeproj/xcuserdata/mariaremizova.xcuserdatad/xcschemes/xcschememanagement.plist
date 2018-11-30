@@ -9,10 +9,28 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>MentalCalculationPlusUI.xcscheme_^#shared#^_</key>
+		<key>Quickulator.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>96F9FBDF219220E4003E80B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96F9FBF6219220E6003E80B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96F9FC01219220E6003E80B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		963A8F66219CAF520019CD30 /* TopScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A8F65219CAF520019CD30 /* TopScoreViewController.swift */; };
 		963A8F68219CB0DC0019CD30 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */; };
+		96B0B00021B1F21F000D1E8D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B0AFFF21B1F21F000D1E8D /* Default-568h@2x.png */; };
 		96D486BA21A0AF91006BA0D7 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D486B921A0AF91006BA0D7 /* Distribution.swift */; };
 		96F9FBE4219220E4003E80B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FBE3219220E4003E80B4 /* AppDelegate.swift */; };
 		96F9FBE6219220E4003E80B4 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */; };
@@ -53,8 +54,9 @@
 /* Begin PBXFileReference section */
 		963A8F65219CAF520019CD30 /* TopScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreViewController.swift; sourceTree = "<group>"; };
 		963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		96B0AFFF21B1F21F000D1E8D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		96D486B921A0AF91006BA0D7 /* Distribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
-		96F9FBE0219220E4003E80B4 /* MentalCalculationPlusUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalCalculationPlusUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96F9FBE0219220E4003E80B4 /* Quickulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quickulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F9FBE3219220E4003E80B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		96F9FBE8219220E4003E80B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,10 +64,10 @@
 		96F9FBED219220E6003E80B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96F9FBF0219220E6003E80B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96F9FBF2219220E6003E80B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96F9FBF7219220E6003E80B4 /* MentalCalculationPlusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MentalCalculationPlusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96F9FBF7219220E6003E80B4 /* QuickulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F9FBFB219220E6003E80B4 /* MentalCalculationPlusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalCalculationPlusUITests.swift; sourceTree = "<group>"; };
 		96F9FBFD219220E6003E80B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96F9FC02219220E6003E80B4 /* MentalCalculationPlusUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MentalCalculationPlusUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96F9FC02219220E6003E80B4 /* QuickulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickulatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F9FC06219220E6003E80B4 /* MentalCalculationPlusUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalCalculationPlusUIUITests.swift; sourceTree = "<group>"; };
 		96F9FC08219220E6003E80B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96F9FC1B2192222E003E80B4 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
@@ -111,7 +113,8 @@
 		96F9FBD7219220E4003E80B4 = {
 			isa = PBXGroup;
 			children = (
-				96F9FBE2219220E4003E80B4 /* MentalCalculationPlusUI */,
+				96B0AFFF21B1F21F000D1E8D /* Default-568h@2x.png */,
+				96F9FBE2219220E4003E80B4 /* Quickulator */,
 				96F9FBFA219220E6003E80B4 /* MentalCalculationPlusUITests */,
 				96F9FC05219220E6003E80B4 /* MentalCalculationPlusUIUITests */,
 				96F9FBE1219220E4003E80B4 /* Products */,
@@ -121,14 +124,14 @@
 		96F9FBE1219220E4003E80B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				96F9FBE0219220E4003E80B4 /* MentalCalculationPlusUI.app */,
-				96F9FBF7219220E6003E80B4 /* MentalCalculationPlusUITests.xctest */,
-				96F9FC02219220E6003E80B4 /* MentalCalculationPlusUIUITests.xctest */,
+				96F9FBE0219220E4003E80B4 /* Quickulator.app */,
+				96F9FBF7219220E6003E80B4 /* QuickulatorTests.xctest */,
+				96F9FC02219220E6003E80B4 /* QuickulatorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		96F9FBE2219220E4003E80B4 /* MentalCalculationPlusUI */ = {
+		96F9FBE2219220E4003E80B4 /* Quickulator */ = {
 			isa = PBXGroup;
 			children = (
 				96F9FC1421922178003E80B4 /* Model */,
@@ -144,7 +147,7 @@
 				96F9FBF2219220E6003E80B4 /* Info.plist */,
 				96F9FBEA219220E4003E80B4 /* MentalCalculationPlusUI.xcdatamodeld */,
 			);
-			path = MentalCalculationPlusUI;
+			path = Quickulator;
 			sourceTree = "<group>";
 		};
 		96F9FBFA219220E6003E80B4 /* MentalCalculationPlusUITests */ = {
@@ -187,9 +190,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		96F9FBDF219220E4003E80B4 /* MentalCalculationPlusUI */ = {
+		96F9FBDF219220E4003E80B4 /* Quickulator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96F9FC0B219220E6003E80B4 /* Build configuration list for PBXNativeTarget "MentalCalculationPlusUI" */;
+			buildConfigurationList = 96F9FC0B219220E6003E80B4 /* Build configuration list for PBXNativeTarget "Quickulator" */;
 			buildPhases = (
 				96F9FBDC219220E4003E80B4 /* Sources */,
 				96F9FBDD219220E4003E80B4 /* Frameworks */,
@@ -199,14 +202,14 @@
 			);
 			dependencies = (
 			);
-			name = MentalCalculationPlusUI;
+			name = Quickulator;
 			productName = MentalCalculationPlusUI;
-			productReference = 96F9FBE0219220E4003E80B4 /* MentalCalculationPlusUI.app */;
+			productReference = 96F9FBE0219220E4003E80B4 /* Quickulator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		96F9FBF6219220E6003E80B4 /* MentalCalculationPlusUITests */ = {
+		96F9FBF6219220E6003E80B4 /* QuickulatorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96F9FC0E219220E6003E80B4 /* Build configuration list for PBXNativeTarget "MentalCalculationPlusUITests" */;
+			buildConfigurationList = 96F9FC0E219220E6003E80B4 /* Build configuration list for PBXNativeTarget "QuickulatorTests" */;
 			buildPhases = (
 				96F9FBF3219220E6003E80B4 /* Sources */,
 				96F9FBF4219220E6003E80B4 /* Frameworks */,
@@ -217,14 +220,14 @@
 			dependencies = (
 				96F9FBF9219220E6003E80B4 /* PBXTargetDependency */,
 			);
-			name = MentalCalculationPlusUITests;
+			name = QuickulatorTests;
 			productName = MentalCalculationPlusUITests;
-			productReference = 96F9FBF7219220E6003E80B4 /* MentalCalculationPlusUITests.xctest */;
+			productReference = 96F9FBF7219220E6003E80B4 /* QuickulatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		96F9FC01219220E6003E80B4 /* MentalCalculationPlusUIUITests */ = {
+		96F9FC01219220E6003E80B4 /* QuickulatorUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96F9FC11219220E6003E80B4 /* Build configuration list for PBXNativeTarget "MentalCalculationPlusUIUITests" */;
+			buildConfigurationList = 96F9FC11219220E6003E80B4 /* Build configuration list for PBXNativeTarget "QuickulatorUITests" */;
 			buildPhases = (
 				96F9FBFE219220E6003E80B4 /* Sources */,
 				96F9FBFF219220E6003E80B4 /* Frameworks */,
@@ -235,9 +238,9 @@
 			dependencies = (
 				96F9FC04219220E6003E80B4 /* PBXTargetDependency */,
 			);
-			name = MentalCalculationPlusUIUITests;
+			name = QuickulatorUITests;
 			productName = MentalCalculationPlusUIUITests;
-			productReference = 96F9FC02219220E6003E80B4 /* MentalCalculationPlusUIUITests.xctest */;
+			productReference = 96F9FC02219220E6003E80B4 /* QuickulatorUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -263,7 +266,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 96F9FBDB219220E4003E80B4 /* Build configuration list for PBXProject "MentalCalculationPlusUI" */;
+			buildConfigurationList = 96F9FBDB219220E4003E80B4 /* Build configuration list for PBXProject "Quickulator" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -276,9 +279,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				96F9FBDF219220E4003E80B4 /* MentalCalculationPlusUI */,
-				96F9FBF6219220E6003E80B4 /* MentalCalculationPlusUITests */,
-				96F9FC01219220E6003E80B4 /* MentalCalculationPlusUIUITests */,
+				96F9FBDF219220E4003E80B4 /* Quickulator */,
+				96F9FBF6219220E6003E80B4 /* QuickulatorTests */,
+				96F9FC01219220E6003E80B4 /* QuickulatorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96F9FBF1219220E6003E80B4 /* LaunchScreen.storyboard in Resources */,
+				96B0B00021B1F21F000D1E8D /* Default-568h@2x.png in Resources */,
 				96F9FBEE219220E6003E80B4 /* Assets.xcassets in Resources */,
 				96F9FBE9219220E4003E80B4 /* Main.storyboard in Resources */,
 			);
@@ -358,12 +362,12 @@
 /* Begin PBXTargetDependency section */
 		96F9FBF9219220E6003E80B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 96F9FBDF219220E4003E80B4 /* MentalCalculationPlusUI */;
+			target = 96F9FBDF219220E4003E80B4 /* Quickulator */;
 			targetProxy = 96F9FBF8219220E6003E80B4 /* PBXContainerItemProxy */;
 		};
 		96F9FC04219220E6003E80B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 96F9FBDF219220E4003E80B4 /* MentalCalculationPlusUI */;
+			target = 96F9FBDF219220E4003E80B4 /* Quickulator */;
 			targetProxy = 96F9FC03219220E6003E80B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -510,7 +514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQK53PF52L;
-				INFOPLIST_FILE = MentalCalculationPlusUI/Info.plist;
+				INFOPLIST_FILE = Quickulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,7 +532,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQK53PF52L;
-				INFOPLIST_FILE = MentalCalculationPlusUI/Info.plist;
+				INFOPLIST_FILE = Quickulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -557,7 +561,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MentalCalculationPlusUI.app/MentalCalculationPlusUI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quickulator.app/Quickulator";
 			};
 			name = Debug;
 		};
@@ -578,7 +582,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MentalCalculationPlusUI.app/MentalCalculationPlusUI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quickulator.app/Quickulator";
 			};
 			name = Release;
 		};
@@ -625,7 +629,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		96F9FBDB219220E4003E80B4 /* Build configuration list for PBXProject "MentalCalculationPlusUI" */ = {
+		96F9FBDB219220E4003E80B4 /* Build configuration list for PBXProject "Quickulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96F9FC09219220E6003E80B4 /* Debug */,
@@ -634,7 +638,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96F9FC0B219220E6003E80B4 /* Build configuration list for PBXNativeTarget "MentalCalculationPlusUI" */ = {
+		96F9FC0B219220E6003E80B4 /* Build configuration list for PBXNativeTarget "Quickulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96F9FC0C219220E6003E80B4 /* Debug */,
@@ -643,7 +647,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96F9FC0E219220E6003E80B4 /* Build configuration list for PBXNativeTarget "MentalCalculationPlusUITests" */ = {
+		96F9FC0E219220E6003E80B4 /* Build configuration list for PBXNativeTarget "QuickulatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96F9FC0F219220E6003E80B4 /* Debug */,
@@ -652,7 +656,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96F9FC11219220E6003E80B4 /* Build configuration list for PBXNativeTarget "MentalCalculationPlusUIUITests" */ = {
+		96F9FC11219220E6003E80B4 /* Build configuration list for PBXNativeTarget "QuickulatorUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96F9FC12219220E6003E80B4 /* Debug */,

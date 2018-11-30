@@ -125,6 +125,7 @@ class GameViewController: UIViewController {
   }
   
   @IBAction func enterButtonPressed(_ sender: UIButton) {
+    self.progress = 0.0
     if (String(task.result) == responseString) {
       timer.invalidate()
       showResultWithColor(isCorrect: true)
