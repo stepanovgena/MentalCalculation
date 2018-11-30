@@ -34,6 +34,8 @@ class GameViewController: UIViewController {
   
   private var scoreForSpeed: Int = 0
   
+  var progress: Float  = 0.0
+  
   //don't like this instance member with exact parameters
   private var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false, block: {(t) in })
   
@@ -65,8 +67,23 @@ class GameViewController: UIViewController {
     case .normal: progressUpdateSpeed = 0.001
     default: progressUpdateSpeed = 0.0005 //for easy and hard give more time to solve
     }
+    //listen for going to background, stop the timer, save progress
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(disableTimerAndSaveTopScore),
+      name: UIApplication.willResignActiveNotification,
+      object: nil)
+    
+    //listen for returning to foreground, start timer from saved progress
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(updateProgressBar),
+      name: UIApplication.didBecomeActiveNotification,
+      object: nil)
+    
     updateViewFromModel()
     updateProgressBar()
+    
   }
   
   /**Draws current task, score and lives in UI */
@@ -159,26 +176,27 @@ class GameViewController: UIViewController {
     }
   }
   /**Handles time given to respond to the task*/
-  func updateProgressBar() {
+  @objc func updateProgressBar() {
     
     if limitedTimeToResolve {
-      progressBar.setProgress(0, animated: false)
+      progressBar.setProgress(progress, animated: false)
       progressBar.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
       
-      var progress: Float  = 0.0
+     
       
       timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
         
-        progress += self.progressUpdateSpeed
+        self.progress += self.progressUpdateSpeed
         
-        self.progressBar.setProgress(progress, animated: true)
+        self.progressBar.setProgress(self.progress, animated: true)
         
         //additional points for speed of answer
-        self.scoreForSpeed = Int((1 - progress) * 10)
+        self.scoreForSpeed = Int((1 - self.progress) * 10)
         
         //if timer runs out then stop timer and programmatically press Enter
-        if (progress > 0.999) {
+        if (self.progress > 0.999) {
           t.invalidate()
+          self.progress = 0.0
           self.enterButtonPressed(self.enterButton)
         }
         
@@ -188,6 +206,11 @@ class GameViewController: UIViewController {
       progressBar.isHidden = true
     }
     
+  }
+  
+  @objc func disableTimerAndSaveTopScore() {
+    timer.invalidate()
+    score.updateTopScore()
   }
   /**Adds wrong answered task to array to display when the game is over */
   func addWrongTaskToList(task: Solvable) {
@@ -200,5 +223,6 @@ class GameViewController: UIViewController {
       destination.wrongAnswersArray = wrongTasksArray
     }
   }
+  
   
 }

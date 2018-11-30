@@ -29,7 +29,6 @@ class Score {
     if (currentScore > topScore) {
       
       topScore = currentScore
-      
       gameData.set(topScore, forKey: topScoreKey)
       
     }
@@ -41,6 +40,10 @@ class Score {
     } else {
       return gameData.integer(forKey: topScoreKey)
     }
+  }
+  
+  func resetTopScore() {
+  gameData.set(0, forKey: topScoreKey)
   }
   
 }
