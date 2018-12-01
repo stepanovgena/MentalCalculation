@@ -13,7 +13,7 @@
         <!--Main Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="MentalCalculationPlusUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="Quickulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +68,7 @@
         <!--Select Category View Controller-->
         <scene sceneID="KKZ-mo-HuS">
             <objects>
-                <viewController id="a8o-MQ-Kwe" customClass="SelectCategoryViewController" customModule="MentalCalculationPlusUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="a8o-MQ-Kwe" customClass="SelectCategoryViewController" customModule="Quickulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JhN-4m-W3B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,7 +199,7 @@
         <!--Top Score View Controller-->
         <scene sceneID="k84-C9-qYx">
             <objects>
-                <viewController id="BQb-PC-5kd" customClass="TopScoreViewController" customModule="MentalCalculationPlusUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BQb-PC-5kd" customClass="TopScoreViewController" customModule="Quickulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U7B-YA-Pxu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,7 +251,7 @@
         <!--Game View Controller-->
         <scene sceneID="h7e-7m-qoL">
             <objects>
-                <viewController id="UJg-JR-Bh7" customClass="GameViewController" customModule="MentalCalculationPlusUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UJg-JR-Bh7" customClass="GameViewController" customModule="Quickulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fbk-7e-cJx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -537,7 +537,7 @@
         <!--Game Over View Controller-->
         <scene sceneID="rif-4l-Qxj">
             <objects>
-                <viewController id="uK4-3g-ahm" customClass="GameOverViewController" customModule="MentalCalculationPlusUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uK4-3g-ahm" customClass="GameOverViewController" customModule="Quickulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iA8-Mj-Uk9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -566,7 +566,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="backToMainMenuButtonPressed:" destination="uK4-3g-ahm" eventType="touchUpInside" id="O8g-os-phW"/>
+                                    <action selector="backButtonPressed:" destination="uK4-3g-ahm" eventType="touchUpInside" id="O8g-os-phW"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-7F-89L">
@@ -588,6 +588,10 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="uK4-3g-ahm" id="jz4-kx-gf2"/>
+                                    <outlet property="delegate" destination="uK4-3g-ahm" id="Jaw-pg-wAs"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Mistakes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXi-fG-5Jv">
                                 <rect key="frame" x="151.33333333333334" y="537.33333333333348" width="72.666666666666657" height="28.666666666666629"/>

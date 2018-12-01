@@ -17,5 +17,4 @@ class TopScoreViewController: UIViewController {
     super.viewDidLoad()
     topScoreLabel.text = "\u{1F3C6}Top score: \(score.getTopScore())"
   }
-  
 }

@@ -11,16 +11,13 @@ import UIKit
 class SelectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
   
   @IBOutlet weak var picker: UIPickerView!
-  
   @IBOutlet weak var limitedTimeSwitch: UISwitch!
   
   var levels: [String] = []
-  
   var selectedLevel: Level = .easy
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     levels = ["Easy", "Normal", "Hard"]
   }
   
@@ -39,40 +36,20 @@ class SelectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPi
       
       switch segue.identifier {
         
-      case "additionSegue":
-        destination.gameCategory = .addition
-        destination.operationsSign = "+"
-        
-      case "subtractionSegue":
-        destination.gameCategory = .substraction
-        destination.operationsSign = "-"
-        
-      case "multiplicationSegue":
-        destination.gameCategory = .multiplication
-        destination.operationsSign = "*"
-        
-      case "divisionSegue":
-        destination.gameCategory = .division
-        destination.operationsSign = "/"
+      case "additionSegue": destination.gameCategory = .addition
+      case "subtractionSegue": destination.gameCategory = .substraction
+      case "multiplicationSegue": destination.gameCategory = .multiplication
+      case "divisionSegue": destination.gameCategory = .division
         
       default:
-        destination.gameCategory = .addition
-        destination.operationsSign = "+"
+        print("No appropriate segue identifier provided")
+        return
       }
       
       if !limitedTimeSwitch.isOn {
         destination.limitedTimeToResolve = false
       }
-      
     }
-    
-    
-  }
-  
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   // Number of columns of data

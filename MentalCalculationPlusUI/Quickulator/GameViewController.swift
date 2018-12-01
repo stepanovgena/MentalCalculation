@@ -10,62 +10,43 @@ import UIKit
 
 class GameViewController: UIViewController {
   
+  @IBOutlet weak var aLabel: UILabel!
+  @IBOutlet weak var bLabel: UILabel!
+  @IBOutlet weak var responseLabel: UILabel!
+  @IBOutlet weak var operationLabel: UILabel!
+  @IBOutlet weak var digitButton: UIButton!
+  @IBOutlet weak var clearButton: UIButton!
+  @IBOutlet weak var enterButton: UIButton!
+  @IBOutlet weak var scoreLabel: UILabel!
+  @IBOutlet weak var livesLabel: UILabel!
+  @IBOutlet weak var progressBar: UIProgressView!
+  
   var gameCategory: GameCategory = .addition
-  
   var gameLevel: Level = .easy
-  
   var progressUpdateSpeed: Float = 0.001
-  
   var limitedTimeToResolve = true
-  
   var wrongTasksArray = [String]()
-  
   private var responseString: String = String()
-  
-  var operationsSign: String = ""
+  lazy var operationsSign = gameCategory.sign
+  private var score: Score = Score()
+  private var lives: Int = 3
+  private var scoreForSpeed: Int = 0
+  var progress: Float  = 0.0
   
   lazy var game: Game = Game(gameCategory: self.gameCategory, gameLevel: self.gameLevel)
-  
   lazy var task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
-  
-  private var score: Score = Score()
-  
-  private var lives: Int = 3
-  
-  private var scoreForSpeed: Int = 0
-  
-  var progress: Float  = 0.0
   
   //don't like this instance member with exact parameters
   private var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false, block: {(t) in })
-  
-  @IBOutlet weak var aLabel: UILabel!
-  
-  @IBOutlet weak var bLabel: UILabel!
-  
-  @IBOutlet weak var responseLabel: UILabel!
-  
-  @IBOutlet weak var operationLabel: UILabel!
-  
-  @IBOutlet weak var digitButton: UIButton!
-  
-  @IBOutlet weak var clearButton: UIButton!
-  
-  @IBOutlet weak var enterButton: UIButton!
-  
-  @IBOutlet weak var scoreLabel: UILabel!
-  
-  @IBOutlet weak var livesLabel: UILabel!
-  
-  @IBOutlet weak var progressBar: UIProgressView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     //adjust timer speed according to difficulty
     switch gameLevel {
+    case .easy: progressUpdateSpeed = 0.0005
     case .normal: progressUpdateSpeed = 0.001
-    default: progressUpdateSpeed = 0.0005 //for easy and hard give more time to solve
+    case .hard: progressUpdateSpeed = 0.0005
     }
     //listen for going to background, stop the timer, save progress
     NotificationCenter.default.addObserver(
@@ -128,7 +109,7 @@ class GameViewController: UIViewController {
     self.progress = 0.0
     if (String(task.result) == responseString) {
       timer.invalidate()
-      showResultWithColor(isCorrect: true)
+      indicateSuccess()
       updateScore()
       clearResponseLabel()
       updateTask()
@@ -137,7 +118,7 @@ class GameViewController: UIViewController {
       
     } else {
       timer.invalidate()
-      showResultWithColor(isCorrect: false)
+      indicateFailure()
       addWrongTaskToList(task: task)
       lives -= 1
       if lives == 0 {
@@ -154,41 +135,29 @@ class GameViewController: UIViewController {
     
   }
   
-  /**Blinks the screen with color depending on whether the answer is correct or wrong*/
-  func showResultWithColor (isCorrect: Bool) {
-    if isCorrect {
-      //blink green if the answer is correct
-      UIView.animate(withDuration: 0.2, animations: {
-        self.view.backgroundColor = UIColor.green
-      }, completion: nil)
-      UIView.animate(withDuration: 0.4, animations: {
-        self.view.backgroundColor = UIColor.black
-      }, completion: nil)
-      
-    } else {
-      //blink red if the answer is incorrect
-      UIView.animate(withDuration: 0.2, animations: {
-        self.view.backgroundColor = UIColor.red
-      }, completion: nil)
-      UIView.animate(withDuration: 0.4, animations: {
-        self.view.backgroundColor = UIColor.black
-      }, completion: nil)
-      
-    }
+  /**Blinks green if the answer is correct*/
+  func indicateSuccess() {
+    UIView.animate(withDuration: 0.2, animations: {
+      self.view.backgroundColor = UIColor.green
+    }, completion: {(finished: Bool) in self.view.backgroundColor = UIColor.black})
   }
+  
+  /**Blinks red if the answer is correct*/
+  func indicateFailure() {
+    UIView.animate(withDuration: 0.2, animations: {
+      self.view.backgroundColor = UIColor.red
+    }, completion: {(finished: Bool) in self.view.backgroundColor = UIColor.black})
+  }
+  
   /**Handles time given to respond to the task*/
   @objc func updateProgressBar() {
     
     if limitedTimeToResolve {
       progressBar.setProgress(progress, animated: false)
       progressBar.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-      
-     
-      
       timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
         
         self.progress += self.progressUpdateSpeed
-        
         self.progressBar.setProgress(self.progress, animated: true)
         
         //additional points for speed of answer
@@ -200,13 +169,10 @@ class GameViewController: UIViewController {
           self.progress = 0.0
           self.enterButtonPressed(self.enterButton)
         }
-        
       })
-      
     } else {
       progressBar.isHidden = true
     }
-    
   }
   
   @objc func disableTimerAndSaveTopScore() {
@@ -224,6 +190,4 @@ class GameViewController: UIViewController {
       destination.wrongAnswersArray = wrongTasksArray
     }
   }
-  
-  
 }

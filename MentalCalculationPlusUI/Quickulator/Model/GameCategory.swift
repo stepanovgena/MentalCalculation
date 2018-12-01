@@ -14,3 +14,14 @@ enum GameCategory: Int {
   case multiplication = 3
   case division = 4
 }
+
+extension GameCategory {
+  var sign: String {
+    switch self {
+    case .addition: return "+"
+    case .substraction: return "-"
+    case .multiplication: return "*"
+    case .division: return "/"
+    }
+  }
+}

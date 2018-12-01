@@ -11,32 +11,33 @@ import UIKit
 class GameOverViewController: UIViewController, UITableViewDataSource {
   
   @IBOutlet weak var backToMainMenuButton: UIButton!
-  
-  var displayedScore: Int = 0
-  
-  var wrongAnswersArray = [String]()
-  
   @IBOutlet weak var scoreLabel: UILabel!
-  
   @IBOutlet weak var wrongTasksTableView: UITableView!
   
+  var displayedScore: Int = 0
+  var wrongAnswersArray = [String]()
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    wrongTasksTableView.dataSource = self
-    wrongTasksTableView.tableFooterView = UIView()
-    
-    let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(backToMainMenuButtonPressed(_:)))
+    let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(popToMainMenu))
     swipeRight.direction = .right
     self.view.addGestureRecognizer(swipeRight)
     
     scoreLabel.text = "\u{1F3C6}Your score: \(displayedScore)"
   }
   
+  @IBAction func backButtonPressed(_ sender: UIButton) {
+    popToMainMenu()
+  }
   //return to Select Category
-  @IBAction func backToMainMenuButtonPressed(_ sender: UIButton) {
+  @objc func popToMainMenu() {
+    let index:Int = 1
     let controllerStack = self.navigationController?.viewControllers
-    _ = self.navigationController?.popToViewController((controllerStack?[1])!, animated: true)
+    let numberOfControllersInStack = controllerStack?.count
+    if (numberOfControllersInStack != nil && index < numberOfControllersInStack!) {
+    _ = self.navigationController?.popToViewController((controllerStack?[index])!, animated: true)
+    }
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,7 +57,4 @@ class GameOverViewController: UIViewController, UITableViewDataSource {
     return cell
   }
   
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-  }
 }
