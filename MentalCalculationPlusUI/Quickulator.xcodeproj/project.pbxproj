@@ -14,7 +14,6 @@
 		96F9FBE4219220E4003E80B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FBE3219220E4003E80B4 /* AppDelegate.swift */; };
 		96F9FBE6219220E4003E80B4 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */; };
 		96F9FBE9219220E4003E80B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F9FBE7219220E4003E80B4 /* Main.storyboard */; };
-		96F9FBEC219220E4003E80B4 /* MentalCalculationPlusUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FBEA219220E4003E80B4 /* MentalCalculationPlusUI.xcdatamodeld */; };
 		96F9FBEE219220E6003E80B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96F9FBED219220E6003E80B4 /* Assets.xcassets */; };
 		96F9FBF1219220E6003E80B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F9FBEF219220E6003E80B4 /* LaunchScreen.storyboard */; };
 		96F9FBFC219220E6003E80B4 /* MentalCalculationPlusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FBFB219220E6003E80B4 /* MentalCalculationPlusUITests.swift */; };
@@ -60,7 +59,6 @@
 		96F9FBE3219220E4003E80B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		96F9FBE8219220E4003E80B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		96F9FBEB219220E4003E80B4 /* MentalCalculationPlusUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MentalCalculationPlusUI.xcdatamodel; sourceTree = "<group>"; };
 		96F9FBED219220E6003E80B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96F9FBF0219220E6003E80B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96F9FBF2219220E6003E80B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				96F9FBED219220E6003E80B4 /* Assets.xcassets */,
 				96F9FBEF219220E6003E80B4 /* LaunchScreen.storyboard */,
 				96F9FBF2219220E6003E80B4 /* Info.plist */,
-				96F9FBEA219220E4003E80B4 /* MentalCalculationPlusUI.xcdatamodeld */,
 			);
 			path = Quickulator;
 			sourceTree = "<group>";
@@ -324,7 +321,6 @@
 				96F9FC3821923555003E80B4 /* SelectCategoryViewController.swift in Sources */,
 				96F9FC2F2192222F003E80B4 /* MultiplicationTask.swift in Sources */,
 				963A8F68219CB0DC0019CD30 /* GameOverViewController.swift in Sources */,
-				96F9FBEC219220E4003E80B4 /* MentalCalculationPlusUI.xcdatamodeld in Sources */,
 				96D486BA21A0AF91006BA0D7 /* Distribution.swift in Sources */,
 				96F9FC322192222F003E80B4 /* SubstractionTask.swift in Sources */,
 				96F9FC3C21938616003E80B4 /* GameViewController.swift in Sources */,
@@ -666,19 +662,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		96F9FBEA219220E4003E80B4 /* MentalCalculationPlusUI.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				96F9FBEB219220E4003E80B4 /* MentalCalculationPlusUI.xcdatamodel */,
-			);
-			currentVersion = 96F9FBEB219220E4003E80B4 /* MentalCalculationPlusUI.xcdatamodel */;
-			path = MentalCalculationPlusUI.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 96F9FBD8219220E4003E80B4 /* Project object */;
 }
