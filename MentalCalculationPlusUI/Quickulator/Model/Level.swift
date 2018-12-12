@@ -13,3 +13,16 @@ enum Level: Int {
   case normal = 2
   case hard = 3
 }
+
+extension Level {
+  static var array:[Int] {
+    var a:[Int] = []
+    switch Level.easy {
+    case .easy: a.append(easy.rawValue); fallthrough
+    case .normal: a.append(normal.rawValue); fallthrough
+    case .hard: a.append(hard.rawValue)
+    }
+    return a
+  }
+  
+}

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		963A8F66219CAF520019CD30 /* TopScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A8F65219CAF520019CD30 /* TopScoreViewController.swift */; };
 		963A8F68219CB0DC0019CD30 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */; };
+		96521CEC21C1A4090005B24B /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521CEB21C1A4090005B24B /* RoundButton.swift */; };
+		96521CEE21C1ADC50005B24B /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521CED21C1ADC50005B24B /* CornerRadiusButton.swift */; };
 		96B0B00021B1F21F000D1E8D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B0AFFF21B1F21F000D1E8D /* Default-568h@2x.png */; };
 		96D486BA21A0AF91006BA0D7 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D486B921A0AF91006BA0D7 /* Distribution.swift */; };
 		96F9FBE4219220E4003E80B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FBE3219220E4003E80B4 /* AppDelegate.swift */; };
@@ -53,6 +55,8 @@
 /* Begin PBXFileReference section */
 		963A8F65219CAF520019CD30 /* TopScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreViewController.swift; sourceTree = "<group>"; };
 		963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		96521CEB21C1A4090005B24B /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		96521CED21C1ADC50005B24B /* CornerRadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
 		96B0AFFF21B1F21F000D1E8D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		96D486B921A0AF91006BA0D7 /* Distribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
 		96F9FBE0219220E4003E80B4 /* Quickulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quickulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96521CEA21C1A3BF0005B24B /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				96521CEB21C1A4090005B24B /* RoundButton.swift */,
+				96521CED21C1ADC50005B24B /* CornerRadiusButton.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		96F9FBD7219220E4003E80B4 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +145,7 @@
 		96F9FBE2219220E4003E80B4 /* Quickulator */ = {
 			isa = PBXGroup;
 			children = (
+				96521CEA21C1A3BF0005B24B /* CustomView */,
 				96F9FC1421922178003E80B4 /* Model */,
 				96F9FBE3219220E4003E80B4 /* AppDelegate.swift */,
 				96F9FC3B21938616003E80B4 /* GameViewController.swift */,
@@ -320,6 +334,7 @@
 				96F9FBE6219220E4003E80B4 /* MainMenuViewController.swift in Sources */,
 				96F9FC3821923555003E80B4 /* SelectCategoryViewController.swift in Sources */,
 				96F9FC2F2192222F003E80B4 /* MultiplicationTask.swift in Sources */,
+				96521CEC21C1A4090005B24B /* RoundButton.swift in Sources */,
 				963A8F68219CB0DC0019CD30 /* GameOverViewController.swift in Sources */,
 				96D486BA21A0AF91006BA0D7 /* Distribution.swift in Sources */,
 				96F9FC322192222F003E80B4 /* SubstractionTask.swift in Sources */,
@@ -327,6 +342,7 @@
 				96F9FC282192222F003E80B4 /* Score.swift in Sources */,
 				96F9FC302192222F003E80B4 /* Solvable.swift in Sources */,
 				96F9FBE4219220E4003E80B4 /* AppDelegate.swift in Sources */,
+				96521CEE21C1ADC50005B24B /* CornerRadiusButton.swift in Sources */,
 				96F9FC2C2192222F003E80B4 /* GameCategory.swift in Sources */,
 				963A8F66219CAF520019CD30 /* TopScoreViewController.swift in Sources */,
 				96F9FC332192222F003E80B4 /* CoinFlip.swift in Sources */,

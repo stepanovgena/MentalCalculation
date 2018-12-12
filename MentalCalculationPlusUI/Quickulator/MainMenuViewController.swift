@@ -9,14 +9,17 @@
 import UIKit
 
 class MainMenuViewController: UIViewController {
-  
-  
+  @IBOutlet weak var gameCategorySegmentedControl: UISegmentedControl!
+  @IBOutlet weak var gameLevelSegmentedControl: UISegmentedControl!
+  @IBOutlet weak var limitedTimeSwitch: UISwitch!
   @IBOutlet weak var playButton: UIButton!
-
   
   override func viewWillAppear(_ animated: Bool) {
     self.navigationController?.setNavigationBarHidden(true, animated: animated)
     super.viewWillAppear(animated)
+    
+    
+   
   
   }
   
@@ -26,6 +29,8 @@ class MainMenuViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+   
 
   }
 
@@ -34,6 +39,23 @@ class MainMenuViewController: UIViewController {
     
   }
   
+  @IBAction func playButtonPressed(_ sender: UIButton) {
+    //segue in storyboard
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let level: Level = Level(rawValue: gameLevelSegmentedControl.selectedSegmentIndex + 1) ?? .easy
+    let category: GameCategory = GameCategory(rawValue: gameCategorySegmentedControl.selectedSegmentIndex + 1) ?? .addition
+    if let destination = segue.destination as? GameViewController {
+  
+      destination.gameLevel = level
+      destination.gameCategory = category
+      if !limitedTimeSwitch.isOn {
+        destination.limitedTimeToResolve = false
+      }
+    }
+  }
   
 }
+
 
