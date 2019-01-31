@@ -42,6 +42,11 @@ class GameViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    clearButton.layer.borderColor = UIColor.lightGray.cgColor
+    clearButton.layer.borderWidth = 1
+    
+    enterButton.layer.borderColor = UIColor.lightGray.cgColor
+    enterButton.layer.borderWidth = 1
     //adjust timer speed according to difficulty
     switch gameLevel {
     case .easy: progressUpdateSpeed = 0.0005

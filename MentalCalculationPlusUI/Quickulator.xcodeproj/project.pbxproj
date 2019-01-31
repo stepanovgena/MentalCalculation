@@ -121,6 +121,19 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		96CBEF922203863700FE4E9A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				96F9FC3B21938616003E80B4 /* GameViewController.swift */,
+				963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */,
+				96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */,
+				96F9FC3721923555003E80B4 /* SelectCategoryViewController.swift */,
+				963A8F65219CAF520019CD30 /* TopScoreViewController.swift */,
+			);
+			name = "View Controllers";
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		96F9FBD7219220E4003E80B4 = {
 			isa = PBXGroup;
 			children = (
@@ -147,12 +160,8 @@
 			children = (
 				96521CEA21C1A3BF0005B24B /* CustomView */,
 				96F9FC1421922178003E80B4 /* Model */,
+				96CBEF922203863700FE4E9A /* View Controllers */,
 				96F9FBE3219220E4003E80B4 /* AppDelegate.swift */,
-				96F9FC3B21938616003E80B4 /* GameViewController.swift */,
-				963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */,
-				96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */,
-				96F9FC3721923555003E80B4 /* SelectCategoryViewController.swift */,
-				963A8F65219CAF520019CD30 /* TopScoreViewController.swift */,
 				96F9FBE7219220E4003E80B4 /* Main.storyboard */,
 				96F9FBED219220E6003E80B4 /* Assets.xcassets */,
 				96F9FBEF219220E6003E80B4 /* LaunchScreen.storyboard */,
