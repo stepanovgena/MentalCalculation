@@ -19,6 +19,7 @@ class SelectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPi
   override func viewDidLoad() {
     super.viewDidLoad()
     levels = ["Easy", "Normal", "Hard"]
+    
   }
   
   override var preferredStatusBarStyle : UIStatusBarStyle {

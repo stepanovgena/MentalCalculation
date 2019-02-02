@@ -21,6 +21,9 @@ class GameViewController: UIViewController {
   @IBOutlet weak var livesLabel: UILabel!
   @IBOutlet weak var progressBar: UIProgressView!
   
+  @IBOutlet weak var buttonStackView: UIStackView!
+  
+  
   var gameCategory: GameCategory = .addition
   var gameLevel: Level = .easy
   var progressUpdateSpeed: Float = 0.001
@@ -41,6 +44,11 @@ class GameViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+     let rotateView = CGAffineTransform(rotationAngle: CGFloat.pi)
+     let scaleView = CGAffineTransform(scaleX: 1, y: 2)
+    
+    progressBar.transform = rotateView.concatenating(scaleView)
     
     clearButton.layer.borderColor = UIColor.lightGray.cgColor
     clearButton.layer.borderWidth = 1
@@ -102,8 +110,11 @@ class GameViewController: UIViewController {
   }
   
   @IBAction func digitButtonPressed(_ sender: UIButton) {
-    responseString.append(sender.titleLabel!.text!)
+    guard  let buttonLabel = sender.titleLabel else { return }
+    if let input = buttonLabel.text {
+    responseString.append(input)
     responseLabel.text = responseString
+    }
   }
   
   @IBAction func clearButtonPressed(_ sender: UIButton) {
@@ -159,8 +170,9 @@ class GameViewController: UIViewController {
     
     if limitedTimeToResolve {
       progressBar.setProgress(progress, animated: false)
-      progressBar.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+     
       timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
+      
         
         self.progress += self.progressUpdateSpeed
         self.progressBar.setProgress(self.progress, animated: true)
@@ -168,10 +180,15 @@ class GameViewController: UIViewController {
         //additional points for speed of answer
         self.scoreForSpeed = Int((1 - self.progress) * 10)
         
+        if (self.progress > 0.5) {
+            self.progressBar.trackTintColor = .red
+        }
+        
         //if timer runs out then stop timer and programmatically press Enter
         if (self.progress > 0.999) {
           t.invalidate()
           self.progress = 0.0
+          self.progressBar.trackTintColor = .white
           self.enterButtonPressed(self.enterButton)
         }
       })

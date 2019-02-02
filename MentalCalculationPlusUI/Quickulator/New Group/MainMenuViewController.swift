@@ -30,6 +30,9 @@ class MainMenuViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    let font = UIFont.systemFont(ofSize: 28)
+    gameCategorySegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font],
+                                            for: .normal)
 
   }
 

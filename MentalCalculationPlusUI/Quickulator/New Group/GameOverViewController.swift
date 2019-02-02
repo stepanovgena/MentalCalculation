@@ -32,11 +32,12 @@ class GameOverViewController: UIViewController, UITableViewDataSource {
   }
   //return to Select Category
   @objc func popToMainMenu() {
-    let index:Int = 1
-    let controllerStack = self.navigationController?.viewControllers
-    let numberOfControllersInStack = controllerStack?.count
-    if (numberOfControllersInStack != nil && index < numberOfControllersInStack!) {
-    _ = self.navigationController?.popToViewController((controllerStack?[index])!, animated: true)
+    let index:Int = 0
+    if let controllerStack = self.navigationController?.viewControllers {
+      let numberOfControllersInStack = controllerStack.count
+      if (index < numberOfControllersInStack) {
+        _ = self.navigationController?.popToViewController((controllerStack[index]), animated: true)
+      }
     }
   }
   
