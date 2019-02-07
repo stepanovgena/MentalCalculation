@@ -14,15 +14,21 @@ class GameViewController: UIViewController {
   @IBOutlet weak var bLabel: UILabel!
   @IBOutlet weak var responseLabel: UILabel!
   @IBOutlet weak var operationLabel: UILabel!
-  @IBOutlet weak var digitButton: UIButton!
-  @IBOutlet weak var clearButton: UIButton!
-  @IBOutlet weak var enterButton: UIButton!
+  @IBOutlet weak var zeroButton: RoundButton!
+  @IBOutlet weak var oneButton: RoundButton!
+  @IBOutlet weak var twoButton: RoundButton!
+  @IBOutlet weak var threeButton: RoundButton!
+  @IBOutlet weak var fourButton: RoundButton!
+  @IBOutlet weak var fiveButton: RoundButton!
+  @IBOutlet weak var sixButton: RoundButton!
+  @IBOutlet weak var sevenButton: RoundButton!
+  @IBOutlet weak var eightButton: RoundButton!
+  @IBOutlet weak var nineButton: RoundButton!
+  @IBOutlet weak var clearButton: RoundButton!
+  @IBOutlet weak var enterButton: RoundButton!
   @IBOutlet weak var scoreLabel: UILabel!
   @IBOutlet weak var livesLabel: UILabel!
   @IBOutlet weak var progressBar: UIProgressView!
-  
-  @IBOutlet weak var buttonStackView: UIStackView!
-  
   
   var gameCategory: GameCategory = .addition
   var gameLevel: Level = .easy
@@ -35,6 +41,21 @@ class GameViewController: UIViewController {
   private var lives: Int = 3
   private var scoreForSpeed: Int = 0
   var progress: Float  = 0.0
+  
+  lazy var roundButtons: [RoundButton] = [
+  zeroButton,
+  oneButton,
+  twoButton,
+  threeButton,
+  fourButton,
+  fiveButton,
+  sixButton,
+  sevenButton,
+  eightButton,
+  nineButton,
+  clearButton,
+  enterButton,
+  ]
   
   lazy var game: Game = Game(gameCategory: self.gameCategory, gameLevel: self.gameLevel)
   lazy var task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
@@ -80,6 +101,13 @@ class GameViewController: UIViewController {
     
   }
   
+  override func viewDidLayoutSubviews() {
+   
+    for button in roundButtons {
+      button.refreshCornerRadius()
+    }
+  }
+  
   /**Draws current task, score and lives in UI */
   func updateViewFromModel() {
     aLabel.text = String(task.a)
@@ -122,7 +150,8 @@ class GameViewController: UIViewController {
   }
   
   @IBAction func enterButtonPressed(_ sender: UIButton) {
-    self.progress = 0.0
+    progress = 0.0
+    progressBar.trackTintColor = .white
     if (String(task.result) == responseString) {
       timer.invalidate()
       indicateSuccess()
@@ -148,21 +177,30 @@ class GameViewController: UIViewController {
         updateProgressBar()
       }
     }
-    
   }
   
   /**Blinks green if the answer is correct*/
   func indicateSuccess() {
-    UIView.animate(withDuration: 0.2, animations: {
-      self.view.backgroundColor = UIColor.green
-    }, completion: {(finished: Bool) in self.view.backgroundColor = UIColor.black})
+    
+    let animation = CASpringAnimation(keyPath: "transform.scale")
+    animation.fromValue = 0.9
+    animation.toValue = 1
+    animation.stiffness = 200
+    animation.mass = 2
+    animation.duration = 0.8
+    animation.beginTime = CACurrentMediaTime()
+    animation.fillMode = CAMediaTimingFillMode.backwards
+    
+    self.scoreLabel.layer.add(animation, forKey: nil)
   }
   
   /**Blinks red if the answer is correct*/
   func indicateFailure() {
-    UIView.animate(withDuration: 0.2, animations: {
-      self.view.backgroundColor = UIColor.red
-    }, completion: {(finished: Bool) in self.view.backgroundColor = UIColor.black})
+    UIView.animate(withDuration: 0.8, animations: {
+      let translate = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height)
+      let rotate = CGAffineTransform(rotationAngle: .pi)
+      self.livesLabel.transform = rotate.concatenating(translate)
+    }, completion: {(finished: Bool) in self.livesLabel.transform = .identity})
   }
   
   /**Handles time given to respond to the task*/
@@ -172,7 +210,6 @@ class GameViewController: UIViewController {
       progressBar.setProgress(progress, animated: false)
      
       timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
-      
         
         self.progress += self.progressUpdateSpeed
         self.progressBar.setProgress(self.progress, animated: true)
@@ -180,7 +217,7 @@ class GameViewController: UIViewController {
         //additional points for speed of answer
         self.scoreForSpeed = Int((1 - self.progress) * 10)
         
-        if (self.progress > 0.5) {
+        if (self.progress > 0.8) {
             self.progressBar.trackTintColor = .red
         }
         
@@ -188,7 +225,6 @@ class GameViewController: UIViewController {
         if (self.progress > 0.999) {
           t.invalidate()
           self.progress = 0.0
-          self.progressBar.trackTintColor = .white
           self.enterButtonPressed(self.enterButton)
         }
       })

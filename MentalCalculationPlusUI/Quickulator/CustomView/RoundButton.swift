@@ -13,7 +13,7 @@ import UIKit
 @IBDesignable class RoundButton: UIButton {
   
   @IBInspectable var cornerRadius: CGFloat {
-    return frame.width/2
+    return frame.height/2
   }
   
   override init(frame: CGRect) {
@@ -31,10 +31,15 @@ import UIKit
   }
   
   func sharedInit() {
-    refreshCorners(value: cornerRadius)
+    setCornerRadius(value: cornerRadius)
   }
   
-  func refreshCorners(value: CGFloat) {
+  func setCornerRadius(value: CGFloat) {
     layer.cornerRadius = value    
   }
+  
+  func refreshCornerRadius() {
+    layer.cornerRadius = cornerRadius
+  }
+  
 }
