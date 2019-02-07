@@ -47,6 +47,9 @@ class GameViewController: UIViewController {
   private var scoreForSpeed: Int = 0
   var progress: Float  = 0.0
   
+  let presentTransition = CustomPresentModalAnimator()
+  let dismissTransition = CustomDismissModalAnimator()
+  
   lazy var roundButtons: [RoundButton] = [
   zeroButton,
   oneButton,
@@ -67,6 +70,8 @@ class GameViewController: UIViewController {
   heartTwo,
   heartThree
   ]
+  
+  var blurView = UIVisualEffectView()
   
   lazy var game: Game = Game(gameCategory: self.gameCategory, gameLevel: self.gameLevel)
   lazy var task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
@@ -110,17 +115,19 @@ class GameViewController: UIViewController {
     for heartLabel in heartLabels {
       heartLabel.text = "\u{2764}"
     }
-    
     updateViewFromModel()
     updateProgressBar()
-    
   }
   
   override func viewDidLayoutSubviews() {
-   
     for button in roundButtons {
       button.refreshCornerRadius()
     }
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    print("view will appear")
+  //  updateProgressBar()
   }
   
   /**Draws current task, score and lives in UI */
@@ -129,7 +136,6 @@ class GameViewController: UIViewController {
     bLabel.text = String(task.b)
     operationLabel.text = operationsSign
     scoreLabel.text = "\u{1F3C6}\(score.getScore())"
-    //livesLabel.text = "\u{2764}\(lives)"
   }
   
   /**Generates new task of given category and difficulty */
@@ -211,6 +217,7 @@ class GameViewController: UIViewController {
   
   /**Blinks red if the answer is correct*/
   func indicateFailure() {
+    guard lives > 0 else { return }
     let labelToAnimate = heartLabels[3 - lives]
     
     let fadedLabel = UILabel(frame: labelToAnimate.frame)
@@ -225,9 +232,7 @@ class GameViewController: UIViewController {
       labelToAnimate.transform = rotate.concatenating(translate)
       
     }, completion: {(finished: Bool) in
-//      labelToAnimate.alpha = 0.3
-//      labelToAnimate.transform = .identity
-      
+      labelToAnimate.removeFromSuperview()
     })
   }
   
@@ -275,5 +280,28 @@ class GameViewController: UIViewController {
       destination.displayedScore = score.getScore()
       destination.wrongAnswersArray = wrongTasksArray
     }
+  }
+  
+  
+  @IBAction func backButtonPressed(_ sender: Any) {
+    
+    disableTimerAndSaveTopScore()
+    //animate custom transition with blurred background
+    let pauseGameViewController = storyboard?.instantiateViewController(withIdentifier: "pauseGameViewController") as! PauseGameViewController
+    pauseGameViewController.transitioningDelegate = self
+    present(pauseGameViewController, animated: true, completion: nil)
+    
+    
+  }
+  
+}
+
+extension GameViewController: UIViewControllerTransitioningDelegate {
+  func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return presentTransition
+  }
+  
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return dismissTransition
   }
 }
