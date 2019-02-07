@@ -44,7 +44,5 @@ class CustomInteractiveTransition: UIPercentDrivenInteractiveTransition {
     default: return
     }
   }
-
-  
 }
 

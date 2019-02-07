@@ -27,7 +27,7 @@ class GameOverViewController: UIViewController, UITableViewDataSource {
     scoreLabel.text = "\u{1F3C6}Your score: \(displayedScore)"
   }
   
-  @IBAction func backButtonPressed(_ sender: UIButton) {
+  @IBAction func pauseButtonPressed(_ sender: UIButton) {
     popToMainMenu()
   }
   //return to Select Category

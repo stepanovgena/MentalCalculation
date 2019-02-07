@@ -46,6 +46,7 @@ class GameViewController: UIViewController {
   private var lives: Int = 3
   private var scoreForSpeed: Int = 0
   var progress: Float  = 0.0
+  var isGamePaused = false
   
   let presentTransition = CustomPresentModalAnimator()
   let dismissTransition = CustomDismissModalAnimator()
@@ -119,7 +120,7 @@ class GameViewController: UIViewController {
     }
     
     updateViewFromModel()
-    //updateProgressBar()
+    updateProgressBar()
   }
   
   override func viewDidLayoutSubviews() {
@@ -218,11 +219,11 @@ class GameViewController: UIViewController {
     }
   }
   
-  /**Blinks green if the answer is correct*/
+ 
   func indicateSuccess() {
     
     let animation = CASpringAnimation(keyPath: "transform.scale")
-    animation.fromValue = 0.9
+    animation.fromValue = 0.8
     animation.toValue = 1
     animation.stiffness = 200
     animation.mass = 2
@@ -233,7 +234,7 @@ class GameViewController: UIViewController {
     self.scoreLabel.layer.add(animation, forKey: nil)
   }
   
-  /**Blinks red if the answer is correct*/
+  
   func indicateFailure() {
     guard lives > 0 else { return }
     let labelToAnimate = heartLabels[3 - lives]
@@ -261,7 +262,7 @@ class GameViewController: UIViewController {
       
       progressBar.setProgress(progress, animated: false)
      
-      if (!timer.isValid && self.presentingViewController == nil) {
+      if (!timer.isValid && !isGamePaused) {
       print("progress bar updated at: \(CACurrentMediaTime())")
       timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
         
@@ -306,14 +307,17 @@ class GameViewController: UIViewController {
   }
   
   
-  @IBAction func backButtonPressed(_ sender: Any) {
+  @IBAction func pauseButtonPressed(_ sender: Any) {
     
     disableTimerAndSaveTopScore()
     //animate custom transition with blurred background
+    isGamePaused = true
     let pauseGameViewController = storyboard?.instantiateViewController(withIdentifier: "pauseGameViewController") as! PauseGameViewController
     pauseGameViewController.transitioningDelegate = self
     present(pauseGameViewController, animated: true, completion: nil)
-    
+    pauseGameViewController.didClose = { [unowned pauseGameViewController] in
+      pauseGameViewController.dismiss(animated: true, completion: nil)
+    }
     
   }
   
@@ -327,4 +331,6 @@ extension GameViewController: UIViewControllerTransitioningDelegate {
   func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     return dismissTransition
   }
+  
+  
 }

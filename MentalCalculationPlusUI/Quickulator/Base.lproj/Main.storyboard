@@ -292,9 +292,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wYT-hN-oNX"/>
                     </view>
-                    <connections>
-                        <outlet property="resumeButton" destination="hkY-xt-FRb" id="bK9-9q-BFw"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jyg-gF-HUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -317,7 +314,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonPressed:" destination="UJg-JR-Bh7" eventType="touchUpInside" id="Ukh-lw-TdY"/>
+                                    <action selector="pauseButtonPressed:" destination="UJg-JR-Bh7" eventType="touchUpInside" id="Ukh-lw-TdY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScoreLbl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxQ-7v-enc">
@@ -698,7 +695,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonPressed:" destination="uK4-3g-ahm" eventType="touchUpInside" id="O8g-os-phW"/>
+                                    <action selector="pauseButtonPressed:" destination="uK4-3g-ahm" eventType="touchUpInside" id="O8g-os-phW"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-7F-89L">

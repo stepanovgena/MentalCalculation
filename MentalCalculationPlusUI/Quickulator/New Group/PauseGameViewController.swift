@@ -9,43 +9,32 @@
 import UIKit
 
 class PauseGameViewController: UIViewController {
-
   
+  var didClose: (() -> Void)?
   
-  @IBOutlet weak var resumeButton: UIButton!
   override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
   
-  override func viewDidAppear(_ animated: Bool) {
+
   
-  }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
   
   @IBAction func resumeButtonPressed(_ sender: Any) {
     let navigationController = self.presentingViewController as? UINavigationController 
     let destination = navigationController?.viewControllers[1] as? GameViewController
-   // destination?.updateProgressBar()
+    destination?.isGamePaused = false
     
-    self.dismiss(animated: true, completion: nil)
+    didClose?()
+    //self.dismiss(animated: true, completion: nil)
   }
   
   @IBAction func backToMenuButtonPressed(_ sender: Any) {
     let navigationController = self.presentingViewController as? UINavigationController
     navigationController?.popToRootViewController(animated: false)
     
-     self.dismiss(animated: false, completion: nil)
+    didClose?()
+    // self.dismiss(animated: false, completion: nil)
   }
   
 }
