@@ -27,8 +27,13 @@ class GameViewController: UIViewController {
   @IBOutlet weak var clearButton: RoundButton!
   @IBOutlet weak var enterButton: RoundButton!
   @IBOutlet weak var scoreLabel: UILabel!
-  @IBOutlet weak var livesLabel: UILabel!
+  //@IBOutlet weak var livesLabel: UILabel!
   @IBOutlet weak var progressBar: UIProgressView!
+  
+  @IBOutlet weak var heartOne: UILabel!
+  @IBOutlet weak var heartTwo: UILabel!
+  @IBOutlet weak var heartThree: UILabel!
+  
   
   var gameCategory: GameCategory = .addition
   var gameLevel: Level = .easy
@@ -55,6 +60,12 @@ class GameViewController: UIViewController {
   nineButton,
   clearButton,
   enterButton,
+  ]
+  
+  lazy var heartLabels: [UILabel] = [
+  heartOne,
+  heartTwo,
+  heartThree
   ]
   
   lazy var game: Game = Game(gameCategory: self.gameCategory, gameLevel: self.gameLevel)
@@ -96,6 +107,10 @@ class GameViewController: UIViewController {
       name: UIApplication.didBecomeActiveNotification,
       object: nil)
     
+    for heartLabel in heartLabels {
+      heartLabel.text = "\u{2764}"
+    }
+    
     updateViewFromModel()
     updateProgressBar()
     
@@ -114,7 +129,7 @@ class GameViewController: UIViewController {
     bLabel.text = String(task.b)
     operationLabel.text = operationsSign
     scoreLabel.text = "\u{1F3C6}\(score.getScore())"
-    livesLabel.text = "\u{2764}\(lives)"
+    //livesLabel.text = "\u{2764}\(lives)"
   }
   
   /**Generates new task of given category and difficulty */
@@ -196,11 +211,24 @@ class GameViewController: UIViewController {
   
   /**Blinks red if the answer is correct*/
   func indicateFailure() {
+    let labelToAnimate = heartLabels[3 - lives]
+    
+    let fadedLabel = UILabel(frame: labelToAnimate.frame)
+    fadedLabel.text = "\u{2764}"
+    fadedLabel.alpha = 0.3
+    view.addSubview(fadedLabel)
+  
+    
     UIView.animate(withDuration: 0.8, animations: {
       let translate = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height)
       let rotate = CGAffineTransform(rotationAngle: .pi)
-      self.livesLabel.transform = rotate.concatenating(translate)
-    }, completion: {(finished: Bool) in self.livesLabel.transform = .identity})
+      labelToAnimate.transform = rotate.concatenating(translate)
+      
+    }, completion: {(finished: Bool) in
+//      labelToAnimate.alpha = 0.3
+//      labelToAnimate.transform = .identity
+      
+    })
   }
   
   /**Handles time given to respond to the task*/
