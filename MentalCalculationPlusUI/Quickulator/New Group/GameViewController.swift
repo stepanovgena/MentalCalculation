@@ -82,6 +82,8 @@ class GameViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    print("view did load")
+    
      let rotateView = CGAffineTransform(rotationAngle: CGFloat.pi)
      let scaleView = CGAffineTransform(scaleX: 1, y: 2)
     
@@ -115,8 +117,9 @@ class GameViewController: UIViewController {
     for heartLabel in heartLabels {
       heartLabel.text = "\u{2764}"
     }
+    
     updateViewFromModel()
-    updateProgressBar()
+    //updateProgressBar()
   }
   
   override func viewDidLayoutSubviews() {
@@ -128,6 +131,21 @@ class GameViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     print("view will appear")
   //  updateProgressBar()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    print("view did appear")
+    updateProgressBar()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    print("view will disappear")
+    disableTimerAndSaveTopScore()
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+   // print("view did disappear")
+   // disableTimerAndSaveTopScore()
   }
   
   /**Draws current task, score and lives in UI */
@@ -240,8 +258,11 @@ class GameViewController: UIViewController {
   @objc func updateProgressBar() {
     
     if limitedTimeToResolve {
+      
       progressBar.setProgress(progress, animated: false)
      
+      if (!timer.isValid && self.presentingViewController == nil) {
+      print("progress bar updated at: \(CACurrentMediaTime())")
       timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
         
         self.progress += self.progressUpdateSpeed
@@ -261,6 +282,7 @@ class GameViewController: UIViewController {
           self.enterButtonPressed(self.enterButton)
         }
       })
+     }
     } else {
       progressBar.isHidden = true
     }
@@ -269,6 +291,7 @@ class GameViewController: UIViewController {
   @objc func disableTimerAndSaveTopScore() {
     timer.invalidate()
     score.updateTopScore()
+    print("timer invalidated at: \(CACurrentMediaTime())")
   }
   /**Adds wrong answered task to array to display when the game is over */
   func addWrongTaskToList(task: Solvable) {

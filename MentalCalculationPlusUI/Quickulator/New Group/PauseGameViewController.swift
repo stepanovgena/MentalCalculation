@@ -17,6 +17,10 @@ class PauseGameViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+  
+  override func viewDidAppear(_ animated: Bool) {
+  
+  }
     
 
     /*
@@ -32,7 +36,7 @@ class PauseGameViewController: UIViewController {
   @IBAction func resumeButtonPressed(_ sender: Any) {
     let navigationController = self.presentingViewController as? UINavigationController 
     let destination = navigationController?.viewControllers[1] as? GameViewController
-    destination?.updateProgressBar()
+   // destination?.updateProgressBar()
     
     self.dismiss(animated: true, completion: nil)
   }

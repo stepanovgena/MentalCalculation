@@ -10,7 +10,7 @@ import UIKit
 
 final class CustomDismissModalAnimator: NSObject, UIViewControllerAnimatedTransitioning {
   
-  let duration = 0.3
+  let duration = 0.05
   var presenting = true
   var originFrame = CGRect.zero
   
