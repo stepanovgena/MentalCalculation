@@ -10,7 +10,7 @@ import UIKit
 
 final class CustomPresentModalAnimator: NSObject, UIViewControllerAnimatedTransitioning {
   
-  let duration = 0.2
+  let duration = 0.3
   var presenting = true
   var originFrame = CGRect.zero
   
@@ -40,13 +40,13 @@ final class CustomPresentModalAnimator: NSObject, UIViewControllerAnimatedTransi
     containerView.addSubview(toView)
     
     //prepare initial state for the sliding effect
-    toView.transform = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height)
+   // toView.transform = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height)
     toView.alpha = 0.0
     
     //animate sliding from bottom
     UIView.animate(withDuration: duration,
                    animations: {
-                    toView.transform = CGAffineTransform(translationX: 0, y: 0)
+                   // toView.transform = CGAffineTransform(translationX: 0, y: 0)
                     toView.alpha = 1.0
     },
                    completion: { _ in

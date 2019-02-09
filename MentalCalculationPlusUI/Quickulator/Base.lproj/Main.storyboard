@@ -153,7 +153,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUY-fT-mcD">
-                                <rect key="frame" x="289" y="96" width="78" height="44"/>
+                                <rect key="frame" x="289" y="104" width="78" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="s4V-gL-PfV"/>
                                 </constraints>
@@ -171,7 +171,7 @@
                             <constraint firstItem="doM-Gz-rYd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N8Y-3b-kKu"/>
                             <constraint firstItem="awD-qE-DdG" firstAttribute="top" secondItem="doM-Gz-rYd" secondAttribute="bottom" constant="16" id="Sib-mh-QYM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="doM-Gz-rYd" secondAttribute="trailing" id="TUt-XK-83c"/>
-                            <constraint firstItem="gUY-fT-mcD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="bVO-7Z-J1K"/>
+                            <constraint firstItem="gUY-fT-mcD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="bVO-7Z-J1K"/>
                             <constraint firstItem="eUG-ZN-a7J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="frh-UF-Zb2"/>
                             <constraint firstAttribute="trailing" secondItem="gUY-fT-mcD" secondAttribute="trailing" constant="8" id="j5w-Mo-V4K"/>
                             <constraint firstItem="awD-qE-DdG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jMm-GJ-0x7"/>
@@ -254,7 +254,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkY-xt-FRb" customClass="CornerRadiusButton" customModule="Quickulator" customModuleProvider="target">
-                                <rect key="frame" x="32" y="334" width="311" height="44"/>
+                                <rect key="frame" x="32" y="384" width="311" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="QPy-Vn-pG4"/>
@@ -268,7 +268,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyd-fd-ndc" customClass="CornerRadiusButton" customModule="Quickulator" customModuleProvider="target">
-                                <rect key="frame" x="32" y="429" width="311" height="44"/>
+                                <rect key="frame" x="32" y="472" width="311" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="qSZ-sr-jcA"/>
@@ -283,8 +283,8 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="hkY-xt-FRb" firstAttribute="top" secondItem="wYT-hN-oNX" secondAttribute="top" constant="290" id="LiS-ve-EJB"/>
-                            <constraint firstItem="cyd-fd-ndc" firstAttribute="top" secondItem="hkY-xt-FRb" secondAttribute="bottom" constant="51" id="Y2o-aV-laE"/>
+                            <constraint firstItem="hkY-xt-FRb" firstAttribute="centerY" secondItem="wNy-bh-0yL" secondAttribute="centerY" id="WFy-pW-bKG"/>
+                            <constraint firstItem="cyd-fd-ndc" firstAttribute="top" secondItem="hkY-xt-FRb" secondAttribute="bottom" constant="44" id="Y2o-aV-laE"/>
                             <constraint firstItem="hkY-xt-FRb" firstAttribute="leading" secondItem="wYT-hN-oNX" secondAttribute="leading" constant="32" id="kTw-86-Cs4"/>
                             <constraint firstItem="wYT-hN-oNX" firstAttribute="trailing" secondItem="cyd-fd-ndc" secondAttribute="trailing" constant="32" id="oiA-Z7-k4W"/>
                             <constraint firstItem="wYT-hN-oNX" firstAttribute="trailing" secondItem="hkY-xt-FRb" secondAttribute="trailing" constant="32" id="v5K-tg-wen"/>
@@ -306,37 +306,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSO-x4-sGE">
-                                <rect key="frame" x="118.66666666666669" y="108" width="138" height="44"/>
+                                <rect key="frame" x="16" y="104" width="96" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Qie-z2-Osd"/>
                                 </constraints>
-                                <state key="normal" title="Back to Game Menu">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Pause Game">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="pauseButtonPressed:" destination="UJg-JR-Bh7" eventType="touchUpInside" id="Ukh-lw-TdY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScoreLbl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxQ-7v-enc">
-                                <rect key="frame" x="16" y="108" width="67.666666666666671" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqj-mA-QzK">
-                                <rect key="frame" x="315" y="108" width="18" height="20.333333333333343"/>
+                                <rect key="frame" x="315" y="116" width="18" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqa-a0-lq8">
-                                <rect key="frame" x="341" y="108" width="18" height="20.333333333333343"/>
+                                <rect key="frame" x="341" y="116" width="18" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Dsf-F1-Vs6">
-                                <rect key="frame" x="8" y="357" width="359" height="2"/>
+                                <rect key="frame" x="8" y="353" width="359" height="2"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -346,13 +341,13 @@
                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tWk-9o-5wG">
-                                <rect key="frame" x="27" y="381" width="321" height="375"/>
+                                <rect key="frame" x="25.333333333333343" y="377" width="324.33333333333326" height="379"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="KI6-np-snN">
-                                        <rect key="frame" x="0.0" y="0.0" width="321" height="81.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="324.33333333333331" height="82.666666666666671"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIy-vR-tKp" customClass="RoundButton" customModule="Quickulator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="81.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="LIy-vR-tKp" secondAttribute="height" multiplier="1:1" id="u2g-Yt-gcf"/>
@@ -366,7 +361,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGW-qu-5yT" customClass="RoundButton" customModule="Quickulator" customModuleProvider="target">
-                                                <rect key="frame" x="119.66666666666666" y="0.0" width="81.666666666666657" height="81.666666666666671"/>
+                                                <rect key="frame" x="120.66666666666669" y="0.0" width="83" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <state key="normal" title="8">
@@ -377,7 +372,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhT-eB-0QT" customClass="RoundButton" customModule="Quickulator" customModuleProvider="target">
-                                                <rect key="frame" x="239.33333333333329" y="0.0" width="81.666666666666657" height="81.666666666666671"/>
+                                                <rect key="frame" x="241.66666666666666" y="0.0" width="82.666666666666657" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="FhT-eB-0QT" secondAttribute="height" multiplier="1:1" id="ubj-3c-wkw"/>
@@ -396,10 +391,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="LpH-uB-vm8">
-                                        <rect key="frame" x="0.0" y="97.666666666666686" width="321" height="82"/>
+                                        <rect key="frame" x="0.0" y="98.666666666666686" width="324.33333333333331" height="83"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzZ-m5-yRJ" customClass="RoundButton" customModule="Quickulator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="82"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="83"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="kzZ-m5-yRJ" secondAttribute="height" multiplier="1:1" id="q3N-E2-k71"/>
@@ -413,7 +408,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdE-vs-yRh" customClass="RoundButton" customModule="Quickulator" customModuleProvider="target">
-                                                <rect key="frame" x="119.66666666666666" y="0.0" width="81.666666666666657" height="82"/>
+                                                <rect key="frame" x="120.66666666666669" y="0.0" width="83" height="83"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <state key="normal" title="5">
@@ -424,7 +419,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5R-RC-HuI" customClass="RoundButton" customModule="Quickulator" customModuleProvider="target">
-                                                <rect key="frame" x="239.33333333333329" y="0.0" width="81.666666666666657" height="82"/>
+                                                <rect key="frame" x="241.66666666666666" y="0.0" width="82.666666666666657" height="83"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="L5R-RC-HuI" secondAttribute="height" multiplier="1:1" id="UjM-u6-3Om"/>
@@ -443,10 +438,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="MAh-Cy-PrH">
-                                        <rect key="frame" x="0.0" y="195.66666666666663" width="321" height="81.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="197.66666666666663" width="324.33333333333331" height="82.666666666666686"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beq-IZ-SXX" customClass="RoundButton" customModule="Quickulator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="81.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Beq-IZ-SXX" secondAttribute="height" multiplier="1:1" id="UMZ-0m-4wR"/>
@@ -460,7 +455,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRZ-LR-vId" customClass="RoundButton" customModule="Quickulator" customModuleProvider="target">
-                                                <rect key="frame" x="119.66666666666666" y="0.0" width="81.666666666666657" height="81.666666666666671"/>
+                                                <rect key="frame" x="120.66666666666669" y="0.0" width="83" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <state key="normal" title="2">
@@ -471,7 +466,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDa-gH-BWC" customClass="RoundButton" customModule="Quickulator" customModuleProvider="target">
-                                                <rect key="frame" x="239.33333333333329" y="0.0" width="81.666666666666657" height="81.666666666666671"/>
+                                                <rect key="frame" x="241.66666666666666" y="0.0" width="82.666666666666657" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="nDa-gH-BWC" secondAttribute="height" multiplier="1:1" id="K7x-1e-tKm"/>
@@ -490,10 +485,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="8l3-yf-PMs">
-                                        <rect key="frame" x="0.0" y="293.33333333333337" width="321" height="81.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="296.33333333333337" width="324.33333333333331" height="82.666666666666686"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="po5-wZ-eaO" customClass="RoundButton" customModule="Quickulator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="81.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="po5-wZ-eaO" secondAttribute="height" multiplier="1:1" id="wgC-1P-5oI"/>
@@ -507,7 +502,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7t-Tt-qBL" customClass="RoundButton" customModule="Quickulator" customModuleProvider="target">
-                                                <rect key="frame" x="119.66666666666666" y="0.0" width="81.666666666666657" height="81.666666666666671"/>
+                                                <rect key="frame" x="120.66666666666669" y="0.0" width="83" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <state key="normal" title="0">
@@ -518,7 +513,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqm-1c-OTf" customClass="RoundButton" customModule="Quickulator" customModuleProvider="target">
-                                                <rect key="frame" x="239.33333333333329" y="0.0" width="81.666666666666657" height="81.666666666666671"/>
+                                                <rect key="frame" x="241.66666666666666" y="0.0" width="82.666666666666657" height="82.666666666666671"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zqm-1c-OTf" secondAttribute="height" multiplier="1:1" id="OcI-Wt-BSf"/>
@@ -539,7 +534,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TDh-Qe-Apg">
-                                <rect key="frame" x="8" y="168" width="359" height="64"/>
+                                <rect key="frame" x="8" y="164" width="359" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5o-8l-VJh">
                                         <rect key="frame" x="0.0" y="0.0" width="67.666666666666671" height="64"/>
@@ -577,15 +572,21 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ik3-D3-B7x" userLabel="SpacerView">
-                                <rect key="frame" x="8" y="340" width="359" height="1"/>
+                                <rect key="frame" x="8" y="336" width="359" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Jfa-Bj-yhr"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbl" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xm-dN-9IE">
-                                <rect key="frame" x="289" y="108" width="18" height="20.333333333333343"/>
+                                <rect key="frame" x="289" y="116" width="18" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScoreLbl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxQ-7v-enc">
+                                <rect key="frame" x="153.66666666666666" y="116" width="67.666666666666657" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -596,26 +597,29 @@
                             <constraint firstItem="jqj-mA-QzK" firstAttribute="leading" secondItem="0xm-dN-9IE" secondAttribute="trailing" constant="8" symbolic="YES" id="18P-4l-8cT"/>
                             <constraint firstItem="hqa-a0-lq8" firstAttribute="leading" secondItem="jqj-mA-QzK" secondAttribute="trailing" constant="8" symbolic="YES" id="1jQ-4r-iuJ"/>
                             <constraint firstItem="Ik3-D3-B7x" firstAttribute="leading" secondItem="51r-Jo-RWY" secondAttribute="leading" constant="8" id="2gD-JC-A0N"/>
-                            <constraint firstItem="jqj-mA-QzK" firstAttribute="top" secondItem="51r-Jo-RWY" secondAttribute="top" constant="20" id="4wK-84-ZJj"/>
+                            <constraint firstItem="0xm-dN-9IE" firstAttribute="top" secondItem="51r-Jo-RWY" secondAttribute="top" constant="28" id="2jU-Ch-3rv"/>
+                            <constraint firstItem="wxQ-7v-enc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KSO-x4-sGE" secondAttribute="trailing" constant="8" id="5eW-Hm-fwh"/>
                             <constraint firstItem="Ik3-D3-B7x" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TDh-Qe-Apg" secondAttribute="bottom" constant="8" id="7Ac-bl-8cM"/>
                             <constraint firstItem="Dsf-F1-Vs6" firstAttribute="leading" secondItem="fbk-7e-cJx" secondAttribute="leading" constant="8" id="Cl5-54-hN2"/>
                             <constraint firstItem="Dsf-F1-Vs6" firstAttribute="top" secondItem="Ik3-D3-B7x" secondAttribute="bottom" constant="16" id="EE2-Mr-nLF"/>
-                            <constraint firstItem="hqa-a0-lq8" firstAttribute="top" secondItem="51r-Jo-RWY" secondAttribute="top" constant="20" id="Fxn-mS-UZG"/>
                             <constraint firstItem="tWk-9o-5wG" firstAttribute="centerX" secondItem="fbk-7e-cJx" secondAttribute="centerX" id="GQW-I1-8We"/>
-                            <constraint firstItem="KSO-x4-sGE" firstAttribute="top" secondItem="51r-Jo-RWY" secondAttribute="top" constant="20" id="LZL-BG-Tu3"/>
-                            <constraint firstItem="KSO-x4-sGE" firstAttribute="centerX" secondItem="fbk-7e-cJx" secondAttribute="centerX" id="P0C-JF-ke6"/>
+                            <constraint firstItem="jqj-mA-QzK" firstAttribute="top" secondItem="51r-Jo-RWY" secondAttribute="top" constant="28" id="J3t-EQ-Qpx"/>
+                            <constraint firstItem="KSO-x4-sGE" firstAttribute="top" secondItem="51r-Jo-RWY" secondAttribute="top" constant="16" id="Qta-n3-OjP"/>
                             <constraint firstItem="51r-Jo-RWY" firstAttribute="trailing" secondItem="TDh-Qe-Apg" secondAttribute="trailing" constant="8" id="W1v-Xl-gjj"/>
+                            <constraint firstItem="hqa-a0-lq8" firstAttribute="top" secondItem="51r-Jo-RWY" secondAttribute="top" constant="28" id="W8V-e7-3R0"/>
                             <constraint firstItem="Dsf-F1-Vs6" firstAttribute="top" relation="lessThanOrEqual" secondItem="TDh-Qe-Apg" secondAttribute="bottom" constant="125" id="ZeL-2l-1OT"/>
-                            <constraint firstItem="wxQ-7v-enc" firstAttribute="top" secondItem="51r-Jo-RWY" secondAttribute="top" constant="20" id="aBy-dV-PWP"/>
                             <constraint firstAttribute="trailing" secondItem="Dsf-F1-Vs6" secondAttribute="trailing" constant="8" id="aiH-ei-AxU"/>
+                            <constraint firstItem="TDh-Qe-Apg" firstAttribute="top" secondItem="KSO-x4-sGE" secondAttribute="bottom" constant="16" id="dGM-7i-hOh"/>
+                            <constraint firstItem="0xm-dN-9IE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wxQ-7v-enc" secondAttribute="trailing" constant="8" id="jrx-PK-EUn"/>
+                            <constraint firstItem="0xm-dN-9IE" firstAttribute="centerY" secondItem="jqj-mA-QzK" secondAttribute="centerY" id="n24-KC-WGf"/>
                             <constraint firstItem="51r-Jo-RWY" firstAttribute="trailing" secondItem="hqa-a0-lq8" secondAttribute="trailing" constant="16" id="q72-KJ-5MI"/>
                             <constraint firstItem="51r-Jo-RWY" firstAttribute="bottom" secondItem="tWk-9o-5wG" secondAttribute="bottom" constant="22" id="rDH-le-Ttc"/>
-                            <constraint firstItem="TDh-Qe-Apg" firstAttribute="top" secondItem="KSO-x4-sGE" secondAttribute="bottom" constant="16" id="sQJ-QD-c83"/>
-                            <constraint firstItem="0xm-dN-9IE" firstAttribute="top" secondItem="51r-Jo-RWY" secondAttribute="top" constant="20" id="uEX-CL-VBh"/>
+                            <constraint firstItem="wxQ-7v-enc" firstAttribute="centerX" secondItem="fbk-7e-cJx" secondAttribute="centerX" id="rjY-yq-mtJ"/>
+                            <constraint firstItem="KSO-x4-sGE" firstAttribute="centerY" secondItem="wxQ-7v-enc" secondAttribute="centerY" id="uVA-Gy-7CF"/>
                             <constraint firstItem="tWk-9o-5wG" firstAttribute="top" secondItem="Dsf-F1-Vs6" secondAttribute="bottom" constant="22" id="uf6-oY-20C"/>
+                            <constraint firstItem="KSO-x4-sGE" firstAttribute="leading" secondItem="51r-Jo-RWY" secondAttribute="leading" constant="16" id="uxS-ig-SdA"/>
                             <constraint firstItem="TDh-Qe-Apg" firstAttribute="leading" secondItem="51r-Jo-RWY" secondAttribute="leading" constant="8" id="w4j-TL-QGs"/>
                             <constraint firstItem="51r-Jo-RWY" firstAttribute="trailing" secondItem="Ik3-D3-B7x" secondAttribute="trailing" constant="8" id="ySR-I9-9eo"/>
-                            <constraint firstItem="wxQ-7v-enc" firstAttribute="leading" secondItem="51r-Jo-RWY" secondAttribute="leading" constant="16" id="zSe-cA-a5b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="51r-Jo-RWY"/>
                         <userDefinedRuntimeAttributes>

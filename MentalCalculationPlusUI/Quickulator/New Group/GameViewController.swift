@@ -27,13 +27,10 @@ class GameViewController: UIViewController {
   @IBOutlet weak var clearButton: RoundButton!
   @IBOutlet weak var enterButton: RoundButton!
   @IBOutlet weak var scoreLabel: UILabel!
-  //@IBOutlet weak var livesLabel: UILabel!
   @IBOutlet weak var progressBar: UIProgressView!
-  
   @IBOutlet weak var heartOne: UILabel!
   @IBOutlet weak var heartTwo: UILabel!
   @IBOutlet weak var heartThree: UILabel!
-  
   
   var gameCategory: GameCategory = .addition
   var gameLevel: Level = .easy
@@ -72,18 +69,19 @@ class GameViewController: UIViewController {
   heartThree
   ]
   
-  var blurView = UIVisualEffectView()
-  
   lazy var game: Game = Game(gameCategory: self.gameCategory, gameLevel: self.gameLevel)
   lazy var task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
   
   //don't like this instance member with exact parameters
   private var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false, block: {(t) in })
   
+  override var preferredStatusBarStyle : UIStatusBarStyle {
+    return .lightContent
+  }
+  
+  //MARK: Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    print("view did load")
     
      let rotateView = CGAffineTransform(rotationAngle: CGFloat.pi)
      let scaleView = CGAffineTransform(scaleX: 1, y: 2)
@@ -104,7 +102,7 @@ class GameViewController: UIViewController {
     //listen for going to background, stop the timer, save progress
     NotificationCenter.default.addObserver(
       self,
-      selector: #selector(disableTimerAndSaveTopScore),
+      selector: #selector(invalidateTimerAndSaveTopScore),
       name: UIApplication.willResignActiveNotification,
       object: nil)
     
@@ -120,6 +118,7 @@ class GameViewController: UIViewController {
     }
     
     updateViewFromModel()
+    timer.invalidate()//otherwise updateProgressBar will not take effect
     updateProgressBar()
   }
   
@@ -128,29 +127,18 @@ class GameViewController: UIViewController {
       button.refreshCornerRadius()
     }
   }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    print("view will appear")
-  //  updateProgressBar()
-  }
-  
+
   override func viewDidAppear(_ animated: Bool) {
-    print("view did appear")
     updateProgressBar()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
-    print("view will disappear")
-    disableTimerAndSaveTopScore()
+    invalidateTimerAndSaveTopScore()
   }
   
-  override func viewDidDisappear(_ animated: Bool) {
-   // print("view did disappear")
-   // disableTimerAndSaveTopScore()
-  }
-  
+  //MARK: Game events
   /**Draws current task, score and lives in UI */
-  func updateViewFromModel() {
+  private func updateViewFromModel() {
     aLabel.text = String(task.a)
     bLabel.text = String(task.b)
     operationLabel.text = operationsSign
@@ -158,30 +146,104 @@ class GameViewController: UIViewController {
   }
   
   /**Generates new task of given category and difficulty */
-  func updateTask() {
+  private func updateTask() {
     task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
   }
   
   /**The score is calculated as 10 * (task category * level difficulty + 0.5 * scoreForSpeed) */
-  func updateScore() {
+  private func updateScore() {
     score.setScore(newValue: score.getScore() + 10 * (task.level.rawValue * (self.gameCategory.rawValue) +  scoreForSpeed/2))
   }
   
   /**Clears user input text*/
-  func clearResponseLabel() {
+  private func clearResponseLabel() {
     responseString = ""
     responseLabel.text = " ?  "
   }
   
-  override var preferredStatusBarStyle : UIStatusBarStyle {
-    return .lightContent
+  /**Handles time given to respond to the task*/
+  @objc func updateProgressBar() {
+    
+    if limitedTimeToResolve {
+      
+      progressBar.setProgress(progress, animated: false)
+      
+      if (!timer.isValid && !isGamePaused) {
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
+          
+          self.progress += self.progressUpdateSpeed
+          self.progressBar.setProgress(self.progress, animated: true)
+          
+          //additional points for speed of answer
+          self.scoreForSpeed = Int((1 - self.progress) * 10)
+          
+          if (self.progress > 0.8) {
+            self.progressBar.trackTintColor = .red
+          }
+          
+          //if timer runs out then stop timer and programmatically press Enter
+          if (self.progress > 0.999) {
+            t.invalidate()
+            self.progress = 0.0
+            self.enterButtonPressed(self.enterButton)
+          }
+        })
+      }
+    } else {
+      progressBar.isHidden = true
+    }
   }
   
+  @objc func invalidateTimerAndSaveTopScore() {
+    timer.invalidate()
+    score.updateTopScore()
+  }
+  
+  /**Adds wrong answered task to array to display when the game is over */
+  private func addWrongTaskToList(task: Solvable) {
+    wrongTasksArray.append("\(task.a) \(operationsSign) \(task.b) = \(task.result)")
+  }
+  
+  private func indicateSuccess() {
+    
+    let animation = CASpringAnimation(keyPath: "transform.scale")
+    animation.fromValue = 0.8
+    animation.toValue = 1
+    animation.stiffness = 200
+    animation.mass = 2
+    animation.duration = 0.8
+    animation.beginTime = CACurrentMediaTime()
+    animation.fillMode = CAMediaTimingFillMode.backwards
+    
+    self.scoreLabel.layer.add(animation, forKey: nil)
+  }
+  
+  private func indicateFailure() {
+    guard lives > 0 else { return }
+    let labelToAnimate = heartLabels[3 - lives]
+    
+    let fadedLabel = UILabel(frame: labelToAnimate.frame)
+    fadedLabel.text = "\u{2764}"
+    fadedLabel.alpha = 0.3
+    view.addSubview(fadedLabel)
+  
+    
+    UIView.animate(withDuration: 0.8, animations: {
+      let translate = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height)
+      let rotate = CGAffineTransform(rotationAngle: .pi)
+      labelToAnimate.transform = rotate.concatenating(translate)
+      
+    }, completion: {(finished: Bool) in
+      labelToAnimate.removeFromSuperview()
+    })
+  }
+  
+  //MARK: IBActions
   @IBAction func digitButtonPressed(_ sender: UIButton) {
     guard  let buttonLabel = sender.titleLabel else { return }
     if let input = buttonLabel.text {
-    responseString.append(input)
-    responseLabel.text = responseString
+      responseString.append(input)
+      responseLabel.text = responseString
     }
   }
   
@@ -219,110 +281,30 @@ class GameViewController: UIViewController {
     }
   }
   
- 
-  func indicateSuccess() {
+  @IBAction func pauseButtonPressed(_ sender: Any) {
     
-    let animation = CASpringAnimation(keyPath: "transform.scale")
-    animation.fromValue = 0.8
-    animation.toValue = 1
-    animation.stiffness = 200
-    animation.mass = 2
-    animation.duration = 0.8
-    animation.beginTime = CACurrentMediaTime()
-    animation.fillMode = CAMediaTimingFillMode.backwards
-    
-    self.scoreLabel.layer.add(animation, forKey: nil)
-  }
-  
-  
-  func indicateFailure() {
-    guard lives > 0 else { return }
-    let labelToAnimate = heartLabels[3 - lives]
-    
-    let fadedLabel = UILabel(frame: labelToAnimate.frame)
-    fadedLabel.text = "\u{2764}"
-    fadedLabel.alpha = 0.3
-    view.addSubview(fadedLabel)
-  
-    
-    UIView.animate(withDuration: 0.8, animations: {
-      let translate = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height)
-      let rotate = CGAffineTransform(rotationAngle: .pi)
-      labelToAnimate.transform = rotate.concatenating(translate)
-      
-    }, completion: {(finished: Bool) in
-      labelToAnimate.removeFromSuperview()
-    })
-  }
-  
-  /**Handles time given to respond to the task*/
-  @objc func updateProgressBar() {
-    
-    if limitedTimeToResolve {
-      
-      progressBar.setProgress(progress, animated: false)
-     
-      if (!timer.isValid && !isGamePaused) {
-      print("progress bar updated at: \(CACurrentMediaTime())")
-      timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(t) in
-        
-        self.progress += self.progressUpdateSpeed
-        self.progressBar.setProgress(self.progress, animated: true)
-        
-        //additional points for speed of answer
-        self.scoreForSpeed = Int((1 - self.progress) * 10)
-        
-        if (self.progress > 0.8) {
-            self.progressBar.trackTintColor = .red
-        }
-        
-        //if timer runs out then stop timer and programmatically press Enter
-        if (self.progress > 0.999) {
-          t.invalidate()
-          self.progress = 0.0
-          self.enterButtonPressed(self.enterButton)
-        }
-      })
-     }
-    } else {
-      progressBar.isHidden = true
+    invalidateTimerAndSaveTopScore()
+    //animate custom transition with blurred background
+    isGamePaused = true
+    let pauseGameViewController = storyboard?.instantiateViewController(withIdentifier: "pauseGameViewController") as! PauseGameViewController
+    pauseGameViewController.transitioningDelegate = self
+    present(pauseGameViewController, animated: true, completion: nil)
+    //closure callback to dismiss modal VC
+    pauseGameViewController.didClose = { [unowned pauseGameViewController] in
+      pauseGameViewController.dismiss(animated: true, completion: nil)
     }
   }
   
-  @objc func disableTimerAndSaveTopScore() {
-    timer.invalidate()
-    score.updateTopScore()
-    print("timer invalidated at: \(CACurrentMediaTime())")
-  }
-  /**Adds wrong answered task to array to display when the game is over */
-  func addWrongTaskToList(task: Solvable) {
-    wrongTasksArray.append("\(task.a) \(operationsSign) \(task.b) = \(task.result)")
-  }
-  
+  //MARK: Navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let destination = segue.destination as? GameOverViewController {
       destination.displayedScore = score.getScore()
       destination.wrongAnswersArray = wrongTasksArray
     }
   }
-  
-  
-  @IBAction func pauseButtonPressed(_ sender: Any) {
-    
-    disableTimerAndSaveTopScore()
-    //animate custom transition with blurred background
-    isGamePaused = true
-    let pauseGameViewController = storyboard?.instantiateViewController(withIdentifier: "pauseGameViewController") as! PauseGameViewController
-    pauseGameViewController.transitioningDelegate = self
-    present(pauseGameViewController, animated: true, completion: nil)
-    pauseGameViewController.didClose = { [unowned pauseGameViewController] in
-      pauseGameViewController.dismiss(animated: true, completion: nil)
-    }
-    
-  }
-  
 }
 
+//MARK: Extensions
 extension GameViewController: UIViewControllerTransitioningDelegate {
   func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     return presentTransition
@@ -331,6 +313,4 @@ extension GameViewController: UIViewControllerTransitioningDelegate {
   func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     return dismissTransition
   }
-  
-  
 }

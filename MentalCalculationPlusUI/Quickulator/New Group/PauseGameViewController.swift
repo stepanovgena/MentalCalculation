@@ -14,27 +14,19 @@ class PauseGameViewController: UIViewController {
   
   override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-  
-
-  
   
   @IBAction func resumeButtonPressed(_ sender: Any) {
     let navigationController = self.presentingViewController as? UINavigationController 
     let destination = navigationController?.viewControllers[1] as? GameViewController
     destination?.isGamePaused = false
-    
     didClose?()
-    //self.dismiss(animated: true, completion: nil)
   }
   
   @IBAction func backToMenuButtonPressed(_ sender: Any) {
-    let navigationController = self.presentingViewController as? UINavigationController
-    navigationController?.popToRootViewController(animated: false)
-    
     didClose?()
-    // self.dismiss(animated: false, completion: nil)
+    let navigationController = self.presentingViewController as? UINavigationController
+    navigationController?.popToRootViewController(animated: true)
+    
   }
-  
 }
