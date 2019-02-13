@@ -13,7 +13,7 @@ class MainMenuViewController: UIViewController {
   @IBOutlet weak var gameLevelSegmentedControl: UISegmentedControl!
   @IBOutlet weak var limitedTimeSwitch: UISwitch!
   @IBOutlet weak var playButton: UIButton!
-  @IBOutlet weak var scrollView: UIScrollView!
+  //@IBOutlet weak var scrollView: UIScrollView!
   
   override func viewWillAppear(_ animated: Bool) {
     self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -27,7 +27,7 @@ class MainMenuViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    scrollView.contentSize = UIScreen.main.bounds.size
+   // scrollView.contentSize = UIScreen.main.bounds.size
    
     
     let font = UIFont.systemFont(ofSize: 28)
