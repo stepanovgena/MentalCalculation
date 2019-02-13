@@ -70,7 +70,7 @@ class GameViewController: UIViewController {
   ]
   
   lazy var game: Game = Game(gameCategory: self.gameCategory, gameLevel: self.gameLevel)
-  lazy var task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
+  lazy var task: Solvable = game.generateTask(category: game.gameCategory, level: game.gameLevel)
   
   //don't like this instance member with exact parameters
   private var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false, block: {(t) in })
@@ -125,6 +125,9 @@ class GameViewController: UIViewController {
   override func viewDidLayoutSubviews() {
     for button in roundButtons {
       button.refreshCornerRadius()
+      button.contentEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
+      button.titleLabel?.minimumScaleFactor = 0.5
+      button.titleLabel?.adjustsFontSizeToFitWidth = true
     }
   }
 

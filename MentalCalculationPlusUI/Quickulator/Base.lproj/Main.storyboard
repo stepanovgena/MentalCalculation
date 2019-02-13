@@ -187,6 +187,7 @@
                         <outlet property="gameLevelSegmentedControl" destination="n62-Bq-TIL" id="8DL-18-knW"/>
                         <outlet property="limitedTimeSwitch" destination="krr-P9-UrL" id="wwV-97-JgI"/>
                         <outlet property="playButton" destination="awD-qE-DdG" id="5H8-am-ihL"/>
+                        <outlet property="scrollView" destination="doM-Gz-rYd" id="hzM-mb-Dwf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
