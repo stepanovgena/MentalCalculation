@@ -15,10 +15,15 @@ class GameOverViewController: UIViewController, UITableViewDataSource {
   @IBOutlet weak var wrongTasksTableView: UITableView!
   
   var displayedScore: Int = 0
-  var wrongAnswersArray = [String]()
+  var wrongAnswersArray = [[String]]()
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    wrongTasksTableView.register(UINib(nibName: "WrongAnswerTableViewCell", bundle: nil), forCellReuseIdentifier: "wrongAnswerCellReuseIdentifier")
+    
+//    wrongTasksTableView.estimatedRowHeight = 44.0
+//    wrongTasksTableView.rowHeight = UITableView.automaticDimension
     
     let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(popToMainMenu))
     swipeRight.direction = .right
@@ -46,16 +51,10 @@ class GameOverViewController: UIViewController, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")!
-    let text = wrongAnswersArray[indexPath.row]
+    let cell = tableView.dequeueReusableCell(withIdentifier: "wrongAnswerCellReuseIdentifier") as! WrongAnswerTableViewCell
     
-    cell.textLabel?.text = text
-    cell.contentView.backgroundColor = .black
-    cell.textLabel?.textColor = .white
-    cell.textLabel?.adjustsFontSizeToFitWidth = true
-    cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
-    cell.textLabel?.textAlignment = .center
+    print("cell hooked up at \(indexPath)")
+    print(cell.bounds)
     return cell
   }
-  
 }

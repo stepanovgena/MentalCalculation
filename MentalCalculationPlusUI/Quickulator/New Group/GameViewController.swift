@@ -36,7 +36,7 @@ class GameViewController: UIViewController {
   var gameLevel: Level = .easy
   var progressUpdateSpeed: Float = 0.001
   var limitedTimeToResolve = true
-  var wrongTasksArray = [String]()
+  var wrongTasksArray = [[String]]()
   private var responseString: String = String()
   lazy var operationsSign = gameCategory.sign
   private var score: Score = Score()
@@ -203,8 +203,8 @@ class GameViewController: UIViewController {
   }
   
   /**Adds wrong answered task to array to display when the game is over */
-  private func addWrongTaskToList(task: Solvable) {
-    wrongTasksArray.append("\(task.a) \(operationsSign) \(task.b) = \(task.result)")
+  private func addWrongTaskToList(task: Solvable, userResponse: String) {
+    wrongTasksArray.append([String(task.a), operationsSign, String(task.b), userResponse, String(task.result)])
   }
   
   private func indicateSuccess() {
@@ -269,7 +269,7 @@ class GameViewController: UIViewController {
     } else {
       timer.invalidate()
       indicateFailure()
-      addWrongTaskToList(task: task)
+      addWrongTaskToList(task: task, userResponse: responseString)
       lives -= 1
       if lives == 0 {
         score.updateTopScore()
