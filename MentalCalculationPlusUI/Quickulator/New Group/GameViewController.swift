@@ -44,6 +44,7 @@ class GameViewController: UIViewController {
   private var scoreForSpeed: Int = 0
   var progress: Float  = 0.0
   var isGamePaused = false
+  var fadedLabels: [UILabel] = []
   
   let presentTransition = CustomPresentModalAnimator()
   let dismissTransition = CustomDismissModalAnimator()
@@ -82,6 +83,8 @@ class GameViewController: UIViewController {
   //MARK: Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    print("GameVC view did load")
     
      let rotateView = CGAffineTransform(rotationAngle: CGFloat.pi)
      let scaleView = CGAffineTransform(scaleX: 1, y: 2)
@@ -229,16 +232,30 @@ class GameViewController: UIViewController {
     fadedLabel.text = "\u{2764}"
     fadedLabel.alpha = 0.3
     view.addSubview(fadedLabel)
+    fadedLabels.append(fadedLabel)
   
-    
     UIView.animate(withDuration: 0.8, animations: {
       let translate = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height)
       let rotate = CGAffineTransform(rotationAngle: .pi)
       labelToAnimate.transform = rotate.concatenating(translate)
       
     }, completion: {(finished: Bool) in
-      labelToAnimate.removeFromSuperview()
+      labelToAnimate.alpha = 0
     })
+  }
+  
+  func refreshState() {
+    score.setScore(newValue: 0)
+    lives = 3
+    updateViewFromModel()
+    wrongTasksArray.removeAll()
+    for label in heartLabels {
+      label.transform = .identity
+      label.alpha = 1
+    }
+    for fadedLabel in fadedLabels {
+      fadedLabel.removeFromSuperview()
+    }
   }
   
   //MARK: IBActions
@@ -269,7 +286,11 @@ class GameViewController: UIViewController {
     } else {
       timer.invalidate()
       indicateFailure()
+      if (responseString == "") {
+        addWrongTaskToList(task: task, userResponse: "??")
+      } else {
       addWrongTaskToList(task: task, userResponse: responseString)
+      }
       lives -= 1
       if lives == 0 {
         score.updateTopScore()

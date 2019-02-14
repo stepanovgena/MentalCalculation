@@ -28,11 +28,11 @@ class WrongAnswerTableViewCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    aLabel.text = "222"
-    sign.text = "+"
-    bLabel.text = "333"
-    mistake.text = "4444"
-    correctValue.text = "5555"
+//    aLabel.text = "222"
+//    sign.text = "+"
+//    bLabel.text = "333"
+//    mistake.text = "4444"
+//    correctValue.text = "5555"
     
     contentView.backgroundColor = .black
    

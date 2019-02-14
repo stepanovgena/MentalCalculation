@@ -24,7 +24,7 @@ class CrossView: UIView {
     let shapeLayer = CAShapeLayer()
     shapeLayer.path = crossPath.cgPath
     shapeLayer.strokeEnd = 0
-    shapeLayer.lineWidth = 3
+    shapeLayer.lineWidth = 1
     shapeLayer.strokeColor = UIColor.red.cgColor
     shapeLayer.fillColor = UIColor.clear.cgColor
     
@@ -32,7 +32,7 @@ class CrossView: UIView {
     
     let strokeEndAnimation = CABasicAnimation(keyPath: "strokeEnd")
     strokeEndAnimation.toValue = 1
-    strokeEndAnimation.duration = 2
+    strokeEndAnimation.duration = 3
     strokeEndAnimation.isRemovedOnCompletion = false
     strokeEndAnimation.fillMode = .forwards
 
