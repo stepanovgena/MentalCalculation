@@ -193,23 +193,43 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFy-mk-qiT">
-                                <rect key="frame" x="114.66666666666669" y="715" width="146" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFy-mk-qiT" customClass="CornerRadiusButton" customModule="Quickulator" customModuleProvider="target">
+                                <rect key="frame" x="16" y="702" width="343" height="44"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="f9W-k2-T6m"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Back to Main Menu">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Back to Menu">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="6ch-o4-Mrm" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="fD6-0Z-EdW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-G9-ddY">
+                                <rect key="frame" x="242" y="104" width="125" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="g6M-t8-mkQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Reset Top Score">
+                                    <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapResetTopScore:" destination="BQb-PC-5kd" eventType="touchUpInside" id="LPz-88-njV"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="hFy-mk-qiT" firstAttribute="centerX" secondItem="U7B-YA-Pxu" secondAttribute="centerX" id="5Sx-Nf-X8m"/>
+                            <constraint firstItem="6Xr-IU-t4j" firstAttribute="trailing" secondItem="wG3-G9-ddY" secondAttribute="trailing" constant="8" id="BUL-Sk-b8U"/>
+                            <constraint firstItem="wG3-G9-ddY" firstAttribute="top" secondItem="6Xr-IU-t4j" secondAttribute="top" constant="16" id="E25-6e-zrE"/>
                             <constraint firstItem="Qqa-tl-h3V" firstAttribute="centerX" secondItem="U7B-YA-Pxu" secondAttribute="centerX" id="G0d-Oc-He2"/>
-                            <constraint firstItem="6Xr-IU-t4j" firstAttribute="bottom" secondItem="hFy-mk-qiT" secondAttribute="bottom" constant="30" id="f6h-Pm-r7Q"/>
+                            <constraint firstItem="6Xr-IU-t4j" firstAttribute="bottom" secondItem="hFy-mk-qiT" secondAttribute="bottom" constant="32" id="Zle-LZ-YTC"/>
+                            <constraint firstItem="hFy-mk-qiT" firstAttribute="leading" secondItem="6Xr-IU-t4j" secondAttribute="leading" constant="16" id="aFy-lb-hh9"/>
+                            <constraint firstItem="6Xr-IU-t4j" firstAttribute="trailing" secondItem="hFy-mk-qiT" secondAttribute="trailing" constant="16" id="hiR-wt-znV"/>
                             <constraint firstItem="Qqa-tl-h3V" firstAttribute="centerY" secondItem="U7B-YA-Pxu" secondAttribute="centerY" id="hy1-UE-TWR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Xr-IU-t4j"/>
