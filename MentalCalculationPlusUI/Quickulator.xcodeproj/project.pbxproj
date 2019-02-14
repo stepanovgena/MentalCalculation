@@ -25,6 +25,7 @@
 		968FC404220C6A3800D7B0DB /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FC3FE220C6A3700D7B0DB /* CustomNavigationController.swift */; };
 		96B0B00021B1F21F000D1E8D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B0AFFF21B1F21F000D1E8D /* Default-568h@2x.png */; };
 		96D486BA21A0AF91006BA0D7 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D486B921A0AF91006BA0D7 /* Distribution.swift */; };
+		96F26DC72215917900CB0493 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F26DC62215917900CB0493 /* ColorScheme.swift */; };
 		96F9FBE4219220E4003E80B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FBE3219220E4003E80B4 /* AppDelegate.swift */; };
 		96F9FBE6219220E4003E80B4 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */; };
 		96F9FBE9219220E4003E80B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F9FBE7219220E4003E80B4 /* Main.storyboard */; };
@@ -83,6 +84,7 @@
 		968FC3FE220C6A3700D7B0DB /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		96B0AFFF21B1F21F000D1E8D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		96D486B921A0AF91006BA0D7 /* Distribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
+		96F26DC62215917900CB0493 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		96F9FBE0219220E4003E80B4 /* Quickulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quickulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F9FBE3219220E4003E80B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				96521CEB21C1A4090005B24B /* RoundButton.swift */,
 				96521CED21C1ADC50005B24B /* CornerRadiusButton.swift */,
 				962F42982214664D00648609 /* CrossView.swift */,
+				96F26DC62215917900CB0493 /* ColorScheme.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				96F9FBE4219220E4003E80B4 /* AppDelegate.swift in Sources */,
 				968FC404220C6A3800D7B0DB /* CustomNavigationController.swift in Sources */,
 				968FC3F7220C5B3600D7B0DB /* PauseGameViewController.swift in Sources */,
+				96F26DC72215917900CB0493 /* ColorScheme.swift in Sources */,
 				96521CEE21C1ADC50005B24B /* CornerRadiusButton.swift in Sources */,
 				96F9FC2C2192222F003E80B4 /* GameCategory.swift in Sources */,
 				963A8F66219CAF520019CD30 /* TopScoreViewController.swift in Sources */,

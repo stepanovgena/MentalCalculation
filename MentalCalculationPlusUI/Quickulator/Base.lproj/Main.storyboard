@@ -169,10 +169,15 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="vpP-O0-9A7"/>
                     <connections>
+                        <outlet property="chooseLevelTitle" destination="eXI-0m-iOY" id="KMZ-fT-hH6"/>
+                        <outlet property="chooseOperationTitle" destination="m9F-do-aEw" id="bTl-ye-CSo"/>
                         <outlet property="gameCategorySegmentedControl" destination="ZIp-dC-fh9" id="eoC-bf-WM8"/>
                         <outlet property="gameLevelSegmentedControl" destination="n62-Bq-TIL" id="8DL-18-knW"/>
                         <outlet property="limitedTimeSwitch" destination="krr-P9-UrL" id="wwV-97-JgI"/>
+                        <outlet property="limitedTimeTitle" destination="E58-7k-kYH" id="BNM-Mh-b8i"/>
+                        <outlet property="mainTitle" destination="eUG-ZN-a7J" id="sKV-hw-WmC"/>
                         <outlet property="playButton" destination="awD-qE-DdG" id="5H8-am-ihL"/>
+                        <outlet property="topScoreButton" destination="gUY-fT-mcD" id="1W0-NH-WeM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -204,7 +209,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6ch-o4-Mrm" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="fD6-0Z-EdW"/>
+                                    <segue destination="6ch-o4-Mrm" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="BaN-Zt-dDe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-G9-ddY">
@@ -238,6 +243,8 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="hFy-mk-qiT" id="XzH-EF-fC3"/>
+                        <outlet property="resetButton" destination="wG3-G9-ddY" id="GZg-Yp-Hjn"/>
                         <outlet property="topScoreLabel" destination="Qqa-tl-h3V" id="h2B-3z-axM"/>
                     </connections>
                 </viewController>
@@ -298,6 +305,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wYT-hN-oNX"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="cyd-fd-ndc" id="y3Q-Ja-glX"/>
+                        <outlet property="resumeButton" destination="hkY-xt-FRb" id="Rrv-Og-hOG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jyg-gF-HUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -631,12 +642,6 @@
                             <constraint firstItem="51r-Jo-RWY" firstAttribute="trailing" secondItem="Ik3-D3-B7x" secondAttribute="trailing" constant="8" id="ySR-I9-9eo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="51r-Jo-RWY"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
-                                <integer key="value" value="60"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="73W-IU-cgr" appends="YES" id="f5D-VA-k3X"/>
                         </connections>
@@ -647,6 +652,7 @@
                         <outlet property="clearButton" destination="po5-wZ-eaO" id="rK3-nb-gtg"/>
                         <outlet property="eightButton" destination="rGW-qu-5yT" id="olm-wZ-PMj"/>
                         <outlet property="enterButton" destination="zqm-1c-OTf" id="qYJ-NY-bSx"/>
+                        <outlet property="equalsLabel" destination="ISR-RH-HYK" id="MO4-J9-WGG"/>
                         <outlet property="fiveButton" destination="CdE-vs-yRh" id="LEv-2B-hBl"/>
                         <outlet property="fourButton" destination="kzZ-m5-yRJ" id="Aaj-WS-Mqk"/>
                         <outlet property="heartOne" destination="0xm-dN-9IE" id="J45-3Q-AiT"/>
@@ -655,6 +661,7 @@
                         <outlet property="nineButton" destination="FhT-eB-0QT" id="uuR-fY-QXm"/>
                         <outlet property="oneButton" destination="Beq-IZ-SXX" id="VDQ-I8-q47"/>
                         <outlet property="operationLabel" destination="ah0-uo-poJ" id="xop-hA-3zh"/>
+                        <outlet property="pauseButton" destination="KSO-x4-sGE" id="BHh-H2-2PW"/>
                         <outlet property="progressBar" destination="Dsf-F1-Vs6" id="YgT-KQ-2JI"/>
                         <outlet property="responseLabel" destination="GFJ-Yc-H41" id="gk5-rJ-rcI"/>
                         <outlet property="scoreLabel" destination="wxQ-7v-enc" id="d85-f6-t6H"/>
@@ -715,7 +722,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="pauseButtonPressed:" destination="uK4-3g-ahm" eventType="touchUpInside" id="O8g-os-phW"/>
+                                    <action selector="didTapBackToMenu:" destination="uK4-3g-ahm" eventType="touchUpInside" id="O8g-os-phW"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-7F-89L">
@@ -776,6 +783,8 @@
                     </view>
                     <connections>
                         <outlet property="backToMainMenuButton" destination="feh-Mr-opw" id="o9y-di-z0Q"/>
+                        <outlet property="mainTitle" destination="5CG-eW-t5j" id="GLh-Uv-J3m"/>
+                        <outlet property="mistakesLabel" destination="PXi-fG-5Jv" id="og4-d7-NXo"/>
                         <outlet property="playAgainButton" destination="qbh-Ea-vmh" id="LG3-do-ezn"/>
                         <outlet property="scoreLabel" destination="H9j-2H-Ypc" id="cuJ-VH-FkM"/>
                         <outlet property="wrongTasksTableView" destination="t4G-7F-89L" id="TVh-J9-61c"/>

@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
   @IBOutlet weak var bLabel: UILabel!
   @IBOutlet weak var responseLabel: UILabel!
   @IBOutlet weak var operationLabel: UILabel!
+  @IBOutlet weak var equalsLabel: UILabel!
   @IBOutlet weak var zeroButton: RoundButton!
   @IBOutlet weak var oneButton: RoundButton!
   @IBOutlet weak var twoButton: RoundButton!
@@ -31,6 +32,7 @@ class GameViewController: UIViewController {
   @IBOutlet weak var heartOne: UILabel!
   @IBOutlet weak var heartTwo: UILabel!
   @IBOutlet weak var heartThree: UILabel!
+  @IBOutlet weak var pauseButton: UIButton!
   
   var gameCategory: GameCategory = .addition
   var gameLevel: Level = .easy
@@ -76,26 +78,21 @@ class GameViewController: UIViewController {
   //don't like this instance member with exact parameters
   private var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false, block: {(t) in })
   
-  override var preferredStatusBarStyle : UIStatusBarStyle {
-    return .lightContent
-  }
+//  override var preferredStatusBarStyle : UIStatusBarStyle {
+//    return .lightContent
+//  }
   
   //MARK: Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    print("GameVC view did load")
+    applyColorScheme()
     
      let rotateView = CGAffineTransform(rotationAngle: CGFloat.pi)
      let scaleView = CGAffineTransform(scaleX: 1, y: 2)
     
     progressBar.transform = rotateView.concatenating(scaleView)
     
-    clearButton.layer.borderColor = UIColor.lightGray.cgColor
-    clearButton.layer.borderWidth = 1
-    
-    enterButton.layer.borderColor = UIColor.lightGray.cgColor
-    enterButton.layer.borderWidth = 1
     //adjust timer speed according to difficulty
     switch gameLevel {
     case .easy: progressUpdateSpeed = 0.0005
@@ -211,7 +208,6 @@ class GameViewController: UIViewController {
   }
   
   private func indicateSuccess() {
-    
     let animation = CASpringAnimation(keyPath: "transform.scale")
     animation.fromValue = 0.8
     animation.toValue = 1
@@ -220,8 +216,7 @@ class GameViewController: UIViewController {
     animation.duration = 0.8
     animation.beginTime = CACurrentMediaTime()
     animation.fillMode = CAMediaTimingFillMode.backwards
-    
-    self.scoreLabel.layer.add(animation, forKey: nil)
+    scoreLabel.layer.add(animation, forKey: nil)
   }
   
   private func indicateFailure() {
@@ -244,6 +239,7 @@ class GameViewController: UIViewController {
     })
   }
   
+  /**Needed to refresh state after PlayAgain is selected in GameOver VC */
   func refreshState() {
     score.setScore(newValue: 0)
     lives = 3
@@ -256,6 +252,34 @@ class GameViewController: UIViewController {
     for fadedLabel in fadedLabels {
       fadedLabel.removeFromSuperview()
     }
+  }
+  
+  func applyColorScheme() {
+    
+    view.backgroundColor = ColorScheme.backgroundColor
+    aLabel.textColor = ColorScheme.primaryFontColor
+    bLabel.textColor = ColorScheme.primaryFontColor
+    responseLabel.textColor = ColorScheme.primaryFontColor
+    operationLabel.textColor = ColorScheme.primaryFontColor
+    equalsLabel.textColor = ColorScheme.primaryFontColor
+    scoreLabel.textColor = ColorScheme.primaryFontColor
+    
+    for button in roundButtons {
+      button.backgroundColor = ColorScheme.primaryDigitButtonColor
+    }
+    
+    clearButton.backgroundColor = ColorScheme.backgroundColor
+    clearButton.setTitleColor(ColorScheme.secondaryCircularButtonTextColor, for: .normal)
+    enterButton.backgroundColor = ColorScheme.backgroundColor
+    enterButton.setTitleColor(ColorScheme.secondaryCircularButtonTextColor, for: .normal)
+    clearButton.layer.borderColor = UIColor.lightGray.cgColor
+    clearButton.layer.borderWidth = 1
+    enterButton.layer.borderColor = UIColor.lightGray.cgColor
+    enterButton.layer.borderWidth = 1
+    
+    progressBar.trackTintColor = ColorScheme.progressBarTrackColor
+    progressBar.progressTintColor = ColorScheme.progressBarBackgroundColor
+    pauseButton.setTitleColor(ColorScheme.secondaryButtonFontColor, for: .normal)
   }
   
   //MARK: IBActions
@@ -273,7 +297,7 @@ class GameViewController: UIViewController {
   
   @IBAction func enterButtonPressed(_ sender: UIButton) {
     progress = 0.0
-    progressBar.trackTintColor = .white
+    progressBar.trackTintColor = ColorScheme.progressBarTrackColor
     if (String(task.result) == responseString) {
       timer.invalidate()
       indicateSuccess()
@@ -322,6 +346,7 @@ class GameViewController: UIViewController {
   //MARK: Navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let destination = segue.destination as? GameOverViewController {
+      progressBar.setProgress(0, animated: false)
       destination.displayedScore = score.getScore()
       destination.wrongAnswersArray = wrongTasksArray
     }

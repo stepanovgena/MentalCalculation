@@ -9,12 +9,22 @@
 import UIKit
 
 class PauseGameViewController: UIViewController {
+  @IBOutlet weak var resumeButton: CornerRadiusButton!
+  @IBOutlet weak var backButton: CornerRadiusButton!
   
   var didClose: (() -> Void)?
   
   override func viewDidLoad() {
         super.viewDidLoad()
+        applyColorScheme()
     }
+  
+  func applyColorScheme() {
+    resumeButton.backgroundColor = ColorScheme.actionButtonFillColor
+    resumeButton.setTitleColor(ColorScheme.actionButtonTextColor, for: .normal)
+    backButton.backgroundColor = ColorScheme.secondaryButtonFillColor
+    backButton.setTitleColor(ColorScheme.secondaryButtonFontColor, for: .normal)
+  }
   
   @IBAction func resumeButtonPressed(_ sender: Any) {
     let navigationController = self.presentingViewController as? UINavigationController 

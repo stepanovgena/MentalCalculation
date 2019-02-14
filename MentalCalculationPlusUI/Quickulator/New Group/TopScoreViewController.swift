@@ -10,16 +10,27 @@ import UIKit
 
 class TopScoreViewController: UIViewController {
   @IBOutlet weak var topScoreLabel: UILabel!
+  @IBOutlet weak var backButton: CornerRadiusButton!
+  @IBOutlet weak var resetButton: UIButton!
   
   private let score = Score()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    applyColorScheme()
     showScore()
   }
   
   func showScore() {
     topScoreLabel.text = "\u{1F3C6}Top score: \(score.getTopScore())"
+  }
+  
+  func applyColorScheme() {
+    view.backgroundColor = ColorScheme.backgroundColor
+    resetButton.setTitleColor(ColorScheme.secondaryButtonFontColor, for: .normal)
+    topScoreLabel.textColor = ColorScheme.primaryFontColor
+    backButton.backgroundColor = ColorScheme.actionButtonFillColor
+    backButton.setTitleColor(ColorScheme.actionButtonTextColor, for: .normal)
   }
   
   @IBAction func didTapResetTopScore(_ sender: UIButton) {

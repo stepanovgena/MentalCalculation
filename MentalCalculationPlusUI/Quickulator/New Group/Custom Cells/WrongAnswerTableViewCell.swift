@@ -34,10 +34,10 @@ class WrongAnswerTableViewCell: UITableViewCell {
 //    mistake.text = "4444"
 //    correctValue.text = "5555"
     
-    contentView.backgroundColor = .black
+    contentView.backgroundColor = ColorScheme.backgroundColor
    
     for label in labels {
-      label.textColor = .white
+      label.textColor = ColorScheme.primaryFontColor
       label.numberOfLines = 1
       label.adjustsFontSizeToFitWidth = true
       label.minimumScaleFactor = 0.1

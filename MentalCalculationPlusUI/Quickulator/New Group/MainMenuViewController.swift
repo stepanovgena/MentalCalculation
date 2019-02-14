@@ -13,20 +13,25 @@ class MainMenuViewController: UIViewController {
   @IBOutlet weak var gameLevelSegmentedControl: UISegmentedControl!
   @IBOutlet weak var limitedTimeSwitch: UISwitch!
   @IBOutlet weak var playButton: UIButton!
-  //@IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet weak var mainTitle: UILabel!
+  @IBOutlet weak var chooseOperationTitle: UILabel!
+  @IBOutlet weak var limitedTimeTitle: UILabel!
+  @IBOutlet weak var chooseLevelTitle: UILabel!
+  @IBOutlet weak var topScoreButton: UIButton!
+  
   
   override func viewWillAppear(_ animated: Bool) {
-    self.navigationController?.setNavigationBarHidden(true, animated: animated)
     super.viewWillAppear(animated)
+    self.navigationController?.setNavigationBarHidden(true, animated: animated)
   }
   
-  override var preferredStatusBarStyle : UIStatusBarStyle {
-    return .lightContent
-  }
+//  override var preferredStatusBarStyle : UIStatusBarStyle {
+//    return .lightContent
+//  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    applyColorScheme()
    // scrollView.contentSize = UIScreen.main.bounds.size
    
     
@@ -34,6 +39,20 @@ class MainMenuViewController: UIViewController {
     gameCategorySegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font],
                                             for: .normal)
 
+  }
+  
+  func applyColorScheme() {
+    view.backgroundColor = ColorScheme.backgroundColor
+    gameCategorySegmentedControl.tintColor = ColorScheme.secondaryFillColor
+    gameLevelSegmentedControl.tintColor = ColorScheme.secondaryFillColor
+    playButton.backgroundColor = ColorScheme.secondaryFillColor
+    playButton.setTitleColor(ColorScheme.secondaryFontColor, for: .normal)
+    mainTitle.textColor = ColorScheme.primaryFontColor
+    chooseOperationTitle.textColor = ColorScheme.primaryFontColor
+    limitedTimeTitle.textColor = ColorScheme.primaryFontColor
+    chooseLevelTitle.textColor = ColorScheme.primaryFontColor
+    topScoreButton.setTitleColor(ColorScheme.secondaryButtonFontColor, for: .normal)
+    
   }
   
   @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {

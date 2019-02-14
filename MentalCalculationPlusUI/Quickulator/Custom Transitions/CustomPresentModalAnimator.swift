@@ -39,14 +39,11 @@ final class CustomPresentModalAnimator: NSObject, UIViewControllerAnimatedTransi
     blurView.removeFromSuperview()
     containerView.addSubview(toView)
     
-    //prepare initial state for the sliding effect
-   // toView.transform = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height)
+    //set initial state of modal vc
     toView.alpha = 0.0
-    
-    //animate sliding from bottom
+    //animate transition
     UIView.animate(withDuration: duration,
                    animations: {
-                   // toView.transform = CGAffineTransform(translationX: 0, y: 0)
                     toView.alpha = 1.0
     },
                    completion: { _ in
