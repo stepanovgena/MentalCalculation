@@ -19,7 +19,7 @@ class CustomInteractiveTransition: UIPercentDrivenInteractiveTransition {
                                                         action: #selector(handleScreenEdgeGesture(_:)))
       recognizer.edges = [.left]
       viewController?.view.addGestureRecognizer(recognizer)
-    }
+   }
   }
 
   @objc func handleScreenEdgeGesture(_ recognizer: UIScreenEdgePanGestureRecognizer) {
@@ -27,6 +27,13 @@ class CustomInteractiveTransition: UIPercentDrivenInteractiveTransition {
     case .began:
       hasStarted = true
       viewController?.navigationController?.popViewController(animated: true)
+
+      if viewController?.navigationController?.viewControllers.count ?? 1 > 1 {
+      if let gameViewController = viewController?.navigationController?.viewControllers[1] as? GameViewController {
+        gameViewController.refreshState()
+        }
+      }
+      
     case .changed:
       let translation = recognizer.translation(in: recognizer.view)
       let relativeTranslation = translation.x / (recognizer.view?.bounds.width ?? 1)

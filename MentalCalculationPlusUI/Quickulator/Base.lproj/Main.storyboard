@@ -98,8 +98,8 @@
                                     <constraint firstAttribute="height" constant="1" id="j4S-wO-gcW"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXI-0m-iOY">
-                                <rect key="frame" x="15.999999999999993" y="341.33333333333331" width="127.33333333333331" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXI-0m-iOY">
+                                <rect key="frame" x="16" y="341.33333333333331" width="98" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -232,6 +232,7 @@
                             <constraint firstItem="6Xr-IU-t4j" firstAttribute="trailing" secondItem="wG3-G9-ddY" secondAttribute="trailing" constant="8" id="BUL-Sk-b8U"/>
                             <constraint firstItem="wG3-G9-ddY" firstAttribute="top" secondItem="6Xr-IU-t4j" secondAttribute="top" constant="16" id="E25-6e-zrE"/>
                             <constraint firstItem="Qqa-tl-h3V" firstAttribute="centerX" secondItem="U7B-YA-Pxu" secondAttribute="centerX" id="G0d-Oc-He2"/>
+                            <constraint firstItem="wG3-G9-ddY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Xr-IU-t4j" secondAttribute="leading" constant="16" id="K5a-4d-hVi"/>
                             <constraint firstItem="6Xr-IU-t4j" firstAttribute="bottom" secondItem="hFy-mk-qiT" secondAttribute="bottom" constant="32" id="Zle-LZ-YTC"/>
                             <constraint firstItem="hFy-mk-qiT" firstAttribute="leading" secondItem="6Xr-IU-t4j" secondAttribute="leading" constant="16" id="aFy-lb-hh9"/>
                             <constraint firstItem="6Xr-IU-t4j" firstAttribute="trailing" secondItem="hFy-mk-qiT" secondAttribute="trailing" constant="16" id="hiR-wt-znV"/>
@@ -642,9 +643,6 @@
                             <constraint firstItem="51r-Jo-RWY" firstAttribute="trailing" secondItem="Ik3-D3-B7x" secondAttribute="trailing" constant="8" id="ySR-I9-9eo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="51r-Jo-RWY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="73W-IU-cgr" appends="YES" id="f5D-VA-k3X"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="aLabel" destination="R5o-8l-VJh" id="xj8-zW-dfs"/>
@@ -674,12 +672,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trm-wl-yAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="OD2-YX-XtC" userLabel="Exit" sceneMemberID="exit"/>
-                <swipeGestureRecognizer direction="right" id="73W-IU-cgr">
-                    <connections>
-                        <segue destination="OD2-YX-XtC" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="yNG-4y-id9"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4296.8000000000002" y="-331.0344827586207"/>
         </scene>
@@ -765,6 +757,7 @@
                             <constraint firstItem="feh-Mr-opw" firstAttribute="leading" secondItem="k6K-bt-wuS" secondAttribute="leading" constant="16" id="9dI-4H-cH7"/>
                             <constraint firstItem="PXi-fG-5Jv" firstAttribute="leading" secondItem="k6K-bt-wuS" secondAttribute="leading" constant="24" id="AlT-d6-Ey6"/>
                             <constraint firstItem="k6K-bt-wuS" firstAttribute="trailing" secondItem="qbh-Ea-vmh" secondAttribute="trailing" constant="16" id="BJX-nz-zNl"/>
+                            <constraint firstItem="k6K-bt-wuS" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PXi-fG-5Jv" secondAttribute="trailing" constant="16" id="CNt-2c-nld"/>
                             <constraint firstItem="k6K-bt-wuS" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5CG-eW-t5j" secondAttribute="trailing" constant="16" id="EXh-MH-OCT"/>
                             <constraint firstItem="qbh-Ea-vmh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="t4G-7F-89L" secondAttribute="bottom" constant="16" id="LMp-3Z-A22"/>
                             <constraint firstItem="PXi-fG-5Jv" firstAttribute="top" secondItem="kCT-oV-qPn" secondAttribute="bottom" constant="64" id="UhM-KD-6N7"/>
@@ -776,7 +769,6 @@
                             <constraint firstItem="feh-Mr-opw" firstAttribute="top" secondItem="qbh-Ea-vmh" secondAttribute="bottom" constant="16" id="jWW-2x-cNc"/>
                             <constraint firstItem="k6K-bt-wuS" firstAttribute="trailing" secondItem="feh-Mr-opw" secondAttribute="trailing" constant="16" id="m6C-gf-xZv"/>
                             <constraint firstItem="t4G-7F-89L" firstAttribute="leading" secondItem="k6K-bt-wuS" secondAttribute="leading" constant="8" id="rTs-9B-joY"/>
-                            <constraint firstItem="feh-Mr-opw" firstAttribute="centerX" secondItem="iA8-Mj-Uk9" secondAttribute="centerX" id="wh7-FA-4uB"/>
                             <constraint firstItem="kCT-oV-qPn" firstAttribute="top" secondItem="k6K-bt-wuS" secondAttribute="top" constant="60" id="zmK-e4-lA1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k6K-bt-wuS"/>
@@ -794,10 +786,10 @@
             </objects>
             <point key="canvasLocation" x="5424.8000000000002" y="-331.0344827586207"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="ne9-SO-Dt2">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="htC-tt-RQy" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="htC-tt-RQy" customClass="CustomNavigationController" customModule="Quickulator" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TO0-hg-GSZ">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>

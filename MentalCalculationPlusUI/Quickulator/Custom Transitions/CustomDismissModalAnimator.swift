@@ -10,7 +10,7 @@ import UIKit
 
 final class CustomDismissModalAnimator: NSObject, UIViewControllerAnimatedTransitioning {
   
-  let duration = 0.05
+  let duration = 0.3
   var presenting = true
   var originFrame = CGRect.zero
   
@@ -32,16 +32,11 @@ final class CustomDismissModalAnimator: NSObject, UIViewControllerAnimatedTransi
     fromView.alpha = 1
     
     UIView.animate(withDuration: duration,
-                   animations: {
-//                    fromView.transform = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height)
-                    fromView.alpha = 0
-                    
-    },
+                   animations: { fromView.alpha = 0 },
                    completion: { _ in
                     transitionContext.completeTransition(true)
-                    //fromView.transform = .identity
     })
-  }
+   }
   }
   
   

@@ -26,10 +26,6 @@ class GameOverViewController: UIViewController, UITableViewDataSource {
     applyColorScheme()
     wrongTasksTableView.register(UINib(nibName: "WrongAnswerTableViewCell", bundle: nil), forCellReuseIdentifier: "wrongAnswerCellReuseIdentifier")
     
-    let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(popToViewController))
-    swipeRight.direction = .right
-    self.view.addGestureRecognizer(swipeRight)
-    
     scoreLabel.text = "\u{1F3C6}Your score: \(displayedScore)"
   }
   
@@ -88,7 +84,4 @@ class GameOverViewController: UIViewController, UITableViewDataSource {
   @IBAction func didTapPlayAgain(_ sender: Any) {
     popToViewController(index: 1)
   }
-  
-  
- 
 }

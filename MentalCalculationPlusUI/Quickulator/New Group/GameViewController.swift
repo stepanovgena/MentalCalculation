@@ -245,6 +245,8 @@ class GameViewController: UIViewController {
     lives = 3
     updateViewFromModel()
     wrongTasksArray.removeAll()
+    updateTask()
+    updateViewFromModel()
     for label in heartLabels {
       label.transform = .identity
       label.alpha = 1

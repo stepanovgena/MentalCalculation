@@ -20,8 +20,6 @@ final class CustomPopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     guard let destination = transitionContext.viewController(forKey: .to) else { return }
     
     let width = source.view.frame.width
-    let height = source.view.frame.height
-    
     let initialTranslation = CGAffineTransform(translationX: -100, y: 0)
     let initialScale = CGAffineTransform(scaleX: 0.8, y: 0.8)
     
@@ -29,7 +27,7 @@ final class CustomPopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     transitionContext.containerView.sendSubviewToBack(destination.view)
     destination.view.frame = source.view.frame
     destination.view.transform = initialScale.concatenating(initialTranslation)
-    
+   
     UIView.animateKeyframes(withDuration: self.transitionDuration(using: transitionContext),
                             delay: 0,
                             options: .calculationModePaced,
@@ -41,18 +39,19 @@ final class CustomPopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                                     let scale = CGAffineTransform(scaleX: 1, y: 1)
                                     destination.view.transform = scale.concatenating(translation)
                               })
-                          
-                              
+                            
                           UIView.addKeyframe(withRelativeStartTime: 0,
                                     relativeDuration: 0.8,
                                     animations: {
-                                    let translation = CGAffineTransform(translationX: width/2 + height/2, y: -width/2)
-                                    let rotation = CGAffineTransform(rotationAngle: -90 * .pi/180)
-                                    source.view.transform = rotation.concatenating(translation)
+                                    let translation = CGAffineTransform(translationX: width, y: 0)
+                                    source.view.transform = translation
                               })
     }) { finished in
       if finished && !transitionContext.transitionWasCancelled {
          destination.view.transform = .identity
+      } else if (transitionContext.transitionWasCancelled) {
+        destination.view.transform = .identity
+        source.view.transform = .identity
       }
       transitionContext.completeTransition(finished && !transitionContext.transitionWasCancelled)
     }

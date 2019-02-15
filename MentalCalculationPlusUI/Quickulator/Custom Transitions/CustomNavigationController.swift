@@ -29,7 +29,7 @@ class CustomNavigationController: UINavigationController, UINavigationController
       return CustomPushAnimator()
     }
     else if (operation == .pop) {
-      if navigationController.viewControllers.first != toVC {
+      if (navigationController.viewControllers.first != toVC) {
         interactiveTransition.viewController = toVC
       }
       return CustomPopAnimator()
