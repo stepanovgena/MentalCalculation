@@ -39,7 +39,7 @@ class CustomInteractiveTransition: UIPercentDrivenInteractiveTransition {
       let relativeTranslation = translation.x / (recognizer.view?.bounds.width ?? 1)
       let progress = max(0, min(1, relativeTranslation))
       
-      shouldFinish = progress > 0.33
+      shouldFinish = progress > 0.5
       
       self.update(progress)
     case .ended:

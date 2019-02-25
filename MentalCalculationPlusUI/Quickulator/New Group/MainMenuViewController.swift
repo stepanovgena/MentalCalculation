@@ -20,10 +20,7 @@ class MainMenuViewController: UIViewController {
   @IBOutlet weak var topScoreButton: UIButton!
   
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    self.navigationController?.setNavigationBarHidden(true, animated: animated)
-  }
+ 
   
 //  override var preferredStatusBarStyle : UIStatusBarStyle {
 //    return .lightContent
@@ -33,12 +30,23 @@ class MainMenuViewController: UIViewController {
     super.viewDidLoad()
     applyColorScheme()
    // scrollView.contentSize = UIScreen.main.bounds.size
-   
+   print("Main Menu View did load")
     
     let font = UIFont.systemFont(ofSize: 28)
     gameCategorySegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font],
                                             for: .normal)
 
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.navigationController?.setNavigationBarHidden(true, animated: animated)
+  
+    print("Main Menu View will appear")
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    print("Main Menu View did appear")
   }
   
   func applyColorScheme() {

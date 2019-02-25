@@ -26,7 +26,7 @@ final class CustomDismissModalAnimator: NSObject, UIViewControllerAnimatedTransi
     let toView = transitionContext.view(forKey: .to)!
     
     fromView.clipsToBounds = false
-    toView.clipsToBounds = false
+    toView.clipsToBounds = true
     containerView.addSubview(toView)
     containerView.addSubview(fromView)
     fromView.alpha = 1
@@ -35,6 +35,7 @@ final class CustomDismissModalAnimator: NSObject, UIViewControllerAnimatedTransi
                    animations: { fromView.alpha = 0 },
                    completion: { _ in
                     transitionContext.completeTransition(true)
+                    print("dismiss transition complete")
     })
    }
   }
