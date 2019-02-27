@@ -7,12 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		962F42962214580700648609 /* WrongAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F42942214580700648609 /* WrongAnswerTableViewCell.swift */; };
+		962F42972214580700648609 /* WrongAnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962F42952214580700648609 /* WrongAnswerTableViewCell.xib */; };
+		962F42992214664D00648609 /* CrossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F42982214664D00648609 /* CrossView.swift */; };
 		963A8F66219CAF520019CD30 /* TopScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A8F65219CAF520019CD30 /* TopScoreViewController.swift */; };
 		963A8F68219CB0DC0019CD30 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */; };
 		96521CEC21C1A4090005B24B /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521CEB21C1A4090005B24B /* RoundButton.swift */; };
 		96521CEE21C1ADC50005B24B /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521CED21C1ADC50005B24B /* CornerRadiusButton.swift */; };
+		968FC3F7220C5B3600D7B0DB /* PauseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FC3F6220C5B3600D7B0DB /* PauseGameViewController.swift */; };
+		968FC3FF220C6A3800D7B0DB /* CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FC3F9220C6A3700D7B0DB /* CustomInteractiveTransition.swift */; };
+		968FC400220C6A3800D7B0DB /* CustomPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FC3FA220C6A3700D7B0DB /* CustomPushAnimator.swift */; };
+		968FC401220C6A3800D7B0DB /* CustomPresentModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FC3FB220C6A3700D7B0DB /* CustomPresentModalAnimator.swift */; };
+		968FC402220C6A3800D7B0DB /* CustomPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FC3FC220C6A3700D7B0DB /* CustomPopAnimator.swift */; };
+		968FC403220C6A3800D7B0DB /* CustomDismissModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FC3FD220C6A3700D7B0DB /* CustomDismissModalAnimator.swift */; };
+		968FC404220C6A3800D7B0DB /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FC3FE220C6A3700D7B0DB /* CustomNavigationController.swift */; };
 		96B0B00021B1F21F000D1E8D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B0AFFF21B1F21F000D1E8D /* Default-568h@2x.png */; };
 		96D486BA21A0AF91006BA0D7 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D486B921A0AF91006BA0D7 /* Distribution.swift */; };
+		96F26DC72215917900CB0493 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F26DC62215917900CB0493 /* ColorScheme.swift */; };
 		96F9FBE4219220E4003E80B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FBE3219220E4003E80B4 /* AppDelegate.swift */; };
 		96F9FBE6219220E4003E80B4 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */; };
 		96F9FBE9219220E4003E80B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F9FBE7219220E4003E80B4 /* Main.storyboard */; };
@@ -53,12 +64,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		962F42942214580700648609 /* WrongAnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerTableViewCell.swift; sourceTree = "<group>"; };
+		962F42952214580700648609 /* WrongAnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerTableViewCell.xib; sourceTree = "<group>"; };
+		962F42982214664D00648609 /* CrossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossView.swift; sourceTree = "<group>"; };
 		963A8F65219CAF520019CD30 /* TopScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreViewController.swift; sourceTree = "<group>"; };
 		963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		96521CEB21C1A4090005B24B /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		96521CED21C1ADC50005B24B /* CornerRadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
+		968FC3F6220C5B3600D7B0DB /* PauseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseGameViewController.swift; sourceTree = "<group>"; };
+		968FC3F9220C6A3700D7B0DB /* CustomInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInteractiveTransition.swift; sourceTree = "<group>"; };
+		968FC3FA220C6A3700D7B0DB /* CustomPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPushAnimator.swift; sourceTree = "<group>"; };
+		968FC3FB220C6A3700D7B0DB /* CustomPresentModalAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentModalAnimator.swift; sourceTree = "<group>"; };
+		968FC3FC220C6A3700D7B0DB /* CustomPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopAnimator.swift; sourceTree = "<group>"; };
+		968FC3FD220C6A3700D7B0DB /* CustomDismissModalAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDismissModalAnimator.swift; sourceTree = "<group>"; };
+		968FC3FE220C6A3700D7B0DB /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		96B0AFFF21B1F21F000D1E8D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		96D486B921A0AF91006BA0D7 /* Distribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
+		96F26DC62215917900CB0493 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		96F9FBE0219220E4003E80B4 /* Quickulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quickulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F9FBE3219220E4003E80B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -117,8 +139,47 @@
 			children = (
 				96521CEB21C1A4090005B24B /* RoundButton.swift */,
 				96521CED21C1ADC50005B24B /* CornerRadiusButton.swift */,
+				962F42982214664D00648609 /* CrossView.swift */,
+				96F26DC62215917900CB0493 /* ColorScheme.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		968FC3F8220C6A3700D7B0DB /* Custom Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				968FC3FE220C6A3700D7B0DB /* CustomNavigationController.swift */,
+				968FC3F9220C6A3700D7B0DB /* CustomInteractiveTransition.swift */,
+				968FC3FA220C6A3700D7B0DB /* CustomPushAnimator.swift */,
+				968FC3FC220C6A3700D7B0DB /* CustomPopAnimator.swift */,
+				968FC3FB220C6A3700D7B0DB /* CustomPresentModalAnimator.swift */,
+				968FC3FD220C6A3700D7B0DB /* CustomDismissModalAnimator.swift */,
+			);
+			path = "Custom Transitions";
+			sourceTree = "<group>";
+		};
+		96CBEF922203863700FE4E9A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				96F9FC3B21938616003E80B4 /* GameViewController.swift */,
+				968FC3F6220C5B3600D7B0DB /* PauseGameViewController.swift */,
+				963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */,
+				96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */,
+				96F9FC3721923555003E80B4 /* SelectCategoryViewController.swift */,
+				963A8F65219CAF520019CD30 /* TopScoreViewController.swift */,
+			);
+			name = "View Controllers";
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		96D5CE712214522F00FF8103 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				962F42942214580700648609 /* WrongAnswerTableViewCell.swift */,
+				962F42952214580700648609 /* WrongAnswerTableViewCell.xib */,
+			);
+			name = "Custom Cells";
+			path = "New Group/Custom Cells";
 			sourceTree = "<group>";
 		};
 		96F9FBD7219220E4003E80B4 = {
@@ -145,14 +206,12 @@
 		96F9FBE2219220E4003E80B4 /* Quickulator */ = {
 			isa = PBXGroup;
 			children = (
+				968FC3F8220C6A3700D7B0DB /* Custom Transitions */,
 				96521CEA21C1A3BF0005B24B /* CustomView */,
 				96F9FC1421922178003E80B4 /* Model */,
+				96D5CE712214522F00FF8103 /* Custom Cells */,
+				96CBEF922203863700FE4E9A /* View Controllers */,
 				96F9FBE3219220E4003E80B4 /* AppDelegate.swift */,
-				96F9FC3B21938616003E80B4 /* GameViewController.swift */,
-				963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */,
-				96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */,
-				96F9FC3721923555003E80B4 /* SelectCategoryViewController.swift */,
-				963A8F65219CAF520019CD30 /* TopScoreViewController.swift */,
 				96F9FBE7219220E4003E80B4 /* Main.storyboard */,
 				96F9FBED219220E6003E80B4 /* Assets.xcassets */,
 				96F9FBEF219220E6003E80B4 /* LaunchScreen.storyboard */,
@@ -304,6 +363,7 @@
 			files = (
 				96F9FBF1219220E6003E80B4 /* LaunchScreen.storyboard in Resources */,
 				96B0B00021B1F21F000D1E8D /* Default-568h@2x.png in Resources */,
+				962F42972214580700648609 /* WrongAnswerTableViewCell.xib in Resources */,
 				96F9FBEE219220E6003E80B4 /* Assets.xcassets in Resources */,
 				96F9FBE9219220E4003E80B4 /* Main.storyboard in Resources */,
 			);
@@ -334,22 +394,32 @@
 				96F9FBE6219220E4003E80B4 /* MainMenuViewController.swift in Sources */,
 				96F9FC3821923555003E80B4 /* SelectCategoryViewController.swift in Sources */,
 				96F9FC2F2192222F003E80B4 /* MultiplicationTask.swift in Sources */,
+				962F42992214664D00648609 /* CrossView.swift in Sources */,
 				96521CEC21C1A4090005B24B /* RoundButton.swift in Sources */,
 				963A8F68219CB0DC0019CD30 /* GameOverViewController.swift in Sources */,
 				96D486BA21A0AF91006BA0D7 /* Distribution.swift in Sources */,
 				96F9FC322192222F003E80B4 /* SubstractionTask.swift in Sources */,
 				96F9FC3C21938616003E80B4 /* GameViewController.swift in Sources */,
+				962F42962214580700648609 /* WrongAnswerTableViewCell.swift in Sources */,
 				96F9FC282192222F003E80B4 /* Score.swift in Sources */,
 				96F9FC302192222F003E80B4 /* Solvable.swift in Sources */,
 				96F9FBE4219220E4003E80B4 /* AppDelegate.swift in Sources */,
+				968FC404220C6A3800D7B0DB /* CustomNavigationController.swift in Sources */,
+				968FC3F7220C5B3600D7B0DB /* PauseGameViewController.swift in Sources */,
+				96F26DC72215917900CB0493 /* ColorScheme.swift in Sources */,
 				96521CEE21C1ADC50005B24B /* CornerRadiusButton.swift in Sources */,
 				96F9FC2C2192222F003E80B4 /* GameCategory.swift in Sources */,
 				963A8F66219CAF520019CD30 /* TopScoreViewController.swift in Sources */,
+				968FC3FF220C6A3800D7B0DB /* CustomInteractiveTransition.swift in Sources */,
 				96F9FC332192222F003E80B4 /* CoinFlip.swift in Sources */,
+				968FC403220C6A3800D7B0DB /* CustomDismissModalAnimator.swift in Sources */,
 				96F9FC292192222F003E80B4 /* RandomNumberFactory.swift in Sources */,
 				96F9FC2D2192222F003E80B4 /* AdditionTask.swift in Sources */,
 				96F9FC2E2192222F003E80B4 /* DivisionTask.swift in Sources */,
 				96F9FC342192222F003E80B4 /* Game.swift in Sources */,
+				968FC401220C6A3800D7B0DB /* CustomPresentModalAnimator.swift in Sources */,
+				968FC402220C6A3800D7B0DB /* CustomPopAnimator.swift in Sources */,
+				968FC400220C6A3800D7B0DB /* CustomPushAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +597,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQK53PF52L;
 				INFOPLIST_FILE = Quickulator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,6 +616,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQK53PF52L;
 				INFOPLIST_FILE = Quickulator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
