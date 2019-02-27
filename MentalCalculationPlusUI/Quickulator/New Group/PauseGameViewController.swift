@@ -18,7 +18,7 @@ class PauseGameViewController: UIViewController {
         super.viewDidLoad()
         applyColorScheme()
     }
-  
+    
   func applyColorScheme() {
     resumeButton.backgroundColor = ColorScheme.actionButtonFillColor
     resumeButton.setTitleColor(ColorScheme.actionButtonTextColor, for: .normal)
