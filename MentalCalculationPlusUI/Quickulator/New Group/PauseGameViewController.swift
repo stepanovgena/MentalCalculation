@@ -42,6 +42,6 @@ class PauseGameViewController: UIViewController {
   @IBAction func backToMenuButtonPressed(_ sender: Any) {
     didClose?()
     let navigationController = self.presentingViewController as? UINavigationController
-    navigationController?.popToRootViewController(animated: true)
+    navigationController?.popToRootViewController(animated: false)
   }
 }
