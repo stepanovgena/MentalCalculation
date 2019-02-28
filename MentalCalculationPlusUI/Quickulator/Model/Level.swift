@@ -24,5 +24,4 @@ extension Level {
     }
     return a
   }
-  
 }

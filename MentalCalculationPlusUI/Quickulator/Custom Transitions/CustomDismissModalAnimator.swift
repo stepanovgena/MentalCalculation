@@ -42,7 +42,6 @@ final class CustomDismissModalAnimator: NSObject, UIViewControllerAnimatedTransi
                    completion: { _ in
                     
                     transitionContext.completeTransition(true)
-                    print("dismiss transition complete")
     })
    }
   }

@@ -1,0 +1,135 @@
+
+/* Class = "UILabel"; text = "lbl"; ObjectID = "0xm-dN-9IE"; */
+"0xm-dN-9IE.text" = "lbl";
+
+/* Class = "UILabel"; text = "You're quite awesome!"; ObjectID = "5CG-eW-t5j"; */
+"5CG-eW-t5j.text" = "You're quite awesome!";
+
+/* Class = "UIButton"; normalTitle = "1"; ObjectID = "Beq-IZ-SXX"; */
+"Beq-IZ-SXX.normalTitle" = "1";
+
+/* Class = "UIButton"; normalTitle = "5"; ObjectID = "CdE-vs-yRh"; */
+"CdE-vs-yRh.normalTitle" = "5";
+
+/* Class = "UILabel"; text = "Limited time"; ObjectID = "E58-7k-kYH"; */
+"E58-7k-kYH.text" = "Limited time";
+
+/* Class = "UIButton"; normalTitle = "9"; ObjectID = "FhT-eB-0QT"; */
+"FhT-eB-0QT.normalTitle" = "9";
+
+/* Class = "UILabel"; text = " ?  "; ObjectID = "GFJ-Yc-H41"; */
+"GFJ-Yc-H41.text" = " ?  ";
+
+/* Class = "UILabel"; text = "scoreLabel"; ObjectID = "H9j-2H-Ypc"; */
+"H9j-2H-Ypc.text" = "scoreLabel";
+
+/* Class = "UILabel"; text = "="; ObjectID = "ISR-RH-HYK"; */
+"ISR-RH-HYK.text" = "=";
+
+/* Class = "UIButton"; normalTitle = "Pause Game"; ObjectID = "KSO-x4-sGE"; */
+"KSO-x4-sGE.normalTitle" = "Pause Game";
+
+/* Class = "UIButton"; normalTitle = "6"; ObjectID = "L5R-RC-HuI"; */
+"L5R-RC-HuI.normalTitle" = "6";
+
+/* Class = "UIButton"; normalTitle = "7"; ObjectID = "LIy-vR-tKp"; */
+"LIy-vR-tKp.normalTitle" = "7";
+
+/* Class = "UILabel"; text = "Mistakes:"; ObjectID = "PXi-fG-5Jv"; */
+"PXi-fG-5Jv.text" = "Mistakes:";
+
+/* Class = "UIButton"; normalTitle = "0"; ObjectID = "Q7t-Tt-qBL"; */
+"Q7t-Tt-qBL.normalTitle" = "0";
+
+/* Class = "UILabel"; text = "topScoreLabel"; ObjectID = "Qqa-tl-h3V"; */
+"Qqa-tl-h3V.text" = "topScoreLabel";
+
+/* Class = "UILabel"; text = "a"; ObjectID = "R5o-8l-VJh"; */
+"R5o-8l-VJh.text" = "a";
+
+/* Class = "UILabel"; text = "b"; ObjectID = "TvX-0N-XZv"; */
+"TvX-0N-XZv.text" = "b";
+
+/* Class = "UISegmentedControl"; ZIp-dC-fh9.segmentTitles[0] = "+"; ObjectID = "ZIp-dC-fh9"; */
+"ZIp-dC-fh9.segmentTitles[0]" = "+";
+
+/* Class = "UISegmentedControl"; ZIp-dC-fh9.segmentTitles[1] = "-"; ObjectID = "ZIp-dC-fh9"; */
+"ZIp-dC-fh9.segmentTitles[1]" = "-";
+
+/* Class = "UISegmentedControl"; ZIp-dC-fh9.segmentTitles[2] = "*"; ObjectID = "ZIp-dC-fh9"; */
+"ZIp-dC-fh9.segmentTitles[2]" = "*";
+
+/* Class = "UISegmentedControl"; ZIp-dC-fh9.segmentTitles[3] = "/"; ObjectID = "ZIp-dC-fh9"; */
+"ZIp-dC-fh9.segmentTitles[3]" = "/";
+
+/* Class = "UILabel"; text = "+"; ObjectID = "ah0-uo-poJ"; */
+"ah0-uo-poJ.text" = "+";
+
+/* Class = "UIButton"; normalTitle = "Play"; ObjectID = "awD-qE-DdG"; */
+"awD-qE-DdG.normalTitle" = "Play";
+
+/* Class = "UIButton"; normalTitle = "Back to Menu"; ObjectID = "cyd-fd-ndc"; */
+"cyd-fd-ndc.normalTitle" = "Back to Menu";
+
+/* Class = "UILabel"; text = "Let's Do Math"; ObjectID = "eUG-ZN-a7J"; */
+"eUG-ZN-a7J.text" = "Let's Do Math";
+
+/* Class = "UILabel"; text = "Choose level"; ObjectID = "eXI-0m-iOY"; */
+"eXI-0m-iOY.text" = "Choose level";
+
+/* Class = "UIButton"; normalTitle = "Back to Menu"; ObjectID = "feh-Mr-opw"; */
+"feh-Mr-opw.normalTitle" = "Back to Menu";
+
+/* Class = "UIButton"; normalTitle = "Top Score"; ObjectID = "gUY-fT-mcD"; */
+"gUY-fT-mcD.normalTitle" = "Top Score";
+
+/* Class = "UIButton"; normalTitle = "Back to Menu"; ObjectID = "hFy-mk-qiT"; */
+"hFy-mk-qiT.normalTitle" = "Back to Menu";
+
+/* Class = "UIButton"; normalTitle = "Resume Game"; ObjectID = "hkY-xt-FRb"; */
+"hkY-xt-FRb.normalTitle" = "Resume Game";
+
+/* Class = "UILabel"; text = "lbl"; ObjectID = "hqa-a0-lq8"; */
+"hqa-a0-lq8.text" = "lbl";
+
+/* Class = "UILabel"; text = "lbl"; ObjectID = "jqj-mA-QzK"; */
+"jqj-mA-QzK.text" = "lbl";
+
+/* Class = "UIButton"; normalTitle = "4"; ObjectID = "kzZ-m5-yRJ"; */
+"kzZ-m5-yRJ.normalTitle" = "4";
+
+/* Class = "UILabel"; text = "What operation you want to practice today?"; ObjectID = "m9F-do-aEw"; */
+"m9F-do-aEw.text" = "What operation you want to practice today?";
+
+/* Class = "UISegmentedControl"; n62-Bq-TIL.segmentTitles[0] = "easy-peasy"; ObjectID = "n62-Bq-TIL"; */
+"n62-Bq-TIL.segmentTitles[0]" = "easy-peasy";
+
+/* Class = "UISegmentedControl"; n62-Bq-TIL.segmentTitles[1] = "normal"; ObjectID = "n62-Bq-TIL"; */
+"n62-Bq-TIL.segmentTitles[1]" = "normal";
+
+/* Class = "UISegmentedControl"; n62-Bq-TIL.segmentTitles[2] = "hard"; ObjectID = "n62-Bq-TIL"; */
+"n62-Bq-TIL.segmentTitles[2]" = "hard";
+
+/* Class = "UIButton"; normalTitle = "3"; ObjectID = "nDa-gH-BWC"; */
+"nDa-gH-BWC.normalTitle" = "3";
+
+/* Class = "UIButton"; normalTitle = "2"; ObjectID = "oRZ-LR-vId"; */
+"oRZ-LR-vId.normalTitle" = "2";
+
+/* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "po5-wZ-eaO"; */
+"po5-wZ-eaO.normalTitle" = "Clear";
+
+/* Class = "UIButton"; normalTitle = "Play again"; ObjectID = "qbh-Ea-vmh"; */
+"qbh-Ea-vmh.normalTitle" = "Play again";
+
+/* Class = "UIButton"; normalTitle = "8"; ObjectID = "rGW-qu-5yT"; */
+"rGW-qu-5yT.normalTitle" = "8";
+
+/* Class = "UIButton"; normalTitle = "Reset Top Score"; ObjectID = "wG3-G9-ddY"; */
+"wG3-G9-ddY.normalTitle" = "Reset Top Score";
+
+/* Class = "UILabel"; text = "ScoreLbl"; ObjectID = "wxQ-7v-enc"; */
+"wxQ-7v-enc.text" = "ScoreLbl";
+
+/* Class = "UIButton"; normalTitle = "Enter"; ObjectID = "zqm-1c-OTf"; */
+"zqm-1c-OTf.normalTitle" = "Enter";

@@ -18,11 +18,12 @@ class TopScoreViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     applyColorScheme()
+    localizeStrings()
     showScore()
   }
   
   func showScore() {
-    topScoreLabel.text = "\u{1F3C6}Top score: \(score.getTopScore())"
+    topScoreLabel.text = "\u{1F3C6}\(NSLocalizedString("Top Score", comment: "TopScore label")): \(score.getTopScore())"
   }
   
   func applyColorScheme() {
@@ -33,16 +34,22 @@ class TopScoreViewController: UIViewController {
     backButton.setTitleColor(ColorScheme.actionButtonTextColor, for: .normal)
   }
   
+  func localizeStrings() {
+    resetButton.setTitle(NSLocalizedString("Reset Top Score", comment: "Press button to reset top score"), for: .normal)
+    //topScoreLabel.text = NSLocalizedString("Top Score", comment: "Top score label")
+    backButton.setTitle(NSLocalizedString("Back to Menu", comment: "press button to return to main menu"), for: .normal)
+  }
+  
   @IBAction func didTapResetTopScore(_ sender: UIButton) {
     
-    let alertController = UIAlertController(title: "Reset Top Score", message:
-      "Do you really want to reset your top score to 0?", preferredStyle: .alert)
-    alertController.addAction(UIAlertAction(title: "Reset", style: .destructive) {(action:UIAlertAction) in
+    let alertController = UIAlertController(title: NSLocalizedString("Reset Top Score", comment: "Alert title"), message:
+      NSLocalizedString("Do you really want to reset your top score to 0?", comment: "Alert message"), preferredStyle: .alert)
+    alertController.addAction(UIAlertAction(title: NSLocalizedString("Reset", comment: "Press button to reset topscore"), style: .destructive) {(action:UIAlertAction) in
       self.score.resetTopScore()
       self.showScore()
     })
-    alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+    alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel resetting top score"), style: .cancel))
     
-    self.present(alertController, animated: true, completion: nil)
+    present(alertController, animated: true, completion: nil)
   }
 }

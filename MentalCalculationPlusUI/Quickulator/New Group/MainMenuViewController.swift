@@ -19,36 +19,23 @@ class MainMenuViewController: UIViewController {
   @IBOutlet weak var chooseLevelTitle: UILabel!
   @IBOutlet weak var topScoreButton: UIButton!
   
-  
- 
-  
-//  override var preferredStatusBarStyle : UIStatusBarStyle {
-//    return .lightContent
-//  }
-  
+  //MARK: Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     applyColorScheme()
-   // scrollView.contentSize = UIScreen.main.bounds.size
-   print("Main Menu View did load")
+    localizeStrings()
     
     let font = UIFont.systemFont(ofSize: 28)
     gameCategorySegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font],
                                             for: .normal)
-
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.navigationController?.setNavigationBarHidden(true, animated: animated)
-  
-    print("Main Menu View will appear")
   }
   
-  override func viewDidAppear(_ animated: Bool) {
-    print("Main Menu View did appear")
-  }
-  
+  //MARK: Setup appearance
   func applyColorScheme() {
     view.backgroundColor = ColorScheme.backgroundColor
     gameCategorySegmentedControl.tintColor = ColorScheme.secondaryFillColor
@@ -60,9 +47,21 @@ class MainMenuViewController: UIViewController {
     limitedTimeTitle.textColor = ColorScheme.primaryFontColor
     chooseLevelTitle.textColor = ColorScheme.primaryFontColor
     topScoreButton.setTitleColor(ColorScheme.secondaryButtonFontColor, for: .normal)
-    
   }
   
+  func localizeStrings() {
+  mainTitle.text = NSLocalizedString("Let's Do Math", comment: "Game main action title")
+  topScoreButton.setTitle(NSLocalizedString("Top Score", comment: "Open Top Score screen"), for: .normal)
+  chooseOperationTitle.text = NSLocalizedString("What operation you want to practice today?", comment: "Choose + or - or * or /")
+  limitedTimeTitle.text = NSLocalizedString("Limited time", comment: "Toggle limited time on/off")
+  chooseLevelTitle.text = NSLocalizedString("Choose level", comment: "Choose difficulty")
+  gameLevelSegmentedControl.setTitle(NSLocalizedString("easy-peasy", comment: "easy level"), forSegmentAt: 0)
+   gameLevelSegmentedControl.setTitle(NSLocalizedString("normal", comment: "normal level"), forSegmentAt: 1)
+   gameLevelSegmentedControl.setTitle(NSLocalizedString("hard", comment: "hard level"), forSegmentAt: 2)
+  playButton.setTitle(NSLocalizedString("Play", comment: "Press play to start game"), for: .normal)
+  }
+  
+  //MARK: Navigation
   @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
     
   }

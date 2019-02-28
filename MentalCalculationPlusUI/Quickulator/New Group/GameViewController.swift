@@ -78,14 +78,10 @@ class GameViewController: UIViewController {
   //don't like this instance member with exact parameters
   private var timer: Timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false, block: {(t) in })
   
-//  override var preferredStatusBarStyle : UIStatusBarStyle {
-//    return .lightContent
-//  }
-  
   //MARK: Lifecycle
   override func viewDidLoad() {
-    super.viewDidLoad()
-    
+    super.viewDidLoad()    
+    localizeStrings()
     applyColorScheme()
     
      let rotateView = CGAffineTransform(rotationAngle: CGFloat.pi)
@@ -283,6 +279,12 @@ class GameViewController: UIViewController {
     progressBar.trackTintColor = ColorScheme.progressBarTrackColor
     progressBar.progressTintColor = ColorScheme.progressBarBackgroundColor
     pauseButton.setTitleColor(ColorScheme.secondaryButtonFontColor, for: .normal)
+  }
+  
+  func localizeStrings() {
+  pauseButton.setTitle(NSLocalizedString("Pause Game", comment: "Press button to pause game"), for: .normal)
+  clearButton.setTitle(NSLocalizedString("Clear", comment: "Press button to clear response"), for: .normal)
+  enterButton.setTitle(NSLocalizedString("Enter", comment: "Press button to enter response"), for: .normal)
   }
   
   //MARK: IBActions

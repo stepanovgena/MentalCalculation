@@ -10,6 +10,7 @@
 		962F42962214580700648609 /* WrongAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F42942214580700648609 /* WrongAnswerTableViewCell.swift */; };
 		962F42972214580700648609 /* WrongAnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962F42952214580700648609 /* WrongAnswerTableViewCell.xib */; };
 		962F42992214664D00648609 /* CrossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F42982214664D00648609 /* CrossView.swift */; };
+		9636858F2228107C001570C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 963685912228107C001570C5 /* Localizable.strings */; };
 		963A8F66219CAF520019CD30 /* TopScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A8F65219CAF520019CD30 /* TopScoreViewController.swift */; };
 		963A8F68219CB0DC0019CD30 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */; };
 		96521CEC21C1A4090005B24B /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521CEB21C1A4090005B24B /* RoundButton.swift */; };
@@ -42,7 +43,6 @@
 		96F9FC322192222F003E80B4 /* SubstractionTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC252192222F003E80B4 /* SubstractionTask.swift */; };
 		96F9FC332192222F003E80B4 /* CoinFlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC262192222F003E80B4 /* CoinFlip.swift */; };
 		96F9FC342192222F003E80B4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC272192222F003E80B4 /* Game.swift */; };
-		96F9FC3821923555003E80B4 /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC3721923555003E80B4 /* SelectCategoryViewController.swift */; };
 		96F9FC3C21938616003E80B4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9FC3B21938616003E80B4 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +67,10 @@
 		962F42942214580700648609 /* WrongAnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerTableViewCell.swift; sourceTree = "<group>"; };
 		962F42952214580700648609 /* WrongAnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerTableViewCell.xib; sourceTree = "<group>"; };
 		962F42982214664D00648609 /* CrossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossView.swift; sourceTree = "<group>"; };
+		9636858D22280FF2001570C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		9636858E22280FF2001570C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		963685902228107C001570C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9636859222281094001570C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		963A8F65219CAF520019CD30 /* TopScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreViewController.swift; sourceTree = "<group>"; };
 		963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		96521CEB21C1A4090005B24B /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -105,7 +109,6 @@
 		96F9FC252192222F003E80B4 /* SubstractionTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstractionTask.swift; sourceTree = "<group>"; };
 		96F9FC262192222F003E80B4 /* CoinFlip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinFlip.swift; sourceTree = "<group>"; };
 		96F9FC272192222F003E80B4 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		96F9FC3721923555003E80B4 /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
 		96F9FC3B21938616003E80B4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,7 +168,6 @@
 				968FC3F6220C5B3600D7B0DB /* PauseGameViewController.swift */,
 				963A8F67219CB0DC0019CD30 /* GameOverViewController.swift */,
 				96F9FBE5219220E4003E80B4 /* MainMenuViewController.swift */,
-				96F9FC3721923555003E80B4 /* SelectCategoryViewController.swift */,
 				963A8F65219CAF520019CD30 /* TopScoreViewController.swift */,
 			);
 			name = "View Controllers";
@@ -216,6 +218,7 @@
 				96F9FBED219220E6003E80B4 /* Assets.xcassets */,
 				96F9FBEF219220E6003E80B4 /* LaunchScreen.storyboard */,
 				96F9FBF2219220E6003E80B4 /* Info.plist */,
+				963685912228107C001570C5 /* Localizable.strings */,
 			);
 			path = Quickulator;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 96F9FBD7219220E4003E80B4;
 			productRefGroup = 96F9FBE1219220E4003E80B4 /* Products */;
@@ -362,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96F9FBF1219220E6003E80B4 /* LaunchScreen.storyboard in Resources */,
+				9636858F2228107C001570C5 /* Localizable.strings in Resources */,
 				96B0B00021B1F21F000D1E8D /* Default-568h@2x.png in Resources */,
 				962F42972214580700648609 /* WrongAnswerTableViewCell.xib in Resources */,
 				96F9FBEE219220E6003E80B4 /* Assets.xcassets in Resources */,
@@ -392,7 +397,6 @@
 			files = (
 				96F9FC312192222F003E80B4 /* Level.swift in Sources */,
 				96F9FBE6219220E4003E80B4 /* MainMenuViewController.swift in Sources */,
-				96F9FC3821923555003E80B4 /* SelectCategoryViewController.swift in Sources */,
 				96F9FC2F2192222F003E80B4 /* MultiplicationTask.swift in Sources */,
 				962F42992214664D00648609 /* CrossView.swift in Sources */,
 				96521CEC21C1A4090005B24B /* RoundButton.swift in Sources */,
@@ -455,10 +459,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		963685912228107C001570C5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				963685902228107C001570C5 /* en */,
+				9636859222281094001570C5 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		96F9FBE7219220E4003E80B4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				96F9FBE8219220E4003E80B4 /* Base */,
+				9636858D22280FF2001570C5 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -467,6 +481,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				96F9FBF0219220E6003E80B4 /* Base */,
+				9636858E22280FF2001570C5 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -478,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -539,6 +555,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

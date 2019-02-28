@@ -24,9 +24,10 @@ class GameOverViewController: UIViewController, UITableViewDataSource {
   override func viewDidLoad() {
     super.viewDidLoad()
     applyColorScheme()
+    localizeStrings()
     wrongTasksTableView.register(UINib(nibName: "WrongAnswerTableViewCell", bundle: nil), forCellReuseIdentifier: "wrongAnswerCellReuseIdentifier")
     
-    scoreLabel.text = "\u{1F3C6}Your score: \(displayedScore)"
+    scoreLabel.text = "\u{1F3C6}\(NSLocalizedString("Your score:", comment: "Your score is..")) \(displayedScore)"
   }
   
   func applyColorScheme() {
@@ -39,6 +40,13 @@ class GameOverViewController: UIViewController, UITableViewDataSource {
     playAgainButton.setTitleColor(ColorScheme.secondaryFontColor, for: .normal)
     backToMainMenuButton.backgroundColor = ColorScheme.secondaryButtonFillColor
     backToMainMenuButton.setTitleColor(ColorScheme.secondaryButtonFontColor, for: .normal)
+  }
+  
+  func localizeStrings() {
+    mainTitle.text = NSLocalizedString("You're quite awesome!", comment: "Cheerful congratulation on game finish")
+    mistakesLabel.text = NSLocalizedString("Mistakes:", comment: "Mistakes table title")
+    playAgainButton.setTitle(NSLocalizedString("Play again", comment: "Press button to play again"), for: .normal)
+    backToMainMenuButton.setTitle(NSLocalizedString("Back to Menu", comment: "Press button to return to menu"), for: .normal)
   }
   
   //MARK: tableView delegate methods

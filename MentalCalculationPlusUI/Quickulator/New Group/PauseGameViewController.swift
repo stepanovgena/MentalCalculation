@@ -17,6 +17,7 @@ class PauseGameViewController: UIViewController {
   override func viewDidLoad() {
         super.viewDidLoad()
         applyColorScheme()
+        localizeStrings()
     }
     
   func applyColorScheme() {
@@ -24,6 +25,11 @@ class PauseGameViewController: UIViewController {
     resumeButton.setTitleColor(ColorScheme.actionButtonTextColor, for: .normal)
     backButton.backgroundColor = ColorScheme.secondaryButtonFillColor
     backButton.setTitleColor(ColorScheme.secondaryButtonFontColor, for: .normal)
+  }
+  
+  func localizeStrings() {
+    resumeButton.setTitle(NSLocalizedString("Resume Game", comment: "Press button to resume game"), for: .normal)
+    backButton.setTitle(NSLocalizedString("Back to Menu", comment: "Press button to return to menu"), for: .normal)
   }
   
   @IBAction func resumeButtonPressed(_ sender: Any) {
@@ -37,6 +43,5 @@ class PauseGameViewController: UIViewController {
     didClose?()
     let navigationController = self.presentingViewController as? UINavigationController
     navigationController?.popToRootViewController(animated: true)
-    
   }
 }

@@ -48,7 +48,6 @@ final class CustomPresentModalAnimator: NSObject, UIViewControllerAnimatedTransi
     },
                    completion: { _ in
                     transitionContext.completeTransition(true)
-                    print("present transition complete")
     }
     )
   }
