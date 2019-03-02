@@ -149,9 +149,9 @@ class GameViewController: UIViewController {
     task = game.generateTask(category: game.gameCategory, level: game.gameLevel)
   }
   
-  /**The score is calculated as 10 * (task category * level difficulty + 0.5 * scoreForSpeed) */
+  /**The score is calculated as 10 * (level difficulty + 0.5 * scoreForSpeed) */
   private func updateScore() {
-    score.setScore(newValue: score.getScore() + 10 * (task.level.rawValue * (self.gameCategory.rawValue) +  scoreForSpeed/2))
+    score.setScore(newValue: score.getScore() + 10 * (task.level.rawValue +  scoreForSpeed/2))
   }
   
   /**Clears user input text*/
