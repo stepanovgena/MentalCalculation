@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Select Game Category"; ObjectID = "1Mf-G9-ywr"; */
+"1Mf-G9-ywr.text" = "Select Game Category";
+
+/* Class = "UIButton"; normalTitle = "Multiplication"; ObjectID = "Nuo-ff-ToL"; */
+"Nuo-ff-ToL.normalTitle" = "Multiplication";
+
+/* Class = "UIButton"; normalTitle = "Top Score"; ObjectID = "WLX-mU-sSX"; */
+"WLX-mU-sSX.normalTitle" = "Top Score";
+
+/* Class = "UIButton"; normalTitle = "Substraction"; ObjectID = "YR3-nt-3o7"; */
+"YR3-nt-3o7.normalTitle" = "Substraction";
+
+/* Class = "UIButton"; normalTitle = "Adiition"; ObjectID = "ZhK-f3-L2N"; */
+"ZhK-f3-L2N.normalTitle" = "Adiition";
+
+/* Class = "UIButton"; normalTitle = "Division"; ObjectID = "kfs-Iq-avP"; */
+"kfs-Iq-avP.normalTitle" = "Division";
+
+/* Class = "UILabel"; text = "Menu"; ObjectID = "nTN-YN-9eQ"; */
+"nTN-YN-9eQ.text" = "Menu";
+
+/* Class = "UIButton"; normalTitle = "Back to Main Menu"; ObjectID = "qPi-IC-fcf"; */
+"qPi-IC-fcf.normalTitle" = "Back to Main Menu";
+
+/* Class = "UIButton"; normalTitle = "New Game"; ObjectID = "xJO-0e-aad"; */
+"xJO-0e-aad.normalTitle" = "New Game";
+
+/* Class = "UIButton"; normalTitle = "Resume Game"; ObjectID = "zrO-bE-5ro"; */
+"zrO-bE-5ro.normalTitle" = "Resume Game";

@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  Quickulator
+
+  Created by Gennady Stepanov on 28/02/2019.
+  Copyright © 2019 Gennady Stepanov. All rights reserved.
+*/
+
+"Let's Do Math" = "Посчитаем?";
+"Top Score" = "Мой рекорд";
+"What operation you want to practice today?" = "Выберите арифметическое действие";
+"Limited time" = "Игра на время";
+"Choose level" = "Выберите сложность";
+"easy-peasy" = "легко";
+"normal" = "нормально";
+"hard" = "сложно";
+"Play" = "Старт";
+"Reset Top Score" = "Сбросить рекорд";
+"Back to Menu" = "Вернуться в меню";
+"Do you really want to reset your top score to 0?" = "Вы действительно хотите сбросить рекорд?";
+"Reset" = "Сбросить";
+"Cancel" = "Отмена";
+"Pause Game" = "Пауза";
+"Clear" = "Сброс";
+"Enter" = "Ввод";
+"Resume Game" = "Продолжить игру";
+"You're quite awesome!" = "Отличная работа!";
+"Your score:" = "Ваш счет:";
+"Mistakes:" = "Ошибки:";
+"Play again" = "Играть еще раз";

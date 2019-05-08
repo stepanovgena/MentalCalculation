@@ -1,0 +1,49 @@
+//
+//  Score.swift
+//  MentalCalculation
+//
+//  Created by Gennady Stepanov on 19/10/2018.
+//  Copyright © 2018 Gennady Stepanov. All rights reserved.
+//
+
+import Foundation
+/**Class provides scoring logic*/
+class Score {
+  private var currentScore = 0
+  private var topScore = 0
+  
+  let gameData = UserDefaults.standard
+  let topScoreKey = "topScore"
+  
+  func getScore() -> Int {
+    return currentScore
+  }
+  
+  func setScore(newValue: Int) {
+    currentScore = newValue
+  }
+  
+  func updateTopScore() {
+    topScore = getTopScore()
+    
+    if (currentScore > topScore) {
+      
+      topScore = currentScore
+      gameData.set(topScore, forKey: topScoreKey)
+      
+    }
+  }
+  func getTopScore() -> Int {
+    
+    if gameData.object(forKey: topScoreKey) == nil {
+      return 0
+    } else {
+      return gameData.integer(forKey: topScoreKey)
+    }
+  }
+  
+  func resetTopScore() {
+  gameData.set(0, forKey: topScoreKey)
+  }
+  
+}

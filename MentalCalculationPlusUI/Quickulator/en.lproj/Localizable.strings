@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  Quickulator
+
+  Created by Gennady Stepanov on 28/02/2019.
+  Copyright © 2019 Gennady Stepanov. All rights reserved.
+*/
+
+"Let's Do Math" = "Let's Do Math";
+"Top Score" = "Top Score";
+"What operation you want to practice today?" = "What operation you want to practice today?";
+"Limited time" = "Limited time";
+"Choose level" = "Choose level";
+"easy-peasy" = "easy-peasy";
+"normal" = "normal";
+"hard" = "hard";
+"Play" = "Play";
+"Reset Top Score" = "Reset Top Score";
+"Back to Menu" = "Back to Menu";
+"Do you really want to reset your top score to 0?" = "Do you really want to reset your top score to 0?";
+"Reset" = "Reset";
+"Cancel" = "Cancel";
+"Pause Game" = "Pause Game";
+"Clear" = "Clear";
+"Enter" = "Enter";
+"Resume Game" = "Resume Game";
+"You're quite awesome!" = "You're quite awesome!";
+"Your score:" = "Your score:";
+"Mistakes:" = "Mistakes:";
+"Play again" = "Play again";
